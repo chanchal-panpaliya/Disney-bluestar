@@ -1,0 +1,25 @@
+.text-input{
+    position: relative;
+    width: 90%;
+    padding: 6px 0;
+    line-height: 16%;
+    font-size: 0.875rem;
+    background: none;
+    border: none;
+    border-bottom: 1px solid var(--BRAND_BLUE);
+    outline: none;
+    color: var(--TEXT_COLOR_L0);
+}
+
+.btn-crediantial{
+    width: fit-content;
+}
+
+.flex-justify-content-flex-space-between{
+    justify-content: space-between;
+    width: -webkit-fill-available;
+}
+
+.text-trasn-cap{
+    text-transform: uppercase;
+}

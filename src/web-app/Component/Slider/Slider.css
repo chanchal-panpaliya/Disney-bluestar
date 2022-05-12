@@ -1,0 +1,91 @@
+.container-slider {
+    height:25rem;
+    position: relative;
+    overflow: hidden;
+    margin: 1.125rem;
+  }
+
+  .slide {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0;
+    transition: opacity ease-in-out 0.4s;
+  }
+
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+  
+  .active-anim {
+    opacity: 1;
+  }
+  
+  .btn-slide {
+    width: 1.875rem;
+    height: 1.875rem;
+    background:var(--TEXT_COLOR_L0);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .btn-slide img {
+    width: 1.563rem;
+    height: 1.563rem;
+    pointer-events: none;
+  }
+  
+  .prev {
+    top: 50%;
+    left: 1.25rem;
+    transform: translateY(-60%);
+    color: var(--BRAND_BLUE);
+  }
+
+  .next {
+    top: 50%;
+    right: 1.25rem;
+    transform: translateY(-60%);
+    color: var(--BRAND_BLUE);
+  }
+  
+  
+  .container-dots {
+    position: absolute;
+    bottom: 0.625rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    background: transparent;
+  }
+  
+  .dot {
+    width: 0.625rem;
+    height: 0.625rem;
+    border-radius: 50%;
+    margin: 0 5px;
+    background: var(--TEXT_COLOR_L0);
+  }
+  .dot.active {
+    background: var(--BRAND_BLUE);
+  }
+
+  .fa-arrow-right:before , .fa-arrow-left:before{
+    background-color: var(--TEXT_COLOR_L0);
+    color: var(--BRAND_BLUE);
+    border: none;
+  }
+
+  @media(max-width: 800px){
+    .container-slider {
+      height:25rem;
+      position: relative;
+      overflow: hidden;
+      margin: 0;
+    }
+  }

@@ -1,0 +1,20 @@
+.slider-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.slider-label{
+    padding-left: 2rem;
+    padding-top:0.5rem;
+}
+
+.loader-img{
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    left: 0;
+    top: 0;
+    position: fixed;
+}
