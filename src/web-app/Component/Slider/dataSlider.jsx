@@ -7,7 +7,7 @@ import movie_slider1 from '../../img/images/temp/movie_slider.jpg'
 import movie_slider2 from '../../img/images/temp/movie_slider2.jpg' 
 import movie_slider3 from '../../img/images/temp/movie_slider3.jpg' 
 import movie_slider4 from '../../img/images/temp/movie_slider4.jpg' 
-// import slider5 from '../../img/slider/slider_06.png';
+//
 import show_slider from '../../img/images/temp/show_slider.jpg' 
 import show_slider2 from '../../img/images/temp/show_slider2.jpg' 
 import show_slider3 from '../../img/images/temp/show_slider3.jpg' 

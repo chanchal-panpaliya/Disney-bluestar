@@ -57,8 +57,6 @@
     position: absolute;
     top: 0;
     left: -5px;
-    /* height: 35px;
-    width: 35px; */
     background-size: cover;
     transform: scale(0.4);
 }

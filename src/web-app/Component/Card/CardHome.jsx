@@ -31,7 +31,6 @@ const CardHome=({data})=>{
                     <i className="fa-solid fa-thumbs-up --background" onClick={()=>{setmodal(!ismodal)}}></i>
                 </span>                           
             }
-            {/* <button className="watchlist-btn">remove like</button> */}
         </div>
         <span>{data.uploadedOn}</span>
     </div>
