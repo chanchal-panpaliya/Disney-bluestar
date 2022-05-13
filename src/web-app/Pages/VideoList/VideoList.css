@@ -1,0 +1,73 @@
+.videolist-display{
+    display: grid;
+    padding: 2rem;
+}
+
+.page-container-videolist{
+    padding: 0;
+}
+
+.page-data-display-videolist{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: -webkit-fill-available;
+    padding: 0;
+}
+
+@media (max-width: 800px) {
+    .page-container-videolist{
+        height: -webkit-fill-available;
+    }
+    .page-data-display-videolist{
+        flex-direction: column;
+        width: -webkit-fill-available;
+        height: 100vh;
+    }
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .videolist-display{
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 2rem;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .videolist-display{
+        display: grid;
+        grid-template-columns: 1fr 1fr ;
+        row-gap: 2rem;
+    }
+}
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 766px) {
+    .videolist-display{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        row-gap: 2rem;
+    }
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .videolist-display{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        row-gap: 2rem;
+    }
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .videolist-display{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}

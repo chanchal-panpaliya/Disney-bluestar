@@ -1,0 +1,115 @@
+.profile-card{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.table-padding{
+    text-align: center;
+    text-align: initial;
+    padding-left: 4rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.table-profile {
+    display:table;
+    width:100%;
+  }
+  
+  .row-profile {
+    display: table-row;
+    min-height: 2.5rem;
+    font-size: 1rem;
+  }
+  
+  .column-profile {
+    display: table-cell;
+    vertical-align: middle;
+    padding:10px 0;
+    width: 12.5rem;
+  }
+
+  .profile-summary{
+    width: auto;
+    height: auto;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  }
+
+  .page-container-userprofile{
+    height: 100vh;
+    padding: 0;
+}
+
+
+.page-data-display-userprofile{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: -webkit-fill-available;
+    padding: 0;
+}
+
+.like-page-header-userprofile{
+    width: -webkit-fill-available;
+    height: 15rem;
+    background: var(--BG_GRADIENT_L2);
+    position: relative;
+    display: flex;
+}
+
+.like-page-round-circle-userprofile{
+    width: 10rem;
+    height: 10rem;
+    background: var(--BG_GRADIENT_L2);
+    position: absolute;
+    bottom: -5rem;
+    border-radius: 999px;
+    left: 2rem;
+    object-fit: fill;
+    transition: 1s;
+}
+
+.like-page-body-userprofile{
+    display: flex;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+}
+
+.like-page-card-grid-userprofile{
+    display: grid;
+    column-gap: 2rem;
+    row-gap: 2rem;
+    background: transparent;
+    padding-top: 2rem;
+    padding-bottom:2rem ;
+}
+
+@media (max-width: 800px) {
+    .page-container-userprofile{
+        height: -webkit-fill-available;
+    }
+    .page-data-display-userprofile{
+        flex-direction: column;
+        width: -webkit-fill-available;
+        height: 100vh;
+    }
+
+    .like-page-round-circle-userprofile{
+        width: 6rem;
+        height: 6rem;
+        background: var(--BG_GRADIENT_L2);
+        position: absolute;
+        bottom: -3rem;
+        border-radius: 999px;
+        left: 2rem;
+        object-fit: fill;
+        transition: 1s;
+    }
+
+    .like-page-body-userprofile{
+        flex-direction: column;
+        row-gap: 1rem;
+    }
+}

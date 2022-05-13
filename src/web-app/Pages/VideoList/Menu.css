@@ -1,0 +1,143 @@
+.menu-container-grid{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 0.6fr 1fr 1fr 9fr;
+    grid-template-rows: 0.1fr 3fr;
+    grid-template-areas:
+      "sidebar nav nav nav"
+      "sidebar main main main";
+      position: relative;
+      height: auto;
+  }
+  
+  .navbar {
+      grid-area: nav;
+    }
+  
+    main {
+      grid-area: main;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      row-gap: 2rem;
+      padding: 2rem;
+      height: 100vh;
+    }
+
+    .sidebar-menulist{
+        background:var(--BG_GRADIENT_L1);
+    }
+  
+    .sidebar {
+      grid-area: sidebar;
+      overflow-y: auto;
+      width: fit-content;
+      position: fixed;
+      height:fit-content;
+    }
+
+   
+    .sidebar-icon{
+        display: none;
+    }
+  
+    .note-logo{
+      display: none;
+    }
+  
+
+    .sidebar-responsive{
+      display: inline ;
+      z-index: 3 ;
+      left: 0 ;
+      height:fit-content;
+      width: fit-content;
+      position: fixed;
+    }
+  
+    .sidebar-header{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1.875rem;
+    }
+  
+  .sidebar__menu{
+      display: flex;
+      flex-direction: column;
+      row-gap: 1rem;
+  }
+    
+    .sidebar__link {
+      color: var(--BG_COLOR_L4);
+      background:var(--BG_COLOR_L1);
+      padding: 0.625rem;
+      border-radius: 0.188rem;
+      margin-bottom: 0.313rem;
+      display: flex;
+      column-gap: 1.5rem;
+      cursor: pointer;
+    }
+  
+    .sidebar_button{
+      background-color: transparent;
+      text-decoration: none;
+  }
+  
+    .sidebar__link:hover{
+      background-color: var(--BRAND_BLUE);
+      color: var(--TEXT_COLOR_L0);
+    }
+  
+  
+    .active_menu_link {
+      background: var(--BRAND_BLUE);
+      color: var(--sidebar-active-c);
+    }
+    
+    .active_menu_link a {
+      color: var(--sidebar-active-text) ;
+    }
+    
+    .button-navbar-open{
+        display: none;
+    }
+  
+    @media only screen and (max-width: 978px) {
+      .menu-container-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.2fr 3fr;
+        grid-template-areas:
+          "nav"
+          "main";
+          position: relative;
+          height: 100vh;
+      }
+    
+      .sidebar {
+        display: none;
+      }
+  
+      .sidebar-icon {
+          display: inline;
+      }
+  
+      .note-logo{
+          display: flex;
+      }
+      .button-navbar-open{
+          display: block;
+      }
+
+      .navbar{
+        height: 3.75rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 1.875rem 0 1.875rem;
+        position: fixed;
+        z-index: 1;
+      }
+    }
+  
+   
