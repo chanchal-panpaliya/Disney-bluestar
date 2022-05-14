@@ -1,0 +1,111 @@
+.page-container-watchlist{
+    height: 100vh;
+    padding: 0;
+}
+
+
+.page-data-display-watchlist{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: -webkit-fill-available;
+    padding: 0;
+}
+
+.like-page-header-watchlist{
+    width: -webkit-fill-available;
+    height: 15rem;
+    background: var(--BG_GRADIENT_L2);
+    position: relative;
+    display: flex;
+}
+
+.like-page-round-circle-watchlist{
+    width: 10rem;
+    height: 10rem;
+    background: var(--BG_GRADIENT_L2);
+    position: absolute;
+    bottom: -5rem;
+    border-radius: 999px;
+    left: 2rem;
+    object-fit: fill;
+    transition: 1s;
+}
+
+.like-page-body-watchlist{
+    display: flex;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+}
+
+.like-page-card-grid-watchlist{
+    display: grid;
+    column-gap: 2rem;
+    row-gap: 2rem;
+    background: transparent;
+    padding-top: 2rem;
+    padding-bottom:2rem ;
+}
+
+@media (max-width: 800px) {
+    .page-container-watchlist{
+        height: -webkit-fill-available;
+    }
+    .page-data-display-watchlist{
+        flex-direction: column;
+        width: -webkit-fill-available;
+        height: 100vh;
+    }
+
+    .like-page-round-circle-watchlist{
+        width: 6rem;
+        height: 6rem;
+        background: var(--BG_GRADIENT_L2);
+        position: absolute;
+        bottom: -3rem;
+        border-radius: 999px;
+        left: 2rem;
+        object-fit: fill;
+        transition: 1s;
+    }
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .like-page-card-grid-watchlist{
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .like-page-card-grid{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 766px) {
+    .like-page-card-grid-watchlist{
+        grid-template-columns: 1fr 1fr ;
+    }
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .like-page-card-grid-watchlist{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .like-page-card-grid-watchlist{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
