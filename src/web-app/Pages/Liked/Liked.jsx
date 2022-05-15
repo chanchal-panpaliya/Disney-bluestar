@@ -16,7 +16,6 @@ const Liked = () =>{
   let navigator = useNavigate();
   let {token} = useAuth()
   const[data,setdata]=useState([])
-  // const [loader,setloader]=useState(false)
   useEffect(()=>{
    let time = setTimeout(()=>{
         fetchAllLikedData(token).then((res)=>{
@@ -33,8 +32,6 @@ const Liked = () =>{
            <div className='page-data-display'>
                <header className='like-page-header'>
                    <img className='like-page-round-circle' src={liked_img} />
-                   {/* <span className='like-page-round-circle'>
-                   </span> */}
                </header>
                <section className='like-page-body'>
                {
@@ -42,7 +39,6 @@ const Liked = () =>{
                   <div className='like-page-card-grid'> 
                         {data.map((item,index)=>{
                         return  <CardHome data={item}/>  
-                        // <VideoListCard data={item} />
                         }) }
                   </div>
                   :
