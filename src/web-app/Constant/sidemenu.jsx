@@ -7,7 +7,7 @@ const sidemenuItem = [
         cName: "nav-text"
     },
     {   id:2,
-        name : "PlayLists" ,
+        name : "Playlists" ,
         route : "/playlist",
         Icon : <i className="fa-solid fa-circle-play --background"></i>, 
         cName: "nav-text"
@@ -28,6 +28,12 @@ const sidemenuItem = [
         name : "History" ,
         route : "/history",
         Icon : <i className="fa-solid fa-clock-rotate-left --background"></i>, 
+        cName: "nav-text"
+    },
+    {   id:5,
+        name : "Upload Video" ,
+        route : "/uploadvideo",
+        Icon : <i class="fa-solid fa-upload --background"></i>, 
         cName: "nav-text"
     },
 ];

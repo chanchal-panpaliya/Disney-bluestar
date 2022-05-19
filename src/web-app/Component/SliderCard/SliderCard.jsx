@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from 'react';
 //component
 import  {VideoCard,EpisodeVideoListCard}  from '../Card/Card';
+import { CardContinueWatch } from '../Card/CardHome';
 import Loader from '../Loader/Loader';
 //css
 import './SliderCard.css';
@@ -22,13 +23,23 @@ const SliderCard =(props) =>{
     return(
         <div className="main-slider-container">
         <button className="slider-icon left" onClick={handlescrollcardLeft}> <i class="fa-solid fa-arrow-left"></i> </button>
-        <div className="slider" style={{scrollLeft:scrollcard}} ref={containerRef}>
-           {
-           props.cardlist.length>0? 
+        <div className={props.type === "continuewatch"?"slider-cw":"slider"} style={{scrollLeft:scrollcard}} ref={containerRef}>
+          {
+            props.type === "continuewatch" ?
+            props.cardlist.length>0? 
             props.cardlist.map((slide,index)=>{
                     return(
-                      props.type === "show" ? 
                       slide !== null ? 
+                        <CardContinueWatch data={slide} key={index} Loader={""}/> 
+                      : <CardContinueWatch data={[]} Loader={"Loader"} key={index}/>  
+                    )
+                })
+            : <div> <Loader/> </div>
+            :
+            props.cardlist.length>0? 
+            props.cardlist.map((slide,index)=>{
+                    return(
+                      props.type === "show" ? slide !== null ? 
                       <EpisodeVideoListCard data={slide} key={index} Loader={""}/> 
                     : <EpisodeVideoListCard data={[]} Loader={"Loader"} key={index}/>  :
                       slide !== null ? 
@@ -37,7 +48,8 @@ const SliderCard =(props) =>{
                     )
                 })
             : <div> <Loader/> </div>
-            }
+          }
+           
         </div>
         <button className="slider-icon right" onClick={handlescrollcardRight}> <i class="fa-solid fa-arrow-right"></i> </button>
     </div>  

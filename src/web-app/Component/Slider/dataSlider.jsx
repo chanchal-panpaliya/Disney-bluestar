@@ -4,19 +4,19 @@ import slider3 from '../../img/images/slider-scale.jpg';
 import slider4 from '../../img/images/slider-scales.jpg';
 //
 import movie_slider1 from '../../img/images/temp/movie_slider.jpg'
-import movie_slider2 from '../../img/images/temp/movie_slider2.jpg' 
-import movie_slider3 from '../../img/images/temp/movie_slider3.jpg' 
-import movie_slider4 from '../../img/images/temp/movie_slider4.jpg' 
+import movie_slider2 from '../../img/images/temp/movie_slider51.jpg' 
+import movie_slider3 from '../../img/images/temp/movie_slider44.jpg' 
+import movie_slider4 from '../../img/images/temp/movie_slider66.jpg' 
 //
 import show_slider from '../../img/images/temp/show_slider.jpg' 
-import show_slider2 from '../../img/images/temp/show_slider2.jpg' 
+import show_slider2 from '../../img/images/temp/show_slider33.jpg' 
 import show_slider3 from '../../img/images/temp/show_slider3.jpg' 
-import show_slider4 from '../../img/images/temp/show_slider4.jpg' 
+import show_slider4 from '../../img/images/temp/show_slider22.jpg' 
 //
-import song_slider1 from '../../img/images/temp/song_slider1.jpg' 
+import song_slider1 from '../../img/images/temp/song_slider13.jpg' 
 import song_slider2 from '../../img/images/temp/song_slider2.jpg' 
 import song_slider3 from '../../img/images/temp/song_slider3.jpg' 
-import song_slider4 from '../../img/images/temp/song_slider4.jpg' 
+import song_slider4 from '../../img/images/temp/song_slider12.jpg' 
 //
 import sport_slider1 from '../../img/images/temp/sport_slider1.jpg' 
 import sport_slider2 from '../../img/images/temp/sport_slider2.jpg' 

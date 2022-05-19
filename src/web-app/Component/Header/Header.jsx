@@ -1,5 +1,5 @@
 //react
-import { useContext, useState , useEffect} from 'react';
+import { useContext, useState , useEffect , useRef} from 'react';
 import { Link ,useNavigate ,useLocation } from "react-router-dom";
 //
 import { fetchAllVideoData } from 'web-app/Service/service';
@@ -28,10 +28,9 @@ const Header =() =>{
     const [getTite,setTitle]=useState("");
     const [alldata,setalldata] = useState([]);
     const [searchResults, setSearchResults] = useState([]);
-
+    const textfocus = useRef();
 
     useEffect(()=>{
-
         fetchAllVideoData().then(function(result){
             setalldata(result)  
         });
@@ -48,7 +47,9 @@ const Header =() =>{
      }
 
      const handleChange =(e)=>{
+    
         setTitle(e.target.value);
+        
         let filterdatabytitle = alldata.filter((item)=>{
              return item.title.toLowerCase().includes(getTite.toLowerCase()) 
         })
@@ -79,7 +80,7 @@ const Header =() =>{
                 </div>
             </div>
             </Link>
-               {/* /Search Bar/ */}
+               {/* /Menu Bar/ */}
                <div className='flex-row header-menu-container --background'>
                    <ul className='header-menu-content --background'>
                        {
@@ -93,7 +94,7 @@ const Header =() =>{
                        }
                    </ul>
                 </div>
-              {/* /Login/ */}
+              {/* /Search Bar/ */}
               <div className='header-right-container'>
                     <div className='header-search'>
                         <input className='search-text-input' type="search" placeholder='Search' value={getTite} onChange={handleChange}/>
@@ -132,14 +133,15 @@ const Header =() =>{
                {
                             token!==null? 
                     <>
-                        <button className='header-button-more' onClick={()=>setsidemenu(!sidemenu)}> <i className="fa-solid fa-gear"></i> </button>
+                        <button className='header-button-more' onClick={()=>setsidemenu(!sidemenu)}> <i className="fa-solid fa-user-gear gear-size"></i> </button>
                         <nav className={sidemenu ? "nav-menu active" : "nav-menu"}>
                            <ul className="nav-menu-items" onClick={()=>setsidemenu(!sidemenu)}>
                                 <li className="navbar-toggle">
                                     <i className="fa-solid fa-xmark"></i>
                                 </li>
                                 <li className='profile-circle'>
-                                        {user.firstName[0] || user.firstname[0]}
+                                        {user.firstName?user.firstName[0].toUpperCase():null} 
+                                        {user.firstname?user.firstname[0].toUpperCase():null}
                                 </li>
                                 <li className='padding-menu-item'> 
                                 {sidemenuItem.map((item, index) => {

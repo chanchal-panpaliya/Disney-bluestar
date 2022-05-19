@@ -57,4 +57,20 @@ const CardPlaylsitContainer=({data})=>{
     )
 }
 
-export {CardHome,CardPlaylsitContainer}
+
+const CardContinueWatch=({data})=>{
+    return(
+        <>
+         <div className="card">
+            <Link to={"/videolist/"+data._id} > 
+                <img src={data.thumbnail.land} className="card-img" alt=""/>
+            </Link>
+            <div className="card-body">
+               
+            </div>
+        </div>
+        </>
+    )
+}
+
+export {CardHome,CardPlaylsitContainer,CardContinueWatch}

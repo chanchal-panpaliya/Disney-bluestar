@@ -1,26 +1,40 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
-const useInfiniteScroll = (callback) => {
-  const [isFetching, setIsFetching] = useState(false);
+export const InfiniteScroll = (data) => {
+  const LIMIT = 4;
+  const totalPosts = data.length;
+  const [pageNumber, setPageNumber] = useState(1);
+  const [observerRef, setObserverRef] = useState(null);
+  const limit_data = data.slice(0, pageNumber * LIMIT);
+  const moredata = pageNumber < Math.ceil(totalPosts / pageNumber);
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (moredata && entries[0].isIntersecting) {
+          setTimeout(() => setPageNumber((prevPage) => prevPage + 1), 800);
+        }
+      },
+      { threshold: 1 }
+    );
 
-  useEffect(() => {
-    if (!isFetching) return;
-    callback(() => {
-      console.log('called back');
-    });
-  }, [isFetching]);
+    if (observerRef) {
+      observer.observe(observerRef);
+    }
 
-  function handleScroll() {
-    if (window.innerHeight + document.documentElement.scrollTop !== document.documentElement.offsetHeight || isFetching) return;
-    setIsFetching(true);
-  }
+    return () => {
+      if (observerRef) {
+        observer.unobserve(observerRef);
+      }
+    };
+  }, [moredata, observerRef]);
 
-  return [isFetching, setIsFetching];
+  return {
+    limit_data,
+    moredata,
+    pageNumber,
+    setPageNumber,
+    observerRef,
+    setObserverRef,
+  };
 };
-
-export default useInfiniteScroll;

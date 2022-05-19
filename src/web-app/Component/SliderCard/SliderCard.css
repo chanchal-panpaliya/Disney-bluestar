@@ -15,7 +15,23 @@
     scrollbar-width: none;
     scroll-behavior: smooth;
     background: rgba(242, 236, 236, 0.097);
-    text-align: start;
+    /* text-align: start; */
+}
+
+.slider-cw{
+    width: 100%;
+    height: 100%;
+    white-space: nowrap;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    background: rgba(242, 236, 236, 0.097);
+    /* text-align: start;    */
+    display: flex;
+}
+
+.slider-cw::-webkit-scrollbar{
+    display: none;
 }
 
 .slider::-webkit-scrollbar{

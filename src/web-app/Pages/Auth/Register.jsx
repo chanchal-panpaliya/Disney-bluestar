@@ -1,10 +1,13 @@
 import './Auth.css';
 import '../../Component/Modal/Modal.css';
-import { useState ,useEffect } from 'react';
+import { useState ,useEffect ,useContext} from 'react';
 import {useNavigate} from 'react-router-dom';
 import { handleRegistration } from '../../Service/service';
+import VideoContext from 'web-app/Context/video/VideoContext';
 
 const Register = ({routeLogin,modalClose}) =>{
+    let{toastdispatch}= useContext(VideoContext)
+
     const navigator = useNavigate();
     const [firstname,setName] = useState("");
     const [emailId, setEmailId] = useState("");
@@ -31,7 +34,7 @@ const Register = ({routeLogin,modalClose}) =>{
     return(
     <div className='flex-col'>
         <h4 className='text-trasn-cap'> Registration </h4>
-          <form onSubmit={(e)=>handleRegistration(e,emailId,password,firstname,lastname,termsAndConditions,navigator,modalClose,setError)}> 
+          <form onSubmit={(e)=>handleRegistration(e,emailId,password,firstname,lastname,termsAndConditions,navigator,modalClose,setError,toastdispatch)}> 
             <div className="flex-row  col-gap-2rem textField-container --background">  
                 <input type="text" name="firstName" value={firstname} placeholder="John" className="text-input" onChange={(e)=>{setName(e.target.value)}} required/>
                 <label className="text-placeholder --background"> Enter First Name </label>                                                

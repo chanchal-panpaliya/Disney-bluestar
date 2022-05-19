@@ -4,12 +4,12 @@ import { useParams } from 'react-router-dom';
 import { useEffect, useState ,useContext} from 'react';
 import { Link } from 'react-router-dom';
 //service
-import { fetch_single_video,fetchAllVideoData ,handler_addWatchLater ,handler_removeWatchLater 
-         ,addVideoToLikedVideos,removeFromlikedVideos,handler_addVideoHistory} from '../../Service/service';
+import { fetch_single_video,fetchAllVideoData ,handler_addWatchLater ,handler_removeWatchLater,handler_addVideoHistory,getNotesService} from '../../Service/service';
 //component
 import Header from '../../Component/Header/Header';
 import Footer from '../../Component/Footer/Footer';
 import SliderCard from '../../Component/SliderCard/SliderCard';
+// import { NoteCard } from 'web-app/Component/Card/NoteCard';
 import { Playlist_Modal ,Auth_Modal,AddNote_Modal,ShareModal} from '../../Component/Modal/Modal';
 //
 import VideoContext from 'web-app/Context/video/VideoContext';
@@ -17,7 +17,7 @@ import { useAuth } from 'web-app/Context/login/AuthContext';
 import Frame from 'web-app/Component/Frame/Frame';
 //
 const SinglePage =()=>{ 
-    let {addwatchlist,removedwatchlist,watchlist,add_liked,removed_liked,liked,add_history,episode_video_Id} = useContext(VideoContext)
+    let {addwatchlist,removedwatchlist,watchlist,add_history,addvideoViewCount,uploadedvideo,CountVideoView,getContinueWatchItem} = useContext(VideoContext)
     let {token} = useAuth()
     const [ispalylistmodal,setpaylist]=useState(false)
     const [ismodal,setmodal]=useState(false)
@@ -28,14 +28,16 @@ const SinglePage =()=>{
     const [data,setdata]=useState();
     const [alldata,setalldata]=useState([]);
     const [showdata,setshowdata]=useState([]);
-
+    // const [noteList,SetnoteList] = useState([]);
+    const [openNoteSidebar,SetopenNoteSidebar] = useState(false)
 
     
     useEffect(()=>{
         fetchAllVideoData().then(function(result){
-             setalldata(result)
+            let newdata =  uploadedvideo.length>0 ? [...result,...uploadedvideo]  : result 
+             setalldata(newdata)
 
-             let filterdata =  result.filter(item=> item.categoryName === "Shows")
+             let filterdata =  newdata.filter(item=> item.categoryName === "Shows")
              if(filterdata.length>0){
                 let obj={}
                 let newarr=[]
@@ -54,13 +56,28 @@ const SinglePage =()=>{
 
     useEffect(()=>{
             let time2 = setTimeout(()=>{
+                           
                 fetch_single_video(id).then((res)=>{
-                setdata(res)
-             })
+                    let check = uploadedvideo.length>0 ? uploadedvideo.find((item)=>item._id===id) : false;
+                        if(check){ 
+                            setdata(check)
+                        }else{
+                            setdata(res)
+                        }
+                })
+                // getNotesService(token,id).then((res)=>{
+                //     SetnoteList(res.data.notes)
+                // })
             },0)
             return ()=>clearTimeout(time2)
     },[data,setdata])
     
+    const handleOpenVideo=(data)=>{
+        if(token){
+             handler_addVideoHistory(token,data,add_history)
+        }
+ }
+
  return(
      <div>
          <Header/>
@@ -70,12 +87,12 @@ const SinglePage =()=>{
                   <> 
                     <section className='singlepage-display'>
                     <div className='flex-col singlepage-iframe'>
-                        <Frame data={data} />
+                        <Frame data={data} Noteval={openNoteSidebar} openNote={()=>SetopenNoteSidebar(true)} closeNote={()=>SetopenNoteSidebar(false)}/>
                         <div className='singlepage-opration singlepage-opration-content typography-padding-top-right-bottom-left'>
                                 <span className='flex-row col-gap-1rem --background'> 
                                     <label className='--background'> Watch {data.categoryName} </label>
                                     <Link to={`/videolist/${data._id}/watch`} className="fa-solid fa-play" 
-                                    onClick={()=>token?handler_addVideoHistory(token,data,add_history):""}></Link>
+                                    onClick={()=>{CountVideoView(data);getContinueWatchItem(data);handleOpenVideo(data)}}></Link>
                                 </span>
                                 <div className='flex-row --background col-gap-2rem'>
                                         {
@@ -103,6 +120,12 @@ const SinglePage =()=>{
                                             <i className="fa-solid fa-share-nodes --background"></i>
                                             <label className='--background' onClick={()=>setshare(!isshare)}>share</label>
                                         </span>
+
+                                        <span className='flex-col row-gap-0.5rem --background'>
+                                            <i className="fa-solid fa-note-sticky --background curser-pointer-noeffect" onClick={()=>SetopenNoteSidebar(!openNoteSidebar)}></i>
+                                            <label className='--background'> add note </label>
+                                        </span>
+                                        
                                 </div>
                       
                 </div>
@@ -123,7 +146,9 @@ const SinglePage =()=>{
                                         }) : null
                                     }
                             </div>
+                            
                             </div>
+
                             {
                                 data.categoryName === "Shows" ? 
                                 <div className='slider-container --background'>

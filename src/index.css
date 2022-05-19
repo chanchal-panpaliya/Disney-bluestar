@@ -79,6 +79,7 @@ a, img {
   color: inherit;
   border: none;
   outline: none;
+  background:transparent;
 }
 
 button{
@@ -104,6 +105,10 @@ ul{
 
 .--color-secondary{
   color: var(--BRAND_ORANGE);
+}
+
+p{
+  background: transparent;
 }
 
 

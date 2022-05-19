@@ -3,7 +3,7 @@ import {useEffect,useState,useContext} from "react";
 import './VideoList.css';
 import '../Playlist/PlayList.css';
 //service
-import { fetchAllVideoData } from "../../Service/service";
+import { fetchAllVideoData} from "../../Service/service";
 //component
 import { VideoListCard } from '../../Component/Card/Card';
 import Filter from "../../Component/Filter/Filter";
@@ -18,12 +18,19 @@ import Slider from "web-app/Component/Slider/Slider";
 import sliderdata from '../../Component/Slider/dataSlider';
 
 import loder_img from '../../img/images/temp/css-swing-masking-loader.gif';
+import loading_img from '../../img/images/temp/loder.gif';
+import { useAuth } from "web-app/Context/login/AuthContext";
+
+import { InfiniteScroll } from "../../Component/InfiniteScroll/useInfiniteScroll";
 
 const VideoList =()=>{
-  let {selectedMenu,filter,filter_dispatch} = useContext(VideoContext)
+  let {token} = useAuth()
+  let {selectedMenu,filter,filter_dispatch,uploadedvideo} = useContext(VideoContext)
   const [data,setdata]=useState([]);
   const [loader,setloader]=useState(false)
   const [loading, setLoading] = useState(true);
+  const { limit_data, moredata, setObserverRef } = InfiniteScroll(data);
+
 
   
   selectedMenu = localStorage.getItem('VIDEO_MENU_SELECTED');
@@ -38,8 +45,9 @@ const VideoList =()=>{
 
   useEffect(()=>{
     setloader(true)
-    fetchAllVideoData().then(function(result){      
-      let filterdata =  result.filter(item=> item.categoryName === selectedMenu)
+    fetchAllVideoData().then(function(result){  
+      let newdata =  uploadedvideo.length>0 ? [...result,...uploadedvideo]  : result 
+      let filterdata =  newdata.filter(item=> item.categoryName === selectedMenu)
       let obj={}
       let newarr=[]
       if(selectedMenu==="Shows"){
@@ -61,12 +69,14 @@ const VideoList =()=>{
 
 
 
-  const category_Type = get_Category_Type(data,filter.categoryType);
+  const category_Type = get_Category_Type(limit_data,filter.categoryType);
   const sort_Data = get_SORT_DATA(category_Type,filter.sort)
  
   
   if (loading) {
-    return <div><img src={loder_img} className="loader-img"/></div>
+    return <div>
+            <img src={loder_img} className="loader-img"/>
+          </div>
 }else{
   return(
     <div>
@@ -79,11 +89,15 @@ const VideoList =()=>{
           <div className="videolist-display --background">
               {
                 loader? <Loader/> : sort_Data.length>0?
-                sort_Data.map((item,index)=>{
+                <>
+                 {sort_Data.map((item,index)=>{
                     return <VideoListCard data={item} key={index} Loader={""}/>
-                  })
+                  })}{
+                    moredata ? <div className=" flex-row flex-justify-content-center --background" ref={setObserverRef}> <img style={{width:"120px"}} src={loading_img} /> </div> : null
+                  }
+                </>
                 :
-                <div> no data found </div>
+                <div className="--background data-not-display flex-col row-gap-2rem flex-justify-content-center"> no data found </div>
               }
           </div>
         </div>

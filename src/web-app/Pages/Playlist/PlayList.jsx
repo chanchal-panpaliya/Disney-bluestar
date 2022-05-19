@@ -48,7 +48,7 @@ const Playlist = ({route}) =>{
                           }) }
                     </div>
                     :
-                    <div className='--background'> no data found </div>
+                    <div className='--background data-not-display flex-col row-gap-2rem flex-justify-content-center'> no data found </div>
                 }
                  </section>
             </div>

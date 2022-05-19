@@ -14,12 +14,14 @@ import { Playlist_Modal ,Auth_Modal,AddNote_Modal,ShareModal} from '../../Compon
 import VideoContext from 'web-app/Context/video/VideoContext';
 import { useAuth } from 'web-app/Context/login/AuthContext';
 //
+import DisplayNote from 'web-app/Component/AddNote/DisplayNote';
 const PlayVideo =()=>{ 
-    let {addwatchlist,removedwatchlist,watchlist,add_liked,removed_liked,liked,add_history,episode_video_Id} = useContext(VideoContext)
+    let {addwatchlist,removedwatchlist,watchlist,add_liked,removed_liked,liked,viewcount,uploadedvideo} = useContext(VideoContext)
     let {token} = useAuth()
     const [ispalylistmodal,setpaylist]=useState(false)
     const [ismodal,setmodal]=useState(false)
     const [isaddnote,setnote]=useState(false)
+    const [openNoteSidebar,SetopenNoteSidebar] = useState(false)
 
     const {id} = useParams();
     const [data,setdata]=useState();
@@ -27,12 +29,13 @@ const PlayVideo =()=>{
     const [isshare,setshare]=useState(false)
     const [showdata,setshowdata]=useState([]);
 
+
     
     useEffect(()=>{
         fetchAllVideoData().then(function(result){
-             setalldata(result)
-
-             let filterdata =  result.filter(item=> item.categoryName === "Shows")
+            let newdata =  uploadedvideo.length>0 ? [...result,...uploadedvideo]  : result 
+            setalldata(newdata)
+             let filterdata =  newdata.filter(item=> item.categoryName === "Shows")
              if(filterdata.length>0){
                 let obj={}
                 let newarr=[]
@@ -52,12 +55,25 @@ const PlayVideo =()=>{
     useEffect(()=>{
             let time2 = setTimeout(()=>{
                 fetch_single_video(id).then((res)=>{
-                setdata(res)
+                    let check = uploadedvideo.length>0 ? uploadedvideo.find((item)=>item._id===id) : false;
+                    if(check){ 
+                        setdata(check)
+                    }else{
+                        setdata(res)
+                    }
              })
             },0)
             return ()=>clearTimeout(time2)
     },[data,setdata])
     
+
+    const renderView=(id)=>{
+        let getview = viewcount.length>0 && viewcount.filter((item)=>item._id===id)
+        return(
+            <div className='--background'> <i class="fa-solid fa-eye"></i> {getview[0].view} view </div>
+        )
+    }
+
  return(
      <div>
          <Header/>
@@ -66,6 +82,7 @@ const PlayVideo =()=>{
                 data!==undefined ? 
                   <> 
                     <section className='singlepage-display'>
+                    <DisplayNote id={data._id} closeNote={()=>SetopenNoteSidebar(false)} sidemenu={openNoteSidebar}/>
                     <div className='flex-col singlepage-iframe'>
 
                              <iframe
@@ -77,6 +94,8 @@ const PlayVideo =()=>{
                              </iframe> 
 
                                  <div className='flex-row --background col-gap-2rem typography-padding-top-right-bottom-left'>
+                                       
+                                        {renderView(data._id)}
                                        {
                                             token ? liked.length>0 && liked.find(item=>item._id === data._id)?
                                             <span className='flex-col row-gap-0.5rem --background'>
@@ -118,6 +137,12 @@ const PlayVideo =()=>{
                                             <i className="fa-solid fa-share-nodes --background" onClick={()=>setshare(!isshare)}></i>
                                             <label className='--background'>share</label>
                                         </span>
+                                        
+                                        <span className='flex-col row-gap-0.5rem --background'>
+                                            <i className="fa-solid fa-note-sticky --background curser-pointer-noeffect" onClick={()=>SetopenNoteSidebar(!openNoteSidebar)}></i>
+                                            <label className='--background'> add note </label>
+                                        </span>
+
                                 </div>
 
                             <div className='singlepage-content'>

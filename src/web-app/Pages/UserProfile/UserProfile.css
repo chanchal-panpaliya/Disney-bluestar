@@ -50,7 +50,7 @@
 
 .like-page-header-userprofile{
     width: -webkit-fill-available;
-    height: 15rem;
+    height: 10rem;
     background: var(--BG_GRADIENT_L2);
     position: relative;
     display: flex;
@@ -111,5 +111,6 @@
     .like-page-body-userprofile{
         flex-direction: column;
         row-gap: 1rem;
+        padding-top: 5rem;
     }
 }

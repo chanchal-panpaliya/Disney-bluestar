@@ -7,6 +7,11 @@ import Watchlist from "../others/Watchlist";
 import LikedList from "../others/Liked";
 import HistoryList from "../others/History";
 import FilterReducer from "../Filter/FilterReducer";
+import NoteReducer from "../others/Note";
+import ContinuewatchReducer from "../others/Continuewatch";
+import {videos} from "../../../backend/db/videos";
+
+import {Uploadreducer,ViewCountreducer} from "../others/Uploaded";
 
 
 const VideoState =({ children })=>{
@@ -27,11 +32,49 @@ const VideoState =({ children })=>{
     const [like,like_dispatch]=useReducer(LikedList,{liked:[]})
     //history
     const [history,history_dispatch]=useReducer(HistoryList,{historylist:[]})
+    //note
+    const [note,note_dispatch]=useReducer(NoteReducer,{notedata:[]})
     //episode id
     const [episode,episode_dispatch]=useReducer(EpisodeVideoId,{episode_video_Id:""})
     //filter
     const [filter,filter_dispatch]=useReducer(FilterReducer,{categoryType:"All",sort:""})
+    //uploaded video
+    const [uploaded,uploaded_dispatch]=useReducer(Uploadreducer,{uploadedvideo:[]})
+    //ViewCountreducer
+    const [view,view_dispatch]=useReducer(ViewCountreducer,{viewcount:videos})
+    //continue watch list
+    const [continuelist,continue_dispatch]=useReducer(ContinuewatchReducer,{Continuewatchlist:[]})
+    
+    useEffect(()=>{
+        if(uploaded.uploadedvideo.length>0){
+          view.viewcount.push(...uploaded.uploadedvideo)
+        }
+    },[view.viewcount])
+    
+    const getAllVideo=(data)=>{
+      view_dispatch({type:"GET_ALL_VIDEO",payload:data})
+    }
 
+    const CountVideoView=(video)=>{
+      view_dispatch({type:"VIDEO_VIEW_COUNT",payload:video})
+    }
+
+    //Continue watchlist
+    const getContinueWatchItem =(item)=>{
+       continue_dispatch({type:"ADD_CONTINUE_WATCH",payload:item})
+    }
+
+    //Uploaded new video
+
+    const Add_Uploaded_Video=(data)=>{
+      uploaded_dispatch({type:"ADD_NEW_VIDEO",payload:data})
+    }
+
+
+    //add Note
+    const AddNote=(data)=>{
+      note_dispatch({type:"ADD_NOTE",payload:data})
+    }
 
     //singledata
     const getSingleSelectedData=(data)=>{
@@ -142,8 +185,17 @@ const VideoState =({ children })=>{
             historylist:history.historylist,
             //episode id
             episode_video_Id:episode.episode_video_Id,
-
+            //
+            notedata : note.notedata,
+            //
+            uploadedvideo:uploaded.uploadedvideo,
+            //
+            viewcount:view.viewcount,
+            //
             filter,filter_dispatch,
+            toast,toastdispatch,
+            //
+            Continuewatchlist:continuelist.Continuewatchlist,
 
             menuselected,
             getSingleSelectedData,  
@@ -166,7 +218,16 @@ const VideoState =({ children })=>{
             remove_history,
             removed_all_history,
             //episode_id
-            getEpisodeVideoId
+            getEpisodeVideoId,
+            //note app
+            AddNote,
+            //uploadnew video
+            Add_Uploaded_Video,
+            //
+            CountVideoView,
+            getAllVideo,
+            //
+            getContinueWatchItem
         }}>
             { children }
         </VideoContext.Provider>

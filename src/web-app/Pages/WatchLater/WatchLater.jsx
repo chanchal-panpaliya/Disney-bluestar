@@ -41,7 +41,7 @@ const WatchLater=()=>{
                         }) }
                   </div>
                   :
-                  <div className='--background flex-col row-gap-2rem'> 
+                  <div className='--background data-not-display flex-col row-gap-2rem flex-justify-content-center'> 
                   <div> no data found </div> 
                   <button className='button header-button-login' onClick={()=>{navigator('/')}}> watch video </button>
                   </div>

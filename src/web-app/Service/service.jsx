@@ -5,6 +5,7 @@ export async function fetchAllVideoData() {
     try {
        let data = [];
        data = await axios.get("/api/videos").then(res=> res.data.videos)
+    
        return data
       }catch (error) {
         console.log(error);
@@ -16,7 +17,7 @@ export async function fetchAllVideoData() {
 export async function fetch_single_video(id) {
     try {
        let data = "";
-        data = await axios.get(`${"/api/video/"+id}`).then(res=> res.data.video)
+        data = await axios.get(`${"/api/video/"+id}`).then(res=>{ return res.data.video})
        return data
       }catch (error) {
         console.log(error);
@@ -24,7 +25,7 @@ export async function fetch_single_video(id) {
 }
 
 //registration
-export const handleRegistration = async (e,email,password,firstname,lastname,termsAndConditions,navigator,modalClose,setError) =>{
+export const handleRegistration = async (e,email,password,firstname,lastname,termsAndConditions,navigator,modalClose,setError,toastdispatch) =>{
     e.preventDefault();
     try {
          await axios.post("/api/auth/signup",{
@@ -32,7 +33,7 @@ export const handleRegistration = async (e,email,password,firstname,lastname,ter
          }).then((res) => {
           
             if(res.status === 200 || res.status === 201){
-                console.log(res)
+                toastdispatch({type:'SUCCESS',payload:"Registered and LOGIN SUCCESSFULL"})
                 localStorage.setItem("token", res.data.encodedToken );
                 localStorage.setItem("user", JSON.stringify(res.data.createdUser));
                 setError("Registered successfully")
@@ -43,6 +44,7 @@ export const handleRegistration = async (e,email,password,firstname,lastname,ter
             }
          }).catch((error)=>{
             if(error.response.status === 422){
+               toastdispatch({type:'WARNING',payload:"email id already exist"})
                setError("email id already exist")
                let time = setTimeout(()=>{
                    setError("")
@@ -52,7 +54,7 @@ export const handleRegistration = async (e,email,password,firstname,lastname,ter
         });
                
           } catch (error) {
-              console.log(error)
+              toastdispatch({type:'DANGER',payload:"Not able to registered !! check"})
               setError("Not able to registered")
               let time = setTimeout(()=>{
                 setError("")
@@ -62,7 +64,7 @@ export const handleRegistration = async (e,email,password,firstname,lastname,ter
 }
 
 //login
-export const handleLogin = async (e,email,password,navigator,modalClose,setError,setToken,setUser) => {
+export const handleLogin = async (e,email,password,navigator,modalClose,setError,setToken,setUser,toastdispatch) => {
     e.preventDefault();
     
     try {
@@ -72,16 +74,22 @@ export const handleLogin = async (e,email,password,navigator,modalClose,setError
                console.log("res",res)
             if(res.status === 200){
                 if(res.data){
+                    
                     localStorage.setItem("token", res.data.encodedToken );
                     localStorage.setItem("user", JSON.stringify(res.data.foundUser));
                     modalClose()
                     window.location.reload()
                     navigator('/')
+                    toastdispatch({type:'SUCCESS',payload:"LOGIN SUCCESSFULL"})
                 } 
+            }else{
+                toastdispatch({type:'DANGER',payload:"login Failed ! please try again"})
+                setError("login Failed ! please try again") 
             }
+
          });
       } catch (error) {
-          console.log("error",error)
+          toastdispatch({type:'DANGER',payload:"login Failed ! please try again"})
           setError("login Failed ! please try again")
       }
 };
@@ -367,6 +375,75 @@ export async function fetch_movie_Data() {
         console.log(error);
     }
 }
+
+
+//note--> add
+
+export function addNoteService( token, note ,toastdispatch) {
+
+    axios.post(
+        "/api/user/notes",
+        { note },
+        {
+            headers: { authorization: token },
+        }
+    ).then((res)=>{
+        toastdispatch({type:'SUCCESS',payload:"NOTE ADDED"})
+    });
+}
+
+// delete
+
+export function deleteNoteService( token, noteId ,toastdispatch) {
+    return axios.delete(`/api/user/notes/${noteId}`, {
+        headers: { authorization: token },
+    }).then(()=>{
+        toastdispatch({type:'DANGER',payload:"NOTE DELETED"})
+    });
+}
+
+//edit
+
+export function editNoteService( token, note ,toastdispatch) {
+    
+    return axios.post(
+        `/api/user/notes/${note._id}`,
+        { note },
+        {
+            headers: { authorization: token },
+        }
+    ).then(()=>{
+        toastdispatch({type:'SUCCESS',payload:"NOTE EDITED"})
+    })
+    ;
+}
+
+//
+export function getNotesService(token, videoId) {
+  return axios.get(`/api/user/notes/${videoId}`, {
+        headers: { authorization: token },
+    })
+}
+
+//
+
+
+
+export function addNewVideoHandler( token, uploadvideo ,Add_Uploaded_Video) {
+    axios.post(
+        "/api/user/videos",
+        { uploadvideo },
+        {
+            headers: { authorization: token },
+        }
+    ).then((res)=>{
+        console.log(res)
+        Add_Uploaded_Video(res.data.uploadedvideo)
+    });       
+}
+
+
+
 
 
 

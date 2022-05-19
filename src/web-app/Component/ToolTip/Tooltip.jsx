@@ -13,7 +13,7 @@ const Tooltip =({children,content})=>{
     }
 
 return(
-    <div className='tooltip-container' onMouseEnter={showtooltip} onMouseLeave={hidetooltip}>
+    <div className='tooltip-container --background' onMouseEnter={showtooltip} onMouseLeave={hidetooltip}>
        {children}
        {
         isactive ? 

@@ -78,7 +78,10 @@ const History=()=>{
                             </div>
                              
                             :
-                            <div> no data found </div>
+                            <div className='--background data-not-display flex-col row-gap-2rem flex-justify-content-center'> 
+                            <label className='--background'> no data found </label>  
+                            <button className='button header-button-login' onClick={()=>{navigator('/')}}> watch video </button>
+                            </div>
                         }
                   </section>
            </div>

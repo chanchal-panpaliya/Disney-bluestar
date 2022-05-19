@@ -39,6 +39,7 @@ export const videos = [
     videoYTId: "DloIQG73TMk",
     uploadedOn: "March 08 2017",
     note:"",
+    view:0
   },
   {
     _id: "03XbghRW3GQ",
@@ -75,6 +76,7 @@ export const videos = [
     videoYTId: "zloKjQXmwhE",
     uploadedOn: "January 01 2019",
     note:"",
+    view:0
   },
   {
     _id: "jzYxbnHHhY4",
@@ -110,6 +112,7 @@ export const videos = [
     videoYTId: "jzYxbnHHhY4",
     uploadedOn: "June 01 2017",
     note:"",
+    view:0
   },
   {
     _id: "azbxbnaHhY9",
@@ -142,6 +145,7 @@ export const videos = [
     videoYTId: "tPXYWRGNl7s",
     uploadedOn: "June 01 2011",
     note:"",
+    view:0
   },
   {
     _id: "zzbxbnaxhYx",
@@ -176,6 +180,7 @@ export const videos = [
     videoYTId: "yWUmIglZO4o",
     uploadedOn: "June 01 2001",
     note:"",
+    view:0
   },
   {
     _id: "UzbxknaxaYx",
@@ -210,6 +215,7 @@ export const videos = [
     videoYTId: "HVyXEbOWrp4",
     uploadedOn: "June 01 2003",
     note:"",
+    view:0
   },
   {
     _id: "bxQ4knaaxMYm",
@@ -241,6 +247,7 @@ export const videos = [
     videoYTId: "jf2gOSORoqU",
     uploadedOn: "June 01 2007",
     note:"",
+    view:0
   },
   {
     _id: "bxQQknaNMYm",
@@ -272,6 +279,7 @@ export const videos = [
     videoYTId:"2gZbSGgj_g4",
     uploadedOn:"June 01 2009",
     note:"",
+    view:0
   },
   {
     _id: "cxQQbknaNMYV",
@@ -304,6 +312,7 @@ export const videos = [
     videoYTId:"f3TmFbQVPn8",
     uploadedOn:"June 01 2006",
     note:"",
+    view:0
   },
   {
     _id: "cAQQknmaNMYV",
@@ -336,7 +345,9 @@ export const videos = [
     videoYTId:"P8mi8WhZpew",
     uploadedOn:"June 01 2004",
     note:"",
+    view:0
   },
+  
   //songs
   {
     _id: "kWmr8SvbmUGMo",
@@ -367,6 +378,7 @@ export const videos = [
     videoYTId: "DKj5m9cSMZs",
     uploadedOn: "March 08 2021",
     note:"",
+    view:0
   },
   {
     _id: "kWmrA8SvMo",
@@ -399,6 +411,7 @@ export const videos = [
     videoYTId: "ioNng23DkIM",
     uploadedOn: "March 08 2020",
     note:"",
+    view:0
   },
   {
     _id: "kWA8SbmUGMo",
@@ -431,6 +444,7 @@ export const videos = [
     videoYTId: "vRXZj0DzXIA",
     uploadedOn: "March 08 2021",
     note:"",
+    view:0
   },
   {
     _id: "kWA88Sbmm",
@@ -463,6 +477,7 @@ export const videos = [
     videoYTId: "dyRsYk0LyA8",
     uploadedOn: "March 08 2021",
     note:"",
+    view:0
   },
   {
     _id: "kWA88Sb5m",
@@ -493,9 +508,10 @@ export const videos = [
     videoYTId: "BzE1mX4Px0I",
     uploadedOn: "March 08 2011",
     note:"",
+    view:0
   },
   {
-    _id: "kWA88Sb5m",
+    _id: "kWA88Sb51",
     episode_id:"",
     categoryName:"Songs",
     categoryType:"Lata Mangeshkar",
@@ -524,9 +540,10 @@ export const videos = [
     videoYTId: "TFr6G5zveS8",
     uploadedOn: "March 08 2000",
     note:"",
+    view:0
   },
   {
-    _id: "kWABBSb5m",
+    _id: "kWABBSb52",
     episode_id:"",
     categoryName:"Songs",
     categoryType:"Lata Mangeshkar",
@@ -555,6 +572,7 @@ export const videos = [
     videoYTId: "9u-DCn0wDVI",
     uploadedOn: "March 08 2001",
     note:"",
+    view:0
   },
   {
     _id: "cCABBSb5m",
@@ -585,6 +603,7 @@ export const videos = [
     videoYTId: "nUIEglUgS9A",
     uploadedOn: "March 08 2019",
     note:"",
+    view:0
   },
   {
     _id: "cCABBVV5m",
@@ -615,6 +634,7 @@ export const videos = [
     videoYTId: "gMJFzXZ103Y",
     uploadedOn: "March 08 2017",
     note:"",
+    view:0
   },
   {
     _id: "cCABBVc5m",
@@ -645,6 +665,7 @@ export const videos = [
     videoYTId: "wruCWicGBA4",
     uploadedOn: "March 08 2017",
     note:"",
+    view:0
   },
   //sport
   {
@@ -674,6 +695,7 @@ export const videos = [
     videoYTId: "MvXgXqfyV1k",
     uploadedOn: "March 08 2018",
     note:"",
+    view:0
   },
   {
     _id: "kZAN5OU",
@@ -703,6 +725,7 @@ export const videos = [
     videoYTId: "kYeJk38rZ3o",
     uploadedOn: "March 08 2018",
     note:"",
+    view:0
   },
   {
     _id: "kZAN9OU",
@@ -732,6 +755,7 @@ export const videos = [
     videoYTId: "8ADVVLPAg10",
     uploadedOn: "March 08 2018",
     note:"",
+    view:0
   },
   {
     _id: "kZAY9OUC",
@@ -761,6 +785,7 @@ export const videos = [
     videoYTId: "rW_fwcmyIfk",
     uploadedOn: "March 08 2021",
     note:"",
+    view:0
   },
   {
     _id: "kZAY9EUC",
@@ -788,6 +813,7 @@ export const videos = [
     videoYTId: "INe9ZrqrMoo",
     uploadedOn: "March 08 2021",
     note:"",
+    view:0
   },
   {
     _id: "kZAY9bUC",
@@ -815,6 +841,7 @@ export const videos = [
     videoYTId: "ssEzTsg0reE",
     uploadedOn: "March 08 2021",
     note:"",
+    view:0
   },
   {
     _id: "kZyY9oUC",
@@ -842,6 +869,7 @@ export const videos = [
     videoYTId: "5iygKOmf0nI",
     uploadedOn: "March 08 2021",
     note:"",
+    view:0
   },
   {
     _id: "kZyY9oUA",
@@ -869,6 +897,7 @@ export const videos = [
     videoYTId: "UvrHUAximog",
     uploadedOn: "March 08 2021",
     note:"",
+    view:0
   },
   {
     _id: "kZAN5OU",
@@ -898,6 +927,7 @@ export const videos = [
     videoYTId: "Mvs1JXYfd6Q",
     uploadedOn: "March 08 2019",
     note:"",
+    view:0
   },
   {
     _id: "kZAN55OU",
@@ -927,6 +957,7 @@ export const videos = [
     videoYTId: "Y1J9_9-vNcU",
     uploadedOn: "March 08 2021",
     note:"",
+    view:0
   },
   //kid
   {
@@ -957,6 +988,7 @@ export const videos = [
     videoYTId: "t0Q2otsqC4I",
     uploadedOn: "March 08 2021",
     note:"",
+    view:0
   },
   {
     _id: "kZAAQ5FU",
@@ -986,6 +1018,7 @@ export const videos = [
     videoYTId: "AGBjI0x9VbM",
     uploadedOn: "March 08 2021",
     note:"",
+    view:0
   },
   {
     _id: "w3Wluvzoggg",
@@ -1015,6 +1048,7 @@ export const videos = [
     videoYTId: "w3Wluvzoggg",
     uploadedOn: "March 08 2021",
     note:"",
+    view:0
   },
   {
     _id: "w3WlAvzoggg",
@@ -1044,6 +1078,7 @@ export const videos = [
     videoYTId: "Fu3MIwF-LJw",
     uploadedOn: "March 08 2021",
     note:"",
+    view:0
   },
   {
     _id: "w3WlAvzo12g",
@@ -1073,6 +1108,7 @@ export const videos = [
     videoYTId: "tUjOL_Nk6uo",
     uploadedOn: "March 08 2020",
     note:"",
+    view:0
   },
   {
     _id: "w3WlAv67ggg",
@@ -1102,6 +1138,7 @@ export const videos = [
     videoYTId: "uwzViw-T0-A",
     uploadedOn: "March 08 2017",
     note:"",
+    view:0
   },
   {
     _id: "w3WlQKoggg",
@@ -1131,6 +1168,7 @@ export const videos = [
     videoYTId: "Edr6_-L3bi4",
     uploadedOn: "March 08 1998",
     note:"",
+    view:0
   },
   {
     _id: "w3ClQKogLg",
@@ -1160,6 +1198,7 @@ export const videos = [
     videoYTId: "BuPhNm9S0YM",
     uploadedOn: "March 01 1998",
     note:"",
+    view:0
   },
   {
     _id: "w3MTQKogLg",
@@ -1189,6 +1228,7 @@ export const videos = [
     videoYTId: "DBrTZWr0QYs",
     uploadedOn: "March 01 1998",
     note:"",
+    view:0
   },
   {
     _id: "w3MTQKommg",
@@ -1218,6 +1258,7 @@ export const videos = [
     videoYTId: "bhe7GJtwmQE",
     uploadedOn: "March 01 1995",
     note:"",
+    view:0
   },
   //ramayan - episode 1
   {
@@ -1252,6 +1293,7 @@ export const videos = [
      rating:"6.1/10",
     uploadedOn: "January 01 1995",
     note:"",
+    view:0
   },
   //ramayan - episode 2
   {
@@ -1286,6 +1328,7 @@ export const videos = [
      rating:"6.1/10",
     uploadedOn: "January 01 1995",
     note:"",
+    view:0
   },
    //ramayan - episode 3
    {
@@ -1320,6 +1363,7 @@ export const videos = [
      rating:"6.1/10",
     uploadedOn: "January 01 1995",
     note:"",
+    view:0
   },
    //ramayan - episode 4
   {
@@ -1354,6 +1398,7 @@ export const videos = [
      rating:"6.1/10",
     uploadedOn: "January 01 1995",
     note:"",
+    view:0
   },
     //ramayan - episode 5
     {
@@ -1388,6 +1433,7 @@ export const videos = [
        rating:"6.1/10",
       uploadedOn: "January 01 1995",
       note:"",
+      view:0
     },
       //ramayan - episode 6
       {
@@ -1422,6 +1468,7 @@ export const videos = [
          rating:"6.1/10",
         uploadedOn: "January 01 1995",
         note:"",
+        view:0
       },
        //ramayan - episode 7
        {
@@ -1456,6 +1503,7 @@ export const videos = [
          rating:"6.1/10",
         uploadedOn: "January 01 1995",
         note:"",
+        view:0
       },
       //ramayan - episode 8
       {
@@ -1490,6 +1538,7 @@ export const videos = [
          rating:"6.1/10",
         uploadedOn: "January 01 1995",
         note:"",
+        view:0
       },
       //ramayan - episode 9
       {
@@ -1524,6 +1573,7 @@ export const videos = [
          rating:"6.1/10",
         uploadedOn: "January 01 1995",
         note:"",
+        view:0
       },
       //ramayan - episode 10
       {
@@ -1558,6 +1608,7 @@ export const videos = [
          rating:"6.1/10",
         uploadedOn: "January 01 1995",
         note:"",
+        view:0
       },
       //mahabharat bhagwat geeta episode 1
       {
@@ -1586,6 +1637,7 @@ export const videos = [
         rating:"6.1/10",
         uploadedOn: "January 01 1999",
         note:"",
+        view:0
       },
         //mahabharat bhagwat geeta episode 2
         {
@@ -1614,6 +1666,7 @@ export const videos = [
           rating:"6.1/10",
           uploadedOn: "January 01 1999",
           note:"",
+          view:0
         },
         //mahabharat bhagwat geeta episode 3
         {
@@ -1642,6 +1695,7 @@ export const videos = [
           rating:"6.1/10",
           uploadedOn: "January 01 1999",
           note:"",
+          view:0
         },
          //mahabharat bhagwat geeta episode 4
          {
@@ -1670,6 +1724,7 @@ export const videos = [
           rating:"6.1/10",
           uploadedOn: "January 01 1999",
           note:"",
+          view:0
         },
          //mahabharat bhagwat geeta episode 5
          {
@@ -1698,6 +1753,7 @@ export const videos = [
           rating:"6.1/10",
           uploadedOn: "January 01 1999",
           note:"",
+          view:0
         },
          //mahabharat bhagwat geeta episode 6
          {
@@ -1726,6 +1782,7 @@ export const videos = [
           rating:"6.1/10",
           uploadedOn: "January 01 1999",
           note:"",
+          view:0
         },
          //mahabharat bhagwat geeta episode 7
          {
@@ -1754,6 +1811,7 @@ export const videos = [
           rating:"6.1/10",
           uploadedOn: "January 01 1999",
           note:"",
+          view:0
         },
            //mahabharat bhagwat geeta episode 8
            {
@@ -1782,6 +1840,7 @@ export const videos = [
             rating:"6.1/10",
             uploadedOn: "January 01 1999",
             note:"",
+            view:0
           },
            //mahabharat bhagwat geeta episode 9
            {
@@ -1810,6 +1869,7 @@ export const videos = [
             rating:"6.1/10",
             uploadedOn: "January 01 1999",
             note:"",
+            view:0
           },
           //mahabharat bhagwat geeta episode 10
           {
@@ -1838,6 +1898,7 @@ export const videos = [
             rating:"6.1/10",
             uploadedOn: "January 01 1999",
             note:"",
+            view:0
           },
             // cid episode 1
             {
@@ -1873,6 +1934,7 @@ export const videos = [
               rating:"6.1/10",
               uploadedOn: "January 01 2014",
               note:"",
+              view:0
             },
             //cid episode 2
             {
@@ -1908,6 +1970,7 @@ export const videos = [
               rating:"6.1/10",
               uploadedOn: "January 01 2014",
               note:"",
+              view:0
             },
             //cid episode 3
             {
@@ -1943,6 +2006,7 @@ export const videos = [
               rating:"6.1/10",
               uploadedOn: "January 01 2014",
               note:"",
+              view:0
             },
             //cid episode 4
             {
@@ -1978,6 +2042,7 @@ export const videos = [
               rating:"6.1/10",
               uploadedOn: "January 01 2014",
               note:"",
+              view:0
             },
              //cid episode 5
              {
@@ -2013,6 +2078,7 @@ export const videos = [
               rating:"6.1/10",
               uploadedOn: "January 01 2014",
               note:"",
+              view:0
             },
                //cid episode 6
                {
@@ -2048,6 +2114,7 @@ export const videos = [
                 rating:"6.1/10",
                 uploadedOn: "January 01 2014",
                 note:"",
+                view:0
               },
                //cid episode 7
                {
@@ -2083,6 +2150,7 @@ export const videos = [
                 rating:"6.1/10",
                 uploadedOn: "January 01 2014",
                 note:"",
+                view:0
               },
                 //dekh bhai dekh - episode 1
                 {
@@ -2111,6 +2179,7 @@ export const videos = [
                   rating:"6.1/10",
                   uploadedOn: "January 01 2012",
                   note:"",
+                  view:0
                 },
                 //dekh bhai dekh - episode 2
                 {
@@ -2139,6 +2208,7 @@ export const videos = [
                   rating:"6.1/10",
                   uploadedOn: "January 01 2012",
                   note:"",
+                  view:0
                 },
                   //dekh bhai dekh - episode 3
                   {
@@ -2167,6 +2237,7 @@ export const videos = [
                     rating:"6.1/10",
                     uploadedOn: "January 01 2012",
                     note:"",
+                    view:0
                   },
                   //dekh bhai dekh - episode 4
                   {
@@ -2195,6 +2266,7 @@ export const videos = [
                     rating:"6.1/10",
                     uploadedOn: "January 01 2012",
                     note:"",
+                    view:0
                   },
                   //dekh bhai dekh - episode 5 - part 1
                   {
@@ -2223,6 +2295,7 @@ export const videos = [
                     rating:"6.1/10",
                     uploadedOn: "January 01 2012",
                     note:"",
+                    view:0
                   },
                   //dekh bhai dekh - episode 5
                   {
@@ -2251,6 +2324,7 @@ export const videos = [
                     rating:"6.1/10",
                     uploadedOn: "January 01 2012",
                     note:"",
+                    view:0
                   },
                    //dekh bhai dekh - episode 6
                    {
@@ -2279,6 +2353,7 @@ export const videos = [
                     rating:"6.1/10",
                     uploadedOn: "January 01 2012",
                     note:"",
+                    view:0
                   },
 
 

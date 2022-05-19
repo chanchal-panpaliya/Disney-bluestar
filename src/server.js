@@ -12,6 +12,8 @@ import {
 import {
   getAllVideosHandler,
   getVideoHandler,
+  getPagedVideosHandler,
+  addNewVideoHandler,
 } from "./backend/controllers/VideoController";
 import { videos } from "./backend/db/videos";
 import { categories } from "./backend/db/categories";
@@ -38,6 +40,16 @@ import {
   getWatchLaterVideosHandler,
   removeItemFromWatchLaterVideos,
 } from "./backend/controllers/WatchLaterController";
+
+import {
+  getNotesHandler,
+  addNoteHandler,
+  deleteNoteHandler,
+  editNoteHandler,
+} from "./backend/controllers/NoteController";
+import { Modal } from "web-app/Component/Modal/Modal";
+
+
 export function makeServer({ environment = "development" } = {}) {
   return new Server({
     serializers: {
@@ -53,6 +65,8 @@ export function makeServer({ environment = "development" } = {}) {
       history: Model,
       playlist: Model,
       watchlater: Model,
+      notes: Model,
+      uploadedvideo:Model,
     },
 
     // Runs on the start of the server
@@ -69,6 +83,8 @@ export function makeServer({ environment = "development" } = {}) {
           watchlater: [],
           history: [],
           playlists: [],
+          notes: [],
+          uploadedvideo:[],
         })
       );
     },
@@ -82,8 +98,11 @@ export function makeServer({ environment = "development" } = {}) {
       // video routes (public)
       this.get("/videos", getAllVideosHandler.bind(this));
       this.get("video/:videoId", getVideoHandler.bind(this));
-
+      this.get("/videos/page/:pageNum", getPagedVideosHandler.bind(this));
       // TODO: POST VIDEO TO DB
+      this.post("/user/videos",addNewVideoHandler.bind(this)); 
+
+
 
       // categories routes (public)
       this.get("/categories", getAllCategoriesHandler.bind(this));
@@ -131,6 +150,13 @@ export function makeServer({ environment = "development" } = {}) {
         removeVideoFromHistoryHandler.bind(this)
       );
       this.delete("/user/history/all", clearHistoryHandler.bind(this));
+
+      // video notes
+      this.get("/user/notes/:videoId", getNotesHandler.bind(this));
+      this.post("/user/notes", addNoteHandler.bind(this));
+      this.post("/user/notes/:noteId", editNoteHandler.bind(this));
+      this.delete("/user/notes/:noteId", deleteNoteHandler.bind(this));
+
     },
   });
 }

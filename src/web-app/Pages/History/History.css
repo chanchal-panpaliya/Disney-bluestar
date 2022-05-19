@@ -1,5 +1,5 @@
 .page-container-history{
-    height: 100vh;
+    /* height: 100vh; */
     padding: 0;
     transition: 1s;
 }
@@ -14,7 +14,7 @@
 
 .like-page-header-history{
     width: -webkit-fill-available;
-    height: 15rem;
+    height: 10rem;
     background: var(--BG_GRADIENT_L2);
     position: relative;
     display: flex;
@@ -71,6 +71,7 @@
     justify-content: center;
     align-items: center;
     background: transparent;
+    padding-top: 5rem;
 }
 
 .like-page-card-grid-history{
@@ -91,7 +92,7 @@
     .page-data-display-history{
         flex-direction: column;
         width: -webkit-fill-available;
-        height: 100vh;
+        /* height: 100vh; */
     }
 
     .like-page-round-circle-history{

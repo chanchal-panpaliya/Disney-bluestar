@@ -12,6 +12,8 @@ import VideoList from "web-app/Pages/VideoList/VideoList";
 import UserProfile from "web-app/Pages/UserProfile/UserProfile";
 import PlayVideo from "web-app/Pages/PlayVideo/PlayVideo";
 import PageNotFound from "web-app/Pages/404error/pagenotfound";
+import Uploadvideo from "web-app/Pages/Uploadvideo/Uploadvideo";
+
 //context
 import { useAuth } from './web-app/Context/login/AuthContext';
 import { Toast } from "web-app/Component/Toast/Toast";
@@ -37,6 +39,7 @@ function App() {
                  <Route exact path="/playlist" element={<Playlist/>}/>
                  <Route exact path="/playlist/:id" element={<PlaylistVideo/>}/>
                  <Route exact path="/profile" element={<UserProfile/>}/>
+                 <Route exact path="/uploadvideo" element={<Uploadvideo/>}/>
                  </> :
                  <>
                     <Route exact path="/liked" element={<Home/>}/>
@@ -45,6 +48,7 @@ function App() {
                     <Route exact path="/playlist" element={<Home/>}/>
                     <Route exact path="/playlist/:id" element={<Home/>}/>
                     <Route exact path="/profile" element={<Home/>}/>
+                    <Route exact path="/uploadvideo" element={<Home/>}/>
                  </>
                }
 

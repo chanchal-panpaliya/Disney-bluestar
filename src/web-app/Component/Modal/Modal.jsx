@@ -3,7 +3,9 @@ import { useState,useContext } from "react";
 import Auth from "../../Pages/Auth/Auth";
 import AddPlayList from "../../Pages/Playlist/addpalylist";
 import AddNote from "../AddNote/AddNote";
+import EditNote from "../AddNote/EditNote";
 import SharePage from "../SharePage/SharePage";
+import AddVideoForm from "web-app/Pages/Uploadvideo/AddVideoForm";
 import VideoContext from 'web-app/Context/video/VideoContext';
 import { useAuth } from 'web-app/Context/login/AuthContext';
 //img
@@ -70,9 +72,30 @@ export const AddNote_Modal =({videoid,data,modalClose})=>{
     return(
         <div className='modal'>
         <div className="modal-container">  
-            <div className='modal-right-side playlist-modal'>
+            <div className='modal-right-side'>
+                <div className='modal-right-flex-row'>
+                      <AddNote vidid={videoid} data={data} modalClose={modalClose}/>
+                </div> 
+            </div>
+            <i className='modal-close-palylist' onClick={modalClose}> x </i>
+        </div>
+    </div> 
+    )
+    else{
+       return <Auth_Modal modalClose={modalClose}/>
+    }
+}
+
+//note edit
+export const AddEdit_Modal =({data,modalClose})=>{
+    let {token} = useAuth()
+    if(token)
+    return(
+        <div className='modal'>
+        <div className="modal-container">  
+            <div className='modal-right-side'>
                 <div className='modal-right-flex-row '>
-                      <AddNote videoId={videoid} data={data}/>
+                      <EditNote data={data} modalClose={modalClose}/>
                 </div> 
             </div>
             <i className='modal-close-palylist' onClick={modalClose}> x </i>
@@ -93,7 +116,22 @@ export const ShareModal =({data,modalClose})=>{
                    <SharePage data={data}/>
                 </div> 
             </div>
-            <i className='material-icons modal-close' onClick={modalClose}> x </i>
+            <i className='modal-close-palylist --background' onClick={modalClose}> x </i>
+        </div>
+    </div> 
+    )
+}
+
+export const UploadvideoModal =({modalClose})=>{
+    return(
+        <div className='modal'>
+        <div className="modal-container">  
+            <div className='modal-right-side'>
+                <div className='modal-right-flex-row'>
+                   <AddVideoForm modalClose={modalClose}/>
+                </div> 
+            </div>
+            <i className='modal-close-palylist --background' onClick={modalClose}> x </i>
         </div>
     </div> 
     )

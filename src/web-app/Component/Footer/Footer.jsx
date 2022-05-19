@@ -22,7 +22,7 @@ function Footer() {
                     <div class="footer-col-2  --background"> 
                         <div className='header-logo  --background'>
                             <div>
-                                <Link to="/" > 
+                                <Link to="/" onClick={()=>{window.scrollTo({ behavior: 'smooth', top: '0px' });}}> 
                                     <img className="logoimage-size" src={logo}/>
                                 </Link>
                             </div>
@@ -49,7 +49,7 @@ function Footer() {
                         <ul className='list-style-type-none --background flex-row col-gap-2rem flex-justify-content-center'>
                             {
                                 footerlink.map((item,index)=>{
-                                    return <li key={index} className="list-style-type-none --background"> 
+                                    return <li key={index} className="list-style-type-none curser-pointer --background"> 
                                               <a href={item.link} className="--background" target="_blank" rel="noopener noreferrer"> {item.name} </a>  
                                             </li>
                                 })

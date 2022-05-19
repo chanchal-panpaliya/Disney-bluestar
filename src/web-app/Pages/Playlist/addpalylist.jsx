@@ -1,4 +1,5 @@
-import { useState ,useContext} from "react";
+import { useState ,useContext,useEffect} from "react";
+
 import { useAuth } from "web-app/Context/login/AuthContext";
 import VideoContext from "web-app/Context/video/VideoContext";
 import {
@@ -16,17 +17,28 @@ const AddPlayList=({videoId,data})=>{
     const [checklist , setChecklist ] = useState([])
 
 
+    useEffect(()=>{
+              if(playlistdata.length>0){
+                    let array = playlistdata.map((item)=>{
+                        return item.title
+                    })
+                   
+                    setChecklist(array)
+              }
+    },[setChecklist])
+
+
     const addtext=(e)=>{
-        if(gettext!==""){
-         let get = gettext.trim()
-         if(checklist.length>0 && checklist.includes(get)){
-            setChecklist((prev)=>[...prev])
-         }else{
-            setChecklist((prev)=>[...prev,get])
-            handler_addPlayListName(e,token,addTitlePlaylist,get)
-            settext("")
-         }
-        }
+        if(gettext.trim().length!==0){
+            let get = gettext.trim() 
+                if(checklist.length>0 && checklist.includes(get)){
+                    setChecklist((prev)=>[...prev])
+                }else{
+                    setChecklist((prev)=>[...prev,get])
+                    handler_addPlayListName(e,token,addTitlePlaylist,get)
+                    settext("")
+                }
+            }
     }
 
 
@@ -57,7 +69,7 @@ const AddPlayList=({videoId,data})=>{
                            
                             return(
                                
-                                    <div className="row-table"> 
+                                    <div className="row-table" key={index}> 
                                         <div className="column-table">
                                               <span> {item.title} </span> 
                                         </div>

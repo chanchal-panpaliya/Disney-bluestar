@@ -1,5 +1,5 @@
 .page-container-watchlist{
-    height: 100vh;
+    /* height: 100vh; */
     padding: 0;
 }
 
@@ -8,13 +8,14 @@
     display: flex;
     flex-direction: column;
     width: auto;
-    height: -webkit-fill-available;
+    /* height: -webkit-fill-available; */
     padding: 0;
+    /* height: 100vh; */
 }
 
 .like-page-header-watchlist{
     width: -webkit-fill-available;
-    height: 15rem;
+    height: 10rem;
     background: var(--BG_GRADIENT_L2);
     position: relative;
     display: flex;
@@ -33,6 +34,7 @@
 }
 
 .like-page-body-watchlist{
+    padding-top: 5rem;
     display: flex;
     width: -webkit-fill-available;
     height: -webkit-fill-available;
@@ -50,6 +52,10 @@
     padding-bottom:2rem ;
 }
 
+.data-not-display{
+    height: 50vh;
+}
+
 @media (max-width: 800px) {
     .page-container-watchlist{
         height: -webkit-fill-available;
@@ -57,7 +63,7 @@
     .page-data-display-watchlist{
         flex-direction: column;
         width: -webkit-fill-available;
-        height: 100vh;
+        /* height: 100vh; */
     }
 
     .like-page-round-circle-watchlist{

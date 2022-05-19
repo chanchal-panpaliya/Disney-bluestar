@@ -15,16 +15,23 @@ import { useAuth } from 'web-app/Context/login/AuthContext';
 
 
 const Playlist_Container_Card=({data,route})=>{
-    let {singlePlaylist,deleteplaylist} = useContext(VideoContext)
+    let {singlePlaylist,deleteplaylist,toastdispatch} = useContext(VideoContext)
     let {token} = useAuth()
     let length = data.videos.length
 
     return(
          <div className='card'> 
                <div className='playlist-name'>
-               <Link to={`/playlist/${data._id}`} onClick={()=>{singlePlaylist(data._id); localStorage.setItem("route","playlistvideo")}} >
-                    {data.title} ({length})
-               </Link>
+                 {
+                     length>0 ?
+                     <Link to={`/playlist/${data._id}`} onClick={()=>{singlePlaylist(data._id); localStorage.setItem("route","playlistvideo")}} >
+                        {data.title} ({length})
+                     </Link> :
+                      <div className='--background' onClick={()=>toastdispatch({type:'WARNING',payload:"No data in playlist"})}>
+                            {data.title} ({length})
+                      </div>
+                 }  
+               
                </div>
                <div className='playlist-container'>
                    
