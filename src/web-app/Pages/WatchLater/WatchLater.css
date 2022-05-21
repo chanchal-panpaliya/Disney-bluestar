@@ -1,5 +1,4 @@
 .page-container-watchlist{
-    /* height: 100vh; */
     padding: 0;
 }
 
@@ -8,9 +7,7 @@
     display: flex;
     flex-direction: column;
     width: auto;
-    /* height: -webkit-fill-available; */
     padding: 0;
-    /* height: 100vh; */
 }
 
 .like-page-header-watchlist{
@@ -63,7 +60,6 @@
     .page-data-display-watchlist{
         flex-direction: column;
         width: -webkit-fill-available;
-        /* height: 100vh; */
     }
 
     .like-page-round-circle-watchlist{

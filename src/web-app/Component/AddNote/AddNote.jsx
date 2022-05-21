@@ -57,6 +57,8 @@ const AddNote=({vidid,modalClose})=>{
             settext("")
             setdesc("")
             modalClose()
+      }else{
+        toastdispatch({type:'WARNING',payload:"Add title and Description on note"})
       }
     }
 
@@ -64,11 +66,11 @@ const AddNote=({vidid,modalClose})=>{
        <div className='flex-col row-gap-2rem --background'>
            <input type="text" value={text} onChange={(e)=>settext(e.target.value)} placeholder="Add title.."/>
            <Editor
-            initialEditorState={editorState}
-            toolbarStyle={toolbarStyle}
-            editorStyle={editorStyle}                                                                            
-            onEditorStateChange={onEditorStateChange}
-            placeholder='Add description...'
+                initialEditorState={editorState}
+                toolbarStyle={toolbarStyle}
+                editorStyle={editorStyle}                                                                            
+                onEditorStateChange={onEditorStateChange}
+                placeholder='Add description...'
           />
           
            <button className='header-button-login' onClick={handleAddNote}> add note </button>

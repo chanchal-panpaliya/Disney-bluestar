@@ -5,10 +5,8 @@ import temp_img from '../../img/movie-banner/movie-banner.jpg'
 //css
 import './Card.css';
 //component
-
 //service
 import { handler_deletePlaylist , handler_removedVideoPlaylist } from 'web-app/Service/service';
-
 //context
 import VideoContext from 'web-app/Context/video/VideoContext';
 import { useAuth } from 'web-app/Context/login/AuthContext';
@@ -21,7 +19,7 @@ const Playlist_Container_Card=({data,route})=>{
 
     return(
          <div className='card'> 
-               <div className='playlist-name'>
+               <div className='playlist-name curser-pointer-noeffect'>
                  {
                      length>0 ?
                      <Link to={`/playlist/${data._id}`} onClick={()=>{singlePlaylist(data._id); localStorage.setItem("route","playlistvideo")}} >
@@ -52,7 +50,7 @@ const VideoPlaylistCard=({data})=>{
     let {token} = useAuth()
     return(
         <div className='videolist-card'> 
-             <Link to={"/videolist/"+data._id} > 
+             <Link to={"/videolist/"+data._id} onClick={()=>{window.scrollTo({ behavior: 'smooth', top: '0px' });}}> 
                <img className='videolist-img' src={data.thumbnail.land} /> 
              </Link>
                <div className="videolist-content">

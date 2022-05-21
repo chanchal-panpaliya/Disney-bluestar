@@ -7,11 +7,11 @@ const SharePage = ({data}) =>{
                 <label> Share Page </label>
             </section>
             <section className="flex-row col-gap-1rem flex-justify-content-center flex-align-item-center">
-                <a class="share-btn share-btn-email" href={`mailto:?subject=${data.title}&body=${window.location.href}`} title="Share via Email">
+                <a class="share-btn share-btn-email" href={`mailto:?subject=${data.title} ${data.episode_id}&body=${window.location.href}`} title="Share via Email">
                 <i class="fa-solid fa-envelope share-icon"></i>
                 </a>
                 <a class="share-btn share-btn-branded share-btn-twitter"
-                href={`https://twitter.com/share?url=${window.location.href}&text=${data.title}&via=${'cheapkart.com'}`}
+                href={`https://twitter.com/share?url=${window.location.href}&text=${data.title}&via=${'disney+bluestar'}`}
                 title="Share on Twitter">
                     <i class="fa-brands fa-twitter-square share-icon"></i>
                 </a>

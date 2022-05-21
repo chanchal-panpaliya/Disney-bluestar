@@ -28,27 +28,27 @@ const AddVideoForm = ({modalClose}) =>{
     const initialdata={
         episode_id:"",
         categoryName:"Movies",
-        categoryType:"Drama",
+        categoryType:"Comedy",
         language:"Hindi",
-        duration:"2h 54m",
-        year:"2007",
+        duration:"2h 14m",
+        year:"2006",
         UA:'13+',
-        creator: "Goldmines Bollywood",
+        creator: "Ultra Movie Parlour",
         creatorLogo: {
-        altText: "Goldmines Bollywood Logo",
-        url: "https://yt3.ggpht.com/cpajxwo_F6AznpciPGhZs7TLBJiwRM02BR67VkI_p0I99vR2VvQ2S6ZRm6zLoBf0y9voDqU92bs=s88-c-k-c0x00ffffff-no-rj",
+        altText: "Ultra Movie Parlour Logo",
+        url: "https://yt3.ggpht.com/ytc/AKedOLTMb29B2py-0b3-4qWuHBdVrI7oEkzgCOzI8rXa=s68-c-k-c0x00ffffff-no-rj",
         },
         thumbnail: {
-        altText: "Apne Movie Thumbnail",
-        url: "https://m.media-amazon.com/images/M/MV5BNzBmZDc3YTUtOTc0Yy00YmFhLWI0ZDMtOWQwNDQ3NTg5ODI3XkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_.jpg",
-        land:"https://m.media-amazon.com/images/M/MV5BYjUyNTc1YWEtMTJlOS00OWQxLWFmZDItNWI4ODVjNzM4YTkzXkEyXkFqcGdeQXVyMjY1MjkzMjE@._V1_.jpg"
+        altText: "apna sapna money money Thumbnail",
+        url: "https://m.media-amazon.com/images/M/MV5BMDE1ODQ1OWEtZGY1ZS00Njk3LTlmNGEtMWY1MmI3Y2JmOGU4XkEyXkFqcGdeQXVyNjQ2MjQ5NzM@._V1_FMjpg_UX1000_.jpg",
+        land:"https://i.ytimg.com/vi/7dcWmEoq7tU/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCsDME7DoITfOXgrX7cwcdpkLTg4g"
         },
-        title: "Apne full movie - 2007",
-        description:"A wrecked boxer turns to his sons to win the glory that eluded him in the ring. But when his younger son is injured in the ring, the elder one decides to fulfil his father's dream.",
+        title: "Apna Sapna Money Money",
+        description:"Satyabol, a devout Hindu, is against his daughter Shivani's relationship with Arjun, a Christian. Resultantly, Arjun asks his conniving cousin, Kishan, to help him unite with his lover.",
         cast:[],
         rating:"6.1/10",
-        videoYTId: "DloIQG73TMk",
-        uploadedOn: "March 08 2017",
+        videoYTId: "7dcWmEoq7tU",
+        uploadedOn: "March 08 2006",
         note:"",
         view:1
     }

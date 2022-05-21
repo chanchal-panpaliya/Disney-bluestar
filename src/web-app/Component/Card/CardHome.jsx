@@ -15,7 +15,7 @@ const CardHome=({data})=>{
     return(
         <>
          <div className="card">
-        <Link to={"/videolist/"+data._id} > 
+        <Link to={"/videolist/"+data._id} onClick={()=>{window.scrollTo({ behavior: 'smooth', top: '0px' });}}> 
             <img src={data.thumbnail.land} className="card-img" alt=""/>
         </Link>
         <div className="card-body">
@@ -45,7 +45,7 @@ const CardHome=({data})=>{
 const CardPlaylsitContainer=({data})=>{
     return(
     <div className="card">
-        <Link to={"/videolist/"+data._id} > 
+        <Link to={"/videolist/"+data._id} onClick={()=>{window.scrollTo({ behavior: 'smooth', top: '0px' });}}> 
             <img src={data.thumbnail.land} className="card-img" alt=""/>
         </Link>
         <div className="card-body">
@@ -61,8 +61,8 @@ const CardPlaylsitContainer=({data})=>{
 const CardContinueWatch=({data})=>{
     return(
         <>
-         <div className="card">
-            <Link to={"/videolist/"+data._id} > 
+         <div className="card temp-card">
+            <Link to={"/videolist/"+data._id} onClick={()=>{window.scrollTo({ behavior: 'smooth', top: '0px' });}}> 
                 <img src={data.thumbnail.land} className="card-img" alt=""/>
             </Link>
             <div className="card-body">

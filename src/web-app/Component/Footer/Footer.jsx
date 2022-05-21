@@ -35,7 +35,7 @@ function Footer() {
                                 menu.menulist.map((item,index)=>{
                                     return(
                                         <Link className='background-white --background list-style-type-none' to={item.Link} key={index} onClick={(e)=>{menuselected(item.menu_name);filter_dispatch({type:"CATEGORY_TYPE",payload:"All"}); window.scrollTo({ behavior: 'smooth', top: '0px' });}}> 
-                                             <li className={selectedMenu==item.menu_name?'active-menu background-white':'background-white'}> {item.menu_img===""?item.menu_name:<img src={item.menu_img}/>} </li>
+                                             <li className={localStorage.getItem('VIDEO_MENU_SELECTED')==item.menu_name?'active-menu background-white':'background-white'}> {item.menu_img===""?item.menu_name:<img src={item.menu_img}/>} </li>
                                         </Link>
                                     )
                                 })
@@ -57,13 +57,6 @@ function Footer() {
                         </ul> 
                        </div>
                        <div class="footer-col-3  --background"> 
-                          <h3>  </h3>
-                          <ul>
-                              <li>  </li>
-                              <li> </li>
-                              <li> </li>
-                              <li>  </li>
-                          </ul>
                        </div>
                    </div>
                    <hr/>

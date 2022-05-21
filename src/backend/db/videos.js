@@ -347,7 +347,77 @@ export const videos = [
     note:"",
     view:0
   },
-  
+  {
+    _id: "MOVIEknmaNMY1",
+    episode_id:"",
+    categoryName:"Movies",
+    categoryType:"Comedy",
+    language:"Hindi",
+    duration:"2h 30m",
+    year:"2007",
+    UA:'10+',
+    creator: "Shemaroo",
+    creatorLogo: {
+      altText: "Shemaroo Logo",
+      url: "https://yt3.ggpht.com/ytc/AKedOLRRYMgsi_Yyhmw0aADMjt-GT-ZHI2Cr_gHzk2Pl=s68-c-k-c0x00ffffff-no-rj",
+    },
+    thumbnail: {
+      altText: "welcome",
+      url: "https://m.media-amazon.com/images/M/MV5BZjcyOTViMzUtOWQ5Yy00ZTVmLWJmYzctN2U2OGVlN2ZjNTA0XkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_.jpg",
+      land:"https://i.ytimg.com/vi/iGfT6rdTS34/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDY_jbCa6KPVvFqa0vO2Jy7pxv6DA",
+      small:"https://i.ytimg.com/vi/iGfT6rdTS34/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDY_jbCa6KPVvFqa0vO2Jy7pxv6DA"
+    },
+    title: "Welcome",
+    description:"Two thugs meet Rajiv, who belongs to a respectable family, and want to fix their sister's wedding with him. However, when Rajiv's uncle refuses to the match, a series of hilarious situations occur.",
+    cast:[
+            {name:"Akshay Kumar",img:"https://m.media-amazon.com/images/M/MV5BODI4NDY1NzkyM15BMl5BanBnXkFtZTgwNzM3MDM0OTE@._V1_UY44_CR1,0,32,44_AL_.jpg",role:"Rajiv Saini"},
+            {name:"Katrina Kaif",img:"https://m.media-amazon.com/images/M/MV5BMjI0Nzc4OTE0NV5BMl5BanBnXkFtZTgwOTczODgyNDM@._V1_UY44_CR0,0,32,44_AL_.jpg",role:"Sanjana S. Shetty"},
+            {name:"Nana Patekar",img:"https://m.media-amazon.com/images/M/MV5BMjI4MzQyODYwOF5BMl5BanBnXkFtZTgwMTcxMTIzOTE@._V1_UY44_CR17,0,32,44_AL_.jpg",role:"Uday Shankar Shetty"},
+            {name:"Anil Kapoor",img:"https://m.media-amazon.com/images/M/MV5BMjUyMWE5MjUtMDlkMC00ODc0LThkOTgtNjZhNDgyMTU5ZDhlXkEyXkFqcGdeQXVyMTExNDQ2MTI@._V1_UX32_CR0,0,32,44_AL_.jpg",role:"Sagar 'Majnu' Pandey"},
+            {name:"Paresh Rawal",img:"https://m.media-amazon.com/images/M/MV5BMjI4Mjg2MjgxMV5BMl5BanBnXkFtZTgwNDYyMTIzOTE@._V1_UY44_CR17,0,32,44_AL_.jpg",role:"Dr. Dayal Ghungroo"},
+            {name:"Feroz Khan",img:"https://m.media-amazon.com/images/M/MV5BN2NjODM2NDItYTU0Ni00MzJmLWJkZTYtMjQ3ZDZjZmNjY2NhXkEyXkFqcGdeQXVyMTExNDQ2MTI@._V1_UY44_CR0,0,32,44_AL_.jpg",role:"'RDX'"},
+            {name:"Supriya Karnik",img:"https://m.media-amazon.com/images/M/MV5BZjFlNDQzZDMtMjI0Mi00ZTk4LWFmNmYtN2E5M2IzNjRjNDU4XkEyXkFqcGdeQXVyMTExNDQ2MTI@._V1_UY44_CR1,0,32,44_AL_.jpg",role:"Payal Ghungroo"},
+         ],
+    rating:"9.6/10",
+    videoYTId:"iGfT6rdTS34",
+    uploadedOn:"June 01 2007",
+    note:"",
+    view:0
+  },
+  {
+    _id: "MOVIEknmaNM22",
+    episode_id:"",
+    categoryName:"Movies",
+    categoryType:"Comedy",
+    language:"Hindi",
+    duration:"2h 13m",
+    year:"2007",
+    UA:'10+',
+    creator: "movie dekho",
+    creatorLogo: {
+      altText: "movie dekho Logo",
+      url: "https://yt3.ggpht.com/ytc/AKedOLRf1u2VHFwy8dTHcdrNH_PCZaHPSwKwZkBCzqU=s68-c-k-c0x00ffffff-no-rj",
+    },
+    thumbnail: {
+      altText: "mr and mrs khiladi",
+      url: "https://m.media-amazon.com/images/M/MV5BMTI4MjUwOTg4MF5BMl5BanBnXkFtZTcwODE2ODgzMQ@@._V1_.jpg",
+      land:"https://i.ytimg.com/vi/Oa758HSyIbA/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCnGOiSFAfcJ-joROo4cAkJKmbGpw",
+      small:"https://i.ytimg.com/vi/Oa758HSyIbA/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCnGOiSFAfcJ-joROo4cAkJKmbGpw"
+    },
+    title: "mr and mrs khiladi",
+    description:"An astrologer predicts a fortune for idler Raja, who falls for Shalu, a millionaire's daughter. However, Shalu's father tells Raja that he will have to work hard and earn money to marry his daughter.",
+    cast:[
+            {name:"Akshay Kumar",img:"https://m.media-amazon.com/images/M/MV5BODI4NDY1NzkyM15BMl5BanBnXkFtZTgwNzM3MDM0OTE@._V1_UY44_CR1,0,32,44_AL_.jpg",role:"Raja"},
+            {name:"Juhi Chawla",img:"https://m.media-amazon.com/images/M/MV5BMWYyYzhkYjItNDAyMi00ZTdhLWFjZGItM2M4ZGZjYjY5NjZhXkEyXkFqcGdeQXVyNjY1MTg4Mzc@._V1_UX32_CR0,0,32,44_AL_.jpg",role:"Shalu"},
+            {name:"Paresh Rawal",img:"https://m.media-amazon.com/images/M/MV5BMjI4Mjg2MjgxMV5BMl5BanBnXkFtZTgwNDYyMTIzOTE@._V1_UY44_CR17,0,32,44_AL_.jpg",role:"Pratap"},
+            {name:"Kader Khan",img:"https://m.media-amazon.com/images/M/MV5BNWYzY2QzNzUtYmVlYy00MmZjLTgxYjEtNjQyOWI5MzZkMDk4XkEyXkFqcGdeQXVyMTExNDQ2MTI@._V1_UY44_CR0,0,32,44_AL_.jpg",role:"Badri Prasad"},
+         ],
+    rating:"9.6/10",
+    videoYTId:"Oa758HSyIbA",
+    uploadedOn:"June 01 2007",
+    note:"",
+    view:0
+  },
   //songs
   {
     _id: "kWmr8SvbmUGMo",
@@ -667,6 +737,68 @@ export const videos = [
     note:"",
     view:0
   },
+  {
+    _id: "SONGBBSb51",
+    episode_id:"",
+    categoryName:"Songs",
+    categoryType:"title track",
+    language:"Hindi",
+    duration:"3:36m",
+    year:"2022",
+    UA:'1+',
+    creator: "t-series",
+    creatorLogo: {
+      altText: "t-series logo",
+      url: "https://yt3.ggpht.com/DzaZaTX6gdgjjPI_vkNc2dPbI794UroI9fTAunua0fa7lukDj5NDkjfhS5-w2KXuvXS02r92=s68-c-k-c0x00ffffff-no-rj",
+    },
+    thumbnail: {
+      altText: "bhool bhulaiyaa 2",
+      url: "https://www.pagalvvorld.com/wp-content/uploads/2022/05/Bhool-Bhulaiyaa-2-Title-Track-mp3-image.jpg",
+      land:"https://i.ytimg.com/vi/J1rOfVst-EQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDm7JEj4CFTOQYLzwcs2v3e0VElrg"
+      
+    },
+    title: "bhool bhulaiyaa 2 title song",
+    description:"Bhool Bhulaiyaa 2 (Title Track), Theme Song Mp3 Download Pagalworld by Neeraj Shridhar is recently released latest Hindi Song written by Sameer and music given by Tanishk Bagchi.",
+    cast:[
+      {name:"kartik aaryan",img:"https://m.media-amazon.com/images/M/MV5BNTY5ZmQyODUtMWViMi00MzQ1LWJmYjEtNjM2NTE2M2NhZjdkXkEyXkFqcGdeQXVyMTMyOTUxNzMx._V1_.jpg",role:"lead actor"},
+      ],
+    rating:"8.1/10",
+    videoYTId: "J1rOfVst-EQ",
+    uploadedOn: "March 08 2022",
+    note:"",
+    view:0
+  },
+  {
+    _id: "SONGBBSb52",
+    episode_id:"",
+    categoryName:"Songs",
+    categoryType:"pop",
+    language:"Hindi",
+    duration:"3:36m",
+    year:"2022",
+    UA:'1+',
+    creator: "t-series",
+    creatorLogo: {
+      altText: "t-series logo",
+      url: "https://yt3.ggpht.com/DzaZaTX6gdgjjPI_vkNc2dPbI794UroI9fTAunua0fa7lukDj5NDkjfhS5-w2KXuvXS02r92=s68-c-k-c0x00ffffff-no-rj",
+    },
+    thumbnail: {
+      altText: "bhool bhulaiyaa 2",
+      url: "https://pagalworldl.com/uploads/thumb/sft18/8666_4.jpg",
+      land:"https://i.ytimg.com/vi/24VdCJo-FIA/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDC5QWuwrVFm1NhD2KFlagTC4-olQ"
+      
+    },
+    title: "De Taali - Bhool Bhulaiyaa 2",
+    description:"De Taali mp3 from Bhool Bhulaiyaa 2 is brand new Hindi song sung by Yo Yo Honey Singh, Armaan Malik, Shashwat Singh and this latest song is featuring Kartik Aaryan, Kiara Advani. De Taali song lyrics are penned down by Amitabh Bhattacharya while music is given by Pritam and video has been directed by Anees Bazmee.",
+    cast:[
+      {name:"kartik aaryan",img:"https://m.media-amazon.com/images/M/MV5BNTY5ZmQyODUtMWViMi00MzQ1LWJmYjEtNjM2NTE2M2NhZjdkXkEyXkFqcGdeQXVyMTMyOTUxNzMx._V1_.jpg",role:"lead actor"},
+      ],
+    rating:"8.1/10",
+    videoYTId: "24VdCJo-FIA",
+    uploadedOn: "March 08 2022",
+    note:"",
+    view:0
+  },
   //sport
   {
     _id: "kWAN5bU",
@@ -687,7 +819,7 @@ export const videos = [
       url: "https://m.media-amazon.com/images/M/MV5BZDdjZGViZWUtMDc1MC00ZjZkLTg2MzMtMGJiNzdiYWYyMjYwXkEyXkFqcGdeQXVyNzU3NTk0NjA@._V1_.jpg",
       land:"https://i.ytimg.com/vi/MvXgXqfyV1k/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCkyFPAN6pvZEz0SaFSQMzRn5S2LQ"
     },
-    title: "Rematch: Vishy Anand vs Praggnanandhaa",
+    title: "Vishy Anand vs Praggnanandhaa",
     description:"The Tata Steel Chess India Blitz was a double round robin event. Yesterday we published the video of round 6 where Praggnanandhaa with the white pieces heavily attacked Vishy Anand's king. Vishy defended calmly and won that game. The battle of generations took place once again in the 15th round. This time Anand had the white pieces. ",
     cast:[
       ],
@@ -712,11 +844,11 @@ export const videos = [
       url: "https://yt3.ggpht.com/ytc/AKedOLSL_J5xSMbfVtPjr0YLWapk58gCObPunaMCx-p_=s68-c-k-c0x00ffffff-no-rj",
     },
     thumbnail: {
-      altText: "MS Dhoni BEST FINISH IN ODI HISTORY",
+      altText: "MS Dhoni BEST FINISH",
       url: "https://m.media-amazon.com/images/M/MV5BMDQxMWM4NGItYTBhOS00NDJlLWI3N2UtZTMwYzI2N2RiYTY3XkEyXkFqcGdeQXVyODAzNzAwOTU@._V1_.jpg",
       land:"https://i.ytimg.com/vi/kYeJk38rZ3o/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDTvwrRrSzdyQMyWLtU6Dui4ry01w"
     },
-    title: "MS Dhoni BEST FINISH IN ODI HISTORY",
+    title: "MS Dhoni best finisher ODI history",
     description:"Indias greatest Finisher finishes it in style against Sri Lanka.",
     cast:[
 
@@ -776,7 +908,7 @@ export const videos = [
       url: "https://gumlet.assettype.com/sinceindependence-english%2Fimport%2F2021%2F08%2FE8L-SEQXoAk7aE220210807122549202108071230052021080715152620210808044407.jpg?w=1200&auto=format%2Ccompress&ogImage=true",
       land:"https://i.ytimg.com/vi/rW_fwcmyIfk/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCaF6s3hx2Qx3IbxnrJhhAGs4mysA"
     },
-    title: "Neeraj Chopra wins historic gold for India",
+    title: "Neeraj Chopra wins gold for India",
     description:"🇮🇳🥇 Neeraj Chopra scripted history for India as his gold medal secured the nation's first ever in Athletics. His 87.58m attempt was enough to place him at the top of the standings after 6 throws in the men’s javelin throw final.",
     cast:[
 
@@ -802,11 +934,11 @@ export const videos = [
       url: "https://yt3.ggpht.com/ytc/AKedOLRCFpu_biul8hGuPLuvU8l63Qmz4JLa0u8Pq_HarC0=s68-c-k-c0x00ffffff-no-rj",
     },
     thumbnail: {
-      altText: "Kamalpreet Kaur enters Olympic final",
+      altText: "Kamalpreet enters Olympic final",
       url: "https://staticg.sportskeeda.com/editor/2021/08/83bb0-16278361293221-800.jpg",
       land:"https://i.ytimg.com/vi/INe9ZrqrMoo/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDLDVrUryiadQho_6gpPhwmwja_Dg"
     },
-    title: "Kamalpreet Kaur enters Olympic final",
+    title: "Kamalpreet enters Olympic final",
     description:"India's Kamalpreet Kaur progressed to the final round in women's discus throw after throwing a qualifying mark of 64m in her final attempt.The Tokyo 2020 Olympic Summer Games are taking place in Japan, from July 23, 2021 to August 8, 2021",
     cast:[],
     rating:"6.1/10",
@@ -834,7 +966,7 @@ export const videos = [
       url: "https://upload.wikimedia.org/wikipedia/commons/b/b9/Saikhom_Mirabai_Chanu.jpg",
       land:"https://i.ytimg.com/vi/ssEzTsg0reE/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBA5Pi3re-taxzceXH2SfCkG7qH4A"
     },
-    title: "Mirabai Chanu wins silver for India 🥈🇮🇳",
+    title: "Mirabai Chanu wins silver 🥈",
     description:" Indian weightlifting sensation Saikhom Mirabai Chanu lifted a total of 202kg to bag a silver medal in the women's 49kg category. She is India's first medallist at #Tokyo2020. The Tokyo 2020 Olympic Summer Games are taking place in Japan, from July 23, 2021 to August 8, 2021",
     cast:[],
     rating:"6.1/10",
@@ -862,7 +994,7 @@ export const videos = [
       url: "https://englishtribuneimages.blob.core.windows.net/gallary-content/2021/8/2021_8$largeimg_2097879015.JPG",
       land:"https://i.ytimg.com/vi/5iygKOmf0nI/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBIcrmfvKycnLjw6vynerqZm3vn5g"
     },
-    title: "Ravi Kumar's incredible fight for gold",
+    title: "Ravi Kumar's fight for gold",
     description:" India's Ravi Kumar Dahiya staged a thrilling last-gasp win over Kazakhstan's Nurislam Sanayev to book a place in the men's 57kg wrestling final.",
     cast:[],
     rating:"6.1/10",
@@ -890,7 +1022,7 @@ export const videos = [
       url: "https://images.news18.com/ibnlive/uploads/2021/08/1627914698_sindhu.jpg",
       land:"https://i.ytimg.com/vi/UvrHUAximog/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBum6BSD_qSSDiX7VfrQLZOyAAp5Q"
     },
-    title: "PV Sindhu wins second Olympic medal 🏸🥉",
+    title: "PV Sindhu wins 2nd Olympic medal",
     description:" PV Sindhu became India's first shuttler to win two Olympic medals after her bronze-medal victory over China's He Bing Jiao 21-13, 21-15. ",
     cast:[],
     rating:"6.1/10",
@@ -918,7 +1050,7 @@ export const videos = [
       url: "https://m.media-amazon.com/images/M/MV5BZDExYjNlODgtOTFkMi00ODIzLWFkOGMtMmVlODA5YzQwNGYyXkEyXkFqcGdeQXVyNzYzNzYyNzA@._V1_UY1200_CR592,0,630,1200_AL_.jpg",
       land:"https://i.ytimg.com/vi/Mvs1JXYfd6Q/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDPfxksaout_QHD-1kMPGiRlp6YIg"
     },
-    title: "India Win Another Super Over Thriller",
+    title: "India Win Super Over Thriller",
     description:"The visiting Indian team took a 4-0 lead in the five match T20 series against the BLACKCAPS at SKY Stadium in another thriller. This is the official channel of New Zealand Cricket and home of BLACKCAPS and WHITE FERNS highlights. Subscribe to the NZC channel for all of our latest content including international and domestic highlights, interviews and videos bringing you closer to New Zealand players and cricket in Aotearoa.",
     cast:[
 
@@ -956,6 +1088,65 @@ export const videos = [
     rating:"6.1/10",
     videoYTId: "Y1J9_9-vNcU",
     uploadedOn: "March 08 2021",
+    note:"",
+    view:0
+  },
+  {
+    _id: "SPORTAN55O1",
+    episode_id:"",
+    categoryName:"Sports",
+    categoryType:"Badminton",
+    language:"English",
+    duration:"3:57 min",
+    year:"2019",
+    UA:'1+',
+    creator: "Pongfinity",
+    creatorLogo: {
+      altText: "Pongfinity",
+      url: "https://yt3.ggpht.com/ytc/AKedOLQiZcSScNbGPna7N_GUs8ko8a7_emuWXJIZX6jEGg=s68-c-k-c0x00ffffff-no-rj",
+    },
+    thumbnail: {
+      altText: "Badminton Trick Shots",
+      url: "https://c.ndtvimg.com/2022-05/ouks77so_akane-yamaguchi-afp_625x300_13_May_22.jpg?im=FeatureCrop,algorithm=dnn,width=806,height=605",
+      land:"https://i.ytimg.com/vi/WT1aWbVwixM/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLATqVpDLnzIgP2FQMSlKH952EUPTg"
+    },
+    title: "Badminton Trick Shots",
+    description:"There were some requests about badminton, so we decided to try it out! Enjoy this one-off episode of badminton trick shots! ",
+    cast:[
+
+      ],
+    rating:"6.1/10",
+    videoYTId: "WT1aWbVwixM",
+    uploadedOn: "March 08 2019",
+    note:"",
+    view:0
+  },
+  {
+    _id: "SPORTkWAN522",
+    episode_id:"",
+    categoryName:"Sports",
+    categoryType:"Chess",
+    language:"Hindi",
+    duration:"15min",
+    year:"2019",
+    UA:'1+',
+    creator: "ChessBase India",
+    creatorLogo: {
+      altText: "ChessBase India Logo",
+      url: "https://yt3.ggpht.com/ytc/AKedOLTW6l4zXdS367F-2snlFbDAlSfDVA3ATcg_GniG=s68-c-k-c0x00ffffff-no-rj",
+    },
+    thumbnail: {
+      altText: "ChessBase India Thumbnail",
+      url: "https://upload.wikimedia.org/wikipedia/commons/5/57/Viswanathan_Anand_%282016%29_%28cropped%29.jpeg",
+      land:"https://i.ytimg.com/vi/t4KqvGXtsdQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD29mSMmBT4-gL5QlUadk_3xQ0UiA"
+    },
+    title: "Vishy Anand vs Magnus Carlsen",
+    description:"Vishy Anand and Magnus Carlsen faced off against each other in round 8 of the Tata Steel Chess India Blitz 2019. The game between two world champions is always exciting! Check out what happened!",
+    cast:[
+      ],
+    rating:"6.1/10",
+    videoYTId: "t4KqvGXtsdQ",
+    uploadedOn: "March 08 2019",
     note:"",
     view:0
   },
@@ -1099,7 +1290,7 @@ export const videos = [
       url: "https://m.media-amazon.com/images/M/MV5BNDVmNjdkM2QtYWQyYy00ZGUyLTlhNTMtNTYwOTcyOGNhOWMzXkEyXkFqcGdeQXVyMTM1NjM2ODg1._V1_.jpg",
       land:"https://i.ytimg.com/vi/tUjOL_Nk6uo/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCCcD71-HKHwh7-_H0pk3jR3nEsVQ"
     },
-    title: "The Lion, The Mouse and The Sleepy Bear",
+    title: "The Lion, Mouse and Sleepy Bear",
     description:"The Lion, The Mouse + The Sleepy Bear | Bedtime Stories for Kids | Animated Fairy Tales For Children A small mouse and there was a huge bear who lived in a neighboring cave. The big bear who had hibernated months ago was still sleeping and snoring loudly. The little mouse went to him one day to wake the bear up. Because he could not sleep all winter due to the bear's noisy snoring. So little mouse decided to ask the big lion for help.",
     cast:[
 
@@ -1257,6 +1448,66 @@ export const videos = [
     rating:"8.1/10",
     videoYTId: "bhe7GJtwmQE",
     uploadedOn: "March 01 1995",
+    note:"",
+    view:0
+  },
+  {
+    _id: "KIDSAvzo121",
+    episode_id:"",
+    categoryName:"Kids",
+    categoryType:"Story",
+    language:"Hindi",
+    duration:"1hr 56min",
+    year:"2015",
+    UA:'1+',
+    creator: "Rhyme4Kids - Nursery Rhymes & Stories",
+    creatorLogo: {
+      altText: "Rhyme4Kids - Nursery Rhymes & Stories Logo",
+      url: "https://yt3.ggpht.com/ytc/AKedOLR_fb6u_VxVF0JXjiOXYTGTk6hVpn5CImu9eKiSNw=s68-c-k-c0x00ffffff-no-rj",
+    },
+    thumbnail: {
+      altText: "Rhyme4Kids - Nursery Rhymes & Stories",
+      url: "https://m.media-amazon.com/images/I/51uIlfOPpAL.jpg",
+      land:"https://i.ytimg.com/vi/WrbU4Kll4TA/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAtszcJXEOoouQ_GYe2x9619gwCMg"
+    },
+    title: "Akbar Birbal || Vol 1",
+    description:"Akbar Birbal stories have always been an integral part of India's heritage. The witty stories of Akbar and Birbal have always made us laugh and also taught us valuable life lessons. Now read these witty stories from our collection below and have fun!",
+    cast:[
+
+      ],
+    rating:"8.1/10",
+    videoYTId: "WrbU4Kll4TA",
+    uploadedOn: "March 08 2015",
+    note:"",
+    view:0
+  },
+  {
+    _id: "KIDSAvzo222",
+    episode_id:"",
+    categoryName:"Kids",
+    categoryType:"Story",
+    language:"Hindi",
+    duration:"1hr 56min",
+    year:"2015",
+    UA:'1+',
+    creator: "Rhyme4Kids - Nursery Rhymes & Stories",
+    creatorLogo: {
+      altText: "Rhyme4Kids - Nursery Rhymes & Stories Logo",
+      url: "https://yt3.ggpht.com/ytc/AKedOLR_fb6u_VxVF0JXjiOXYTGTk6hVpn5CImu9eKiSNw=s68-c-k-c0x00ffffff-no-rj",
+    },
+    thumbnail: {
+      altText: "Rhyme4Kids - Nursery Rhymes & Stories",
+      url: "https://m.media-amazon.com/images/I/51uIlfOPpAL.jpg",
+      land:"https://i.ytimg.com/vi/jutwF95Ljeg/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBu305cIoeJWgbmxcmB_ZN82G-4Cg"
+    },
+    title: "Akbar Birbal || Vol 2",
+    description:"He was an extremely clever and smart person who was quick to find solutions to challenges. The challenges and their solutions made for a good collection of stories aptly told across generations as ‘Akbar Birbal stories.’",
+    cast:[
+
+      ],
+    rating:"8.1/10",
+    videoYTId: "jutwF95Ljeg",
+    uploadedOn: "March 08 2015",
     note:"",
     view:0
   },
@@ -1436,7 +1687,7 @@ export const videos = [
       view:0
     },
       //ramayan - episode 6
-      {
+  {
         _id: "A4CmvmV_eHA6",
         episode_id:"episode 6",
         categoryName:"Shows",
@@ -1469,9 +1720,9 @@ export const videos = [
         uploadedOn: "January 01 1995",
         note:"",
         view:0
-      },
+  },
        //ramayan - episode 7
-       {
+  {
         _id: "A4CmvmV_eHA7",
         episode_id:"episode 7",
         categoryName:"Shows",
@@ -1504,9 +1755,9 @@ export const videos = [
         uploadedOn: "January 01 1995",
         note:"",
         view:0
-      },
+  },
       //ramayan - episode 8
-      {
+  {
         _id: "A4CmvmV_eHA8",
         episode_id:"episode 8",
         categoryName:"Shows",
@@ -1539,9 +1790,9 @@ export const videos = [
         uploadedOn: "January 01 1995",
         note:"",
         view:0
-      },
+  },
       //ramayan - episode 9
-      {
+  {
         _id: "A4CmvmV_eHA9",
         episode_id:"episode 9",
         categoryName:"Shows",
@@ -1574,9 +1825,9 @@ export const videos = [
         uploadedOn: "January 01 1995",
         note:"",
         view:0
-      },
+  },
       //ramayan - episode 10
-      {
+  {
         _id: "A4CmvmV_eHA10",
         episode_id:"episode 10",
         categoryName:"Shows",
@@ -1609,9 +1860,9 @@ export const videos = [
         uploadedOn: "January 01 1995",
         note:"",
         view:0
-      },
+  },
       //mahabharat bhagwat geeta episode 1
-      {
+  {
         _id: "GECmemV_tHA1",
         episode_id:"Part 1",
         categoryName:"Shows",
@@ -1638,9 +1889,9 @@ export const videos = [
         uploadedOn: "January 01 1999",
         note:"",
         view:0
-      },
+  },
         //mahabharat bhagwat geeta episode 2
-        {
+  {
           _id: "GECmemV_tHA2",
           episode_id:"Part 2",
           categoryName:"Shows",
@@ -1667,9 +1918,9 @@ export const videos = [
           uploadedOn: "January 01 1999",
           note:"",
           view:0
-        },
+  },
         //mahabharat bhagwat geeta episode 3
-        {
+  {
           _id: "GECmemV_tHA3",
           episode_id:"Part 3",
           categoryName:"Shows",
@@ -1696,9 +1947,9 @@ export const videos = [
           uploadedOn: "January 01 1999",
           note:"",
           view:0
-        },
+  },
          //mahabharat bhagwat geeta episode 4
-         {
+  {
           _id: "GECmemV_tHA4",
           episode_id:"Part 4",
           categoryName:"Shows",
@@ -1725,9 +1976,9 @@ export const videos = [
           uploadedOn: "January 01 1999",
           note:"",
           view:0
-        },
+  },
          //mahabharat bhagwat geeta episode 5
-         {
+  {
           _id: "GECmemV_tHA5",
           episode_id:"Part 5",
           categoryName:"Shows",
@@ -1754,9 +2005,9 @@ export const videos = [
           uploadedOn: "January 01 1999",
           note:"",
           view:0
-        },
+  },
          //mahabharat bhagwat geeta episode 6
-         {
+  {
           _id: "GECmemV_tHA6",
           episode_id:"Part 6",
           categoryName:"Shows",
@@ -1783,9 +2034,9 @@ export const videos = [
           uploadedOn: "January 01 1999",
           note:"",
           view:0
-        },
+  },
          //mahabharat bhagwat geeta episode 7
-         {
+  {
           _id: "GECmemV_tHA7",
           episode_id:"Part 7",
           categoryName:"Shows",
@@ -1812,9 +2063,9 @@ export const videos = [
           uploadedOn: "January 01 1999",
           note:"",
           view:0
-        },
+  },
            //mahabharat bhagwat geeta episode 8
-           {
+  {
             _id: "GECmemV_tHA8",
             episode_id:"Part 8",
             categoryName:"Shows",
@@ -1841,9 +2092,9 @@ export const videos = [
             uploadedOn: "January 01 1999",
             note:"",
             view:0
-          },
+  },
            //mahabharat bhagwat geeta episode 9
-           {
+  {
             _id: "GECmemV_tHA9",
             episode_id:"Part 9",
             categoryName:"Shows",
@@ -1870,9 +2121,9 @@ export const videos = [
             uploadedOn: "January 01 1999",
             note:"",
             view:0
-          },
+  },
           //mahabharat bhagwat geeta episode 10
-          {
+  {
             _id: "GECmemV_tHA10",
             episode_id:"Part 10",
             categoryName:"Shows",
@@ -1899,9 +2150,9 @@ export const videos = [
             uploadedOn: "January 01 1999",
             note:"",
             view:0
-          },
+  },
             // cid episode 1
-            {
+  {
               _id: "COCmkmKHA1",
               episode_id:"Popular episode 1",
               categoryName:"Shows",
@@ -1935,9 +2186,9 @@ export const videos = [
               uploadedOn: "January 01 2014",
               note:"",
               view:0
-            },
+  },
             //cid episode 2
-            {
+  {
               _id: "COCmkmKHA2",
               episode_id:"Popular episode 2",
               categoryName:"Shows",
@@ -1971,9 +2222,9 @@ export const videos = [
               uploadedOn: "January 01 2014",
               note:"",
               view:0
-            },
+  },
             //cid episode 3
-            {
+  {
               _id: "COCmkmKHA3",
               episode_id:"Popular episode 3",
               categoryName:"Shows",
@@ -2007,9 +2258,9 @@ export const videos = [
               uploadedOn: "January 01 2014",
               note:"",
               view:0
-            },
+  },
             //cid episode 4
-            {
+  {
               _id: "COCmkmKHA4",
               episode_id:"Popular episode 4",
               categoryName:"Shows",
@@ -2043,9 +2294,9 @@ export const videos = [
               uploadedOn: "January 01 2014",
               note:"",
               view:0
-            },
+  },
              //cid episode 5
-             {
+  {
               _id: "COCmkmKHA5",
               episode_id:"Popular episode 5",
               categoryName:"Shows",
@@ -2079,9 +2330,9 @@ export const videos = [
               uploadedOn: "January 01 2014",
               note:"",
               view:0
-            },
+  },
                //cid episode 6
-               {
+  {
                 _id: "COCmkmKHA6",
                 episode_id:"Popular episode 6",
                 categoryName:"Shows",
@@ -2115,9 +2366,9 @@ export const videos = [
                 uploadedOn: "January 01 2014",
                 note:"",
                 view:0
-              },
+  },
                //cid episode 7
-               {
+  {
                 _id: "COCmkmKHA7",
                 episode_id:"Popular episode 7",
                 categoryName:"Shows",
@@ -2151,9 +2402,9 @@ export const videos = [
                 uploadedOn: "January 01 2014",
                 note:"",
                 view:0
-              },
+  },
                 //dekh bhai dekh - episode 1
-                {
+  {
                   _id: "DOCmkmKHA1",
                   episode_id:"episode 1",
                   categoryName:"Shows",
@@ -2180,9 +2431,9 @@ export const videos = [
                   uploadedOn: "January 01 2012",
                   note:"",
                   view:0
-                },
+  },
                 //dekh bhai dekh - episode 2
-                {
+  {
                   _id: "DOCmkmKHA2",
                   episode_id:"episode 2",
                   categoryName:"Shows",
@@ -2209,9 +2460,9 @@ export const videos = [
                   uploadedOn: "January 01 2012",
                   note:"",
                   view:0
-                },
+  },
                   //dekh bhai dekh - episode 3
-                  {
+  {
                     _id: "DOCmkmKHA3",
                     episode_id:"episode 3",
                     categoryName:"Shows",
@@ -2238,9 +2489,9 @@ export const videos = [
                     uploadedOn: "January 01 2012",
                     note:"",
                     view:0
-                  },
+  },
                   //dekh bhai dekh - episode 4
-                  {
+  {
                     _id: "DOCmkmKHA4",
                     episode_id:"episode 4",
                     categoryName:"Shows",
@@ -2267,9 +2518,9 @@ export const videos = [
                     uploadedOn: "January 01 2012",
                     note:"",
                     view:0
-                  },
+  },
                   //dekh bhai dekh - episode 5 - part 1
-                  {
+  {
                     _id: "DOCmkmKHA5",
                     episode_id:"episode 5 - part 1",
                     categoryName:"Shows",
@@ -2296,10 +2547,10 @@ export const videos = [
                     uploadedOn: "January 01 2012",
                     note:"",
                     view:0
-                  },
+  },
                   //dekh bhai dekh - episode 5
-                  {
-                    _id: "DOCmkmKHA52",
+  {
+                    _id: "DOCmkmKCA52",
                     episode_id:"episode 5 - part 2",
                     categoryName:"Shows",
                     categoryType:"Comedy",
@@ -2325,10 +2576,10 @@ export const videos = [
                     uploadedOn: "January 01 2012",
                     note:"",
                     view:0
-                  },
+  },
                    //dekh bhai dekh - episode 6
-                   {
-                    _id: "DOCmkmKHA52",
+  {
+                    _id: "DOCmkmOHA52",
                     episode_id:"episode 6",
                     categoryName:"Shows",
                     categoryType:"Comedy",
@@ -2354,7 +2605,1248 @@ export const videos = [
                     uploadedOn: "January 01 2012",
                     note:"",
                     view:0
-                  },
+  },
+  //small wonder episode1
+  {
+    _id: "SMAmk77H859",
+    episode_id:"episode 1",
+    categoryName:"Shows",
+    categoryType:"Comedy",
+    language:"English",
+    creator: "Epic Shows",
+    duration:"22min 19sec",
+    year:"2000",
+    UA:'5+',
+    creatorLogo: {
+      altText: "Epic Shows Logo",
+      url: "https://yt3.ggpht.com/8f2GTVcv6PH64HhcFGOGZVWTPDR4ibnVdZjVGu1NqOXac0Tp-MzMqDozTj8ccJ2vx1oF_sUxLko=s88-c-k-c0x00ffffff-no-rj",
+    },
+    thumbnail: {
+      altText: "small wonder Show Thumbnail",
+      url: "https://m.media-amazon.com/images/M/MV5BYThhMDE0NjEtZjA5NS00YjlkLWI0ZWEtOTViMmZhOGNjMGU5XkEyXkFqcGdeQXVyNTU2NDQ3NjU@._V1_FMjpg_UX1000_.jpg",
+      land:"https://i.ytimg.com/vi/BT8y_5i1URk/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCGsSFhv7V2rAt1EUVFocNdOvovCQ"
+    },
+    title: "Small Wonder",
+    description:"Ted Lawson introduces his family to V.I.C.I. (or the Voice Input Child Identicant), a secretly constructed robotic domestic aide in the form of a ten-year-old girl.",
+    cast:[],
+    videoYTId:"MnrJLImVrts",
+    rating:"7.1/10",
+    uploadedOn: "January 01 2000",
+    note:"",
+    view:0
+},
+//small wonder episode2
+{
+  _id: "SM22277H859",
+  episode_id:"episode 2",
+  categoryName:"Shows",
+  categoryType:"Comedy",
+  language:"English",
+  creator: "Epic Shows",
+  duration:"22min 19sec",
+  year:"2000",
+  UA:'5+',
+  creatorLogo: {
+    altText: "Epic Shows Logo",
+    url: "https://yt3.ggpht.com/8f2GTVcv6PH64HhcFGOGZVWTPDR4ibnVdZjVGu1NqOXac0Tp-MzMqDozTj8ccJ2vx1oF_sUxLko=s88-c-k-c0x00ffffff-no-rj",
+  },
+  thumbnail: {
+    altText: "small wonder Show Thumbnail",
+    url: "https://m.media-amazon.com/images/M/MV5BYThhMDE0NjEtZjA5NS00YjlkLWI0ZWEtOTViMmZhOGNjMGU5XkEyXkFqcGdeQXVyNTU2NDQ3NjU@._V1_FMjpg_UX1000_.jpg",
+    land:"https://i.ytimg.com/vi/-MeqWUviGqY/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD15qenVrUC_fkOUcxpD6YCNjSe_A"
+  },
+  title: "Small Wonder",
+  description:"The Brindles, the Lawsons' snoopy neighbors, suspect the Lawsons are hiding something and attempt to sniff out their family secret, while Harriet shows off her toy robot. Note: Edie McClurg and William Bogert made their first appearances as Bonnie ",
+  cast:[],
+  videoYTId:"qSDp3F1KQbc",
+  rating:"7.1/10",
+  uploadedOn: "January 01 2000",
+  note:"",
+  view:0
+},
+//small wonder episode3
+{
+  _id: "SM33377H859",
+  episode_id:"episode 3",
+  categoryName:"Shows",
+  categoryType:"Comedy",
+  language:"English",
+  creator: "Epic Shows",
+  duration:"22min 19sec",
+  year:"2000",
+  UA:'5+',
+  creatorLogo: {
+    altText: "Epic Shows Logo",
+    url: "https://yt3.ggpht.com/8f2GTVcv6PH64HhcFGOGZVWTPDR4ibnVdZjVGu1NqOXac0Tp-MzMqDozTj8ccJ2vx1oF_sUxLko=s88-c-k-c0x00ffffff-no-rj",
+  },
+  thumbnail: {
+    altText: "small wonder Show Thumbnail",
+    url: "https://m.media-amazon.com/images/M/MV5BYThhMDE0NjEtZjA5NS00YjlkLWI0ZWEtOTViMmZhOGNjMGU5XkEyXkFqcGdeQXVyNTU2NDQ3NjU@._V1_FMjpg_UX1000_.jpg",
+    land:"https://i.ytimg.com/vi/hlT045c1njk/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDOsjlZ9fAHVmekUkfWvaYl-39TbA"
+  },
+  title: "Small Wonder",
+  description:"When the Lawsons' babysitter cancels, Ted sees an opportunity for a new function for Vicki",
+  cast:[],
+  videoYTId:"x9kIkecQo-8",
+  rating:"7.1/10",
+  uploadedOn: "January 01 2000",
+  note:"",
+  view:0
+},
+//small wonder episode4
+{
+  _id: "SM44477H859",
+  episode_id:"episode 4",
+  categoryName:"Shows",
+  categoryType:"Comedy",
+  language:"English",
+  creator: "Epic Shows",
+  duration:"22min 19sec",
+  year:"2000",
+  UA:'5+',
+  creatorLogo: {
+    altText: "Epic Shows Logo",
+    url: "https://yt3.ggpht.com/8f2GTVcv6PH64HhcFGOGZVWTPDR4ibnVdZjVGu1NqOXac0Tp-MzMqDozTj8ccJ2vx1oF_sUxLko=s88-c-k-c0x00ffffff-no-rj",
+  },
+  thumbnail: {
+    altText: "small wonder Show Thumbnail",
+    url: "https://m.media-amazon.com/images/M/MV5BYThhMDE0NjEtZjA5NS00YjlkLWI0ZWEtOTViMmZhOGNjMGU5XkEyXkFqcGdeQXVyNTU2NDQ3NjU@._V1_FMjpg_UX1000_.jpg",
+    land:"https://i.ytimg.com/vi/RUe6k7tIElk/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCPgTHXih2kPumPoTr8HFr386oz0A"
+  },
+  title: "Small Wonder",
+  description:"Jamie's friend Warren, the school nerd, falls in love with the only girl who doesn't slam the door in his face, Vicki.Note: Daryl T. Bartley makes his first appearance as Warren Enright.",
+  cast:[],
+  videoYTId:"m__c-zuhn5I",
+  rating:"7.1/10",
+  uploadedOn: "January 01 2000",
+  note:"",
+  view:0
+},
+//small wonder episode5
+{
+  _id: "SM55577H859",
+  episode_id:"episode 5",
+  categoryName:"Shows",
+  categoryType:"Comedy",
+  language:"English",
+  creator: "Epic Shows",
+  duration:"22min 19sec",
+  year:"2000",
+  UA:'5+',
+  creatorLogo: {
+    altText: "Epic Shows Logo",
+    url: "https://yt3.ggpht.com/8f2GTVcv6PH64HhcFGOGZVWTPDR4ibnVdZjVGu1NqOXac0Tp-MzMqDozTj8ccJ2vx1oF_sUxLko=s88-c-k-c0x00ffffff-no-rj",
+  },
+  thumbnail: {
+    altText: "small wonder Show Thumbnail",
+    url: "https://m.media-amazon.com/images/M/MV5BYThhMDE0NjEtZjA5NS00YjlkLWI0ZWEtOTViMmZhOGNjMGU5XkEyXkFqcGdeQXVyNTU2NDQ3NjU@._V1_FMjpg_UX1000_.jpg",
+    land:"https://i.ytimg.com/vi/WquDXRxYeLw/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAL6IHq4STrmbci4W-RusykCOPOFQ"
+  },
+  title: "Small Wonder",
+  description:"Jamie's friend Warren, the school nerd, falls in love with the only girl who doesn't slam the door in his face, Vicki.Note: Daryl T. Bartley makes his first appearance as Warren Enright.",
+  cast:[],
+  videoYTId:"xHuVFcZOtR0",
+  rating:"7.1/10",
+  uploadedOn: "January 01 2000",
+  note:"",
+  view:0
+},
+//small wonder episode6
+{
+  _id: "SM66677H859",
+  episode_id:"episode 6",
+  categoryName:"Shows",
+  categoryType:"Comedy",
+  language:"English",
+  creator: "Epic Shows",
+  duration:"22min 19sec",
+  year:"2000",
+  UA:'5+',
+  creatorLogo: {
+    altText: "Epic Shows Logo",
+    url: "https://yt3.ggpht.com/8f2GTVcv6PH64HhcFGOGZVWTPDR4ibnVdZjVGu1NqOXac0Tp-MzMqDozTj8ccJ2vx1oF_sUxLko=s88-c-k-c0x00ffffff-no-rj",
+  },
+  thumbnail: {
+    altText: "small wonder Show Thumbnail",
+    url: "https://m.media-amazon.com/images/M/MV5BYThhMDE0NjEtZjA5NS00YjlkLWI0ZWEtOTViMmZhOGNjMGU5XkEyXkFqcGdeQXVyNTU2NDQ3NjU@._V1_FMjpg_UX1000_.jpg",
+    land:"https://i.ytimg.com/vi/aMGEkMkowU4/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDmvjXkAqH0BE6tpglgHmrKQy2yjQ"
+  },
+  title: "Small Wonder",
+  description:"When Jamie and his best friend Reggie put together a sci-fi movie project for school, the directorial power goes to Jamie's head. Note: Paul C. Scott makes his first appearance as Jamie's best friend Reggie Williams.",
+  cast:[],
+  videoYTId:"Aex_TX6-qhA",
+  rating:"7.1/10",
+  uploadedOn: "January 01 2000",
+  note:"",
+  view:0
+},
+//small wonder episode 7
+{
+  _id: "SM7777H859",
+  episode_id:"episode 7",
+  categoryName:"Shows",
+  categoryType:"Comedy",
+  language:"English",
+  creator: "Epic Shows",
+  duration:"22min 19sec",
+  year:"2000",
+  UA:'5+',
+  creatorLogo: {
+    altText: "Epic Shows Logo",
+    url: "https://yt3.ggpht.com/8f2GTVcv6PH64HhcFGOGZVWTPDR4ibnVdZjVGu1NqOXac0Tp-MzMqDozTj8ccJ2vx1oF_sUxLko=s88-c-k-c0x00ffffff-no-rj",
+  },
+  thumbnail: {
+    altText: "small wonder Show Thumbnail",
+    url: "https://m.media-amazon.com/images/M/MV5BYThhMDE0NjEtZjA5NS00YjlkLWI0ZWEtOTViMmZhOGNjMGU5XkEyXkFqcGdeQXVyNTU2NDQ3NjU@._V1_FMjpg_UX1000_.jpg",
+    land:"https://i.ytimg.com/vi/LeoPLVk3B2E/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBshhwCJMmkww5IUZiQ1rvuURipDA"
+  },
+  title: "Small Wonder",
+  description:"When Jamie and his best friend Reggie put together a sci-fi movie project for school, the directorial power goes to Jamie's head. Note: Paul C. Scott makes his first appearance as Jamie's best friend Reggie Williams.",
+  cast:[],
+  videoYTId:"rsivZjOQwiY",
+  rating:"7.1/10",
+  uploadedOn: "January 01 2000",
+  note:"",
+  view:0
+},
+//small wonder episode 8
+{
+  _id: "SM8888H859",
+  episode_id:"episode 8",
+  categoryName:"Shows",
+  categoryType:"Comedy",
+  language:"English",
+  creator: "Epic Shows",
+  duration:"22min 19sec",
+  year:"2000",
+  UA:'5+',
+  creatorLogo: {
+    altText: "Epic Shows Logo",
+    url: "https://yt3.ggpht.com/8f2GTVcv6PH64HhcFGOGZVWTPDR4ibnVdZjVGu1NqOXac0Tp-MzMqDozTj8ccJ2vx1oF_sUxLko=s88-c-k-c0x00ffffff-no-rj",
+  },
+  thumbnail: {
+    altText: "small wonder Show Thumbnail",
+    url: "https://m.media-amazon.com/images/M/MV5BYThhMDE0NjEtZjA5NS00YjlkLWI0ZWEtOTViMmZhOGNjMGU5XkEyXkFqcGdeQXVyNTU2NDQ3NjU@._V1_FMjpg_UX1000_.jpg",
+    land:"https://i.ytimg.com/vi/Dijd3j1fEEw/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAskOvxNojx34OqRKC75qp5kHMpMw"
+  },
+  title: "Small Wonder",
+  description:"When Jamie and his best friend Reggie put together a sci-fi movie project for school, the directorial power goes to Jamie's head. Note: Paul C. Scott makes his first appearance as Jamie's best friend Reggie Williams.",
+  cast:[],
+  videoYTId:"vjrFFvgVy4A",
+  rating:"7.1/10",
+  uploadedOn: "January 01 2000",
+  note:"",
+  view:0
+},
 
+//mr bean silent comedy episode 1
+{
+  _id: "MBEN11H859",
+  episode_id:"episode 1",
+  categoryName:"Shows",
+  categoryType:"silent comedy",
+  language:"English",
+  creator: "Mr Bean",
+  duration:"22min 19sec",
+  year:"1990",
+  UA:'5+',
+  creatorLogo: {
+    altText: "Mr Bean Logo",
+    url: "https://yt3.ggpht.com/ytc/AKedOLSOkEcl2lDSFEBtGFoNL8eLULm1RkXnBcb3i45uxA=s68-c-k-c0x00ffffff-no-rj",
+  },
+  thumbnail: {
+    altText: "Mr Bean Show Thumbnail",
+    url: "https://m.media-amazon.com/images/M/MV5BOGNjZTRlNDctNGI0Yi00YmFkLTljMmQtMjQ1ZjdiNmU5YTc0XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_FMjpg_UX1000_.jpg",
+    land:"https://i.ytimg.com/vi/7Im2I6STbms/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLASmUqvHvO4lZfqKa0ZjQX6rtGMVg"
+  },
+  title: "Mr Bean",
+  description:"Mr. Bean attends a maths exam, during which he tries to copy from a student (Paul Bown) under the nose of the invigilator (Rudolph Walker); he surreptitiously changes into his swimming trunks so as not to be noticed by someone nearby (Roger Sloman); and he struggles to stay awake during a church service, much to the annoyance of the man sitting next to him, Mr. Sprout (Richard Briers).",
+  cast:[],
+  videoYTId:"7Im2I6STbms",
+  rating:"7.1/10",
+  uploadedOn: "January 01 1990",
+  note:"",
+  view:0
+},
+//mr bean silent comedy episode 2
+{
+  _id: "MBEN22H859",
+  episode_id:"episode 2",
+  categoryName:"Shows",
+  categoryType:"silent comedy",
+  language:"English",
+  creator: "Mr Bean",
+  duration:"22min 19sec",
+  year:"1990",
+  UA:'5+',
+  creatorLogo: {
+    altText: "Mr Bean Logo",
+    url: "https://yt3.ggpht.com/ytc/AKedOLSOkEcl2lDSFEBtGFoNL8eLULm1RkXnBcb3i45uxA=s68-c-k-c0x00ffffff-no-rj",
+  },
+  thumbnail: {
+    altText: "Mr Bean Show Thumbnail",
+    url: "https://m.media-amazon.com/images/M/MV5BOGNjZTRlNDctNGI0Yi00YmFkLTljMmQtMjQ1ZjdiNmU5YTc0XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_FMjpg_UX1000_.jpg",
+    land:"https://i.ytimg.com/vi/YtfQLyy43Xg/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAAzuoPgpTX8i8qTpr3GO6QQ8Lhtw"
+  },
+  title: "Mr Bean",
+  description:"Bean busks to pay a busker (Dave O'Higgins), tries out his new credit card in a department store, visits a restaurant and is served an unwanted dish, leading him to try a variety of strategies to avoid eating it, and then has an unfortunate altercation with Queen Elizabeth II.",
+  cast:[],
+  videoYTId:"YtfQLyy43Xg",
+  rating:"7.1/10",
+  uploadedOn: "January 01 1990",
+  note:"",
+  view:0
+},
+//mr bean silent comedy episode 3
+{
+  _id: "MBEN33H859",
+  episode_id:"episode 3",
+  categoryName:"Shows",
+  categoryType:"silent comedy",
+  language:"English",
+  creator: "Mr Bean",
+  duration:"22min 19sec",
+  year:"1990",
+  UA:'5+',
+  creatorLogo: {
+    altText: "Mr Bean Logo",
+    url: "https://yt3.ggpht.com/ytc/AKedOLSOkEcl2lDSFEBtGFoNL8eLULm1RkXnBcb3i45uxA=s68-c-k-c0x00ffffff-no-rj",
+  },
+  thumbnail: {
+    altText: "Mr Bean Show Thumbnail",
+    url: "https://m.media-amazon.com/images/M/MV5BOGNjZTRlNDctNGI0Yi00YmFkLTljMmQtMjQ1ZjdiNmU5YTc0XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_FMjpg_UX1000_.jpg",
+    land:"https://i.ytimg.com/vi/cQUoCTVuNhA/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAsvSWGKijmXPl4Ehb82D-S9_yeVw"
+  },
+  title: "Mr Bean",
+  description:"Bean visits the local swimming pool where he realises that he is scared of diving, tries to find a way to leave the car park without paying, makes a sandwich in the park sitting next to Angus Deayton, jumps a traffic light in his car by getting out and pushing it and then takes his girlfriend to watch a scary movie at the cinema.",
+  cast:[],
+  videoYTId:"VQ6THOfnukI",
+  rating:"7.1/10",
+  uploadedOn: "January 01 1990",
+  note:"",
+  view:0
+},
+//mr bean silent comedy episode 4
+{
+  _id: "MBEN44H859",
+  episode_id:"episode 4",
+  categoryName:"Shows",
+  categoryType:"silent comedy",
+  language:"English",
+  creator: "Mr Bean",
+  duration:"22min 19sec",
+  year:"1990",
+  UA:'5+',
+  creatorLogo: {
+    altText: "Mr Bean Logo",
+    url: "https://yt3.ggpht.com/ytc/AKedOLSOkEcl2lDSFEBtGFoNL8eLULm1RkXnBcb3i45uxA=s68-c-k-c0x00ffffff-no-rj",
+  },
+  thumbnail: {
+    altText: "Mr Bean Show Thumbnail",
+    url: "https://m.media-amazon.com/images/M/MV5BOGNjZTRlNDctNGI0Yi00YmFkLTljMmQtMjQ1ZjdiNmU5YTc0XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_FMjpg_UX1000_.jpg",
+    land:"https://i.ytimg.com/vi/N8arZdtpINE/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAl9siRqBkVvVLTG-Y-obChyVtmxw"
+  },
+  title: "Mr Bean",
+  description:"Bean buys a new portable television but seems to be having difficulty getting a good reception. He then has his camera stolen in the park and later finds a unique way of identifying the culprit (Nick Hancock). After leaving his shoe on top of a car, Bean finds himself hopping around town to retrieve it. Later he finds a novel use of a photo booth and then takes his girlfriend to see a magic show and have a dance at the disco.",
+  cast:[],
+  videoYTId:"N8arZdtpINE",
+  rating:"7.1/10",
+  uploadedOn: "January 01 1990",
+  note:"",
+  view:0
+},
+//mr bean silent comedy episode 5
+{
+  _id: "MBEN55H859",
+  episode_id:"episode 5",
+  categoryName:"Shows",
+  categoryType:"silent comedy",
+  language:"English",
+  creator: "Mr Bean",
+  duration:"22min 19sec",
+  year:"1990",
+  UA:'5+',
+  creatorLogo: {
+    altText: "Mr Bean Logo",
+    url: "https://yt3.ggpht.com/ytc/AKedOLSOkEcl2lDSFEBtGFoNL8eLULm1RkXnBcb3i45uxA=s68-c-k-c0x00ffffff-no-rj",
+  },
+  thumbnail: {
+    altText: "Mr Bean Show Thumbnail",
+    url: "https://m.media-amazon.com/images/M/MV5BOGNjZTRlNDctNGI0Yi00YmFkLTljMmQtMjQ1ZjdiNmU5YTc0XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_FMjpg_UX1000_.jpg",
+    land:"https://i.ytimg.com/vi/SgA85x-7TaY/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCqr8QmxKml1-uhJRwIaibMZpKDDg"
+  },
+  title: "Mr Bean",
+  description:"Bean wakes up late and has to drive to his dental appointment on the other side of town, while dressing and brushing his teeth. His appointment progresses badly after he manages to anaesthetise the dentist (Richard Wilson). Later he tries to help a young boy with his remote control boat sending an electric wheelchair out of control. He then tries and fails to have a picnic without being pestered by wasps.",
+  cast:[],
+  videoYTId:"SgA85x-7TaY",
+  rating:"7.1/10",
+  uploadedOn: "January 01 1990",
+  note:"",
+  view:0
+},
+//mr bean silent comedy episode 6
+{
+  _id: "MBEN66H859",
+  episode_id:"episode 6",
+  categoryName:"Shows",
+  categoryType:"silent comedy",
+  language:"English",
+  creator: "Mr Bean",
+  duration:"22min 19sec",
+  year:"1990",
+  UA:'5+',
+  creatorLogo: {
+    altText: "Mr Bean Logo",
+    url: "https://yt3.ggpht.com/ytc/AKedOLSOkEcl2lDSFEBtGFoNL8eLULm1RkXnBcb3i45uxA=s68-c-k-c0x00ffffff-no-rj",
+  },
+  thumbnail: {
+    altText: "Mr Bean Show Thumbnail",
+    url: "https://m.media-amazon.com/images/M/MV5BOGNjZTRlNDctNGI0Yi00YmFkLTljMmQtMjQ1ZjdiNmU5YTc0XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_FMjpg_UX1000_.jpg",
+    land:"https://i.ytimg.com/vi/TvQw9VVfZwk/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBAzD_jUH9qgBRbUUIvmEJTKSoc7w"
+  },
+  title: "Mr Bean",
+  description:"Bean tries to save a man suffering from a heart attack but when the ambulance arrives, Bean uses it to jump start his car, inadvertently disabling the ambulance. Later he tries to post a letter and ends up getting locked inside a post box. Bean then packs for a holiday, suffers a noisy laughing man (Stephen Frost) on a train journey and then has to find a way to entertain a sick boy on the plane.",
+  cast:[],
+  videoYTId:"TvQw9VVfZwk",
+  rating:"7.1/10",
+  uploadedOn: "January 01 1990",
+  note:"",
+  view:0
+},
+//mr bean silent comedy episode 7
+{
+  _id: "MBEN77H859",
+  episode_id:"episode 7",
+  categoryName:"Shows",
+  categoryType:"silent comedy",
+  language:"English",
+  creator: "Mr Bean",
+  duration:"22min 19sec",
+  year:"1990",
+  UA:'5+',
+  creatorLogo: {
+    altText: "Mr Bean Logo",
+    url: "https://yt3.ggpht.com/ytc/AKedOLSOkEcl2lDSFEBtGFoNL8eLULm1RkXnBcb3i45uxA=s68-c-k-c0x00ffffff-no-rj",
+  },
+  thumbnail: {
+    altText: "Mr Bean Show Thumbnail",
+    url: "https://m.media-amazon.com/images/M/MV5BOGNjZTRlNDctNGI0Yi00YmFkLTljMmQtMjQ1ZjdiNmU5YTc0XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_FMjpg_UX1000_.jpg",
+    land:"https://i.ytimg.com/vi/HKUY_gOxLas/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDio-EXFeXzm7q7JKPNtQPke6kbTA"
+  },
+  title: "Mr Bean",
+  description:"Bean finds a miniature nativity scene in Harrods and performs his own take on the birth of Jesus with army troops and Daleks. Later he conducts a brass band and attempts to cook a turkey. He then relaxes for a somewhat reserved Christmas meal with his girlfriend, but has he got her the present that she wanted?",
+  cast:[],
+  videoYTId:"HKUY_gOxLas",
+  rating:"7.1/10",
+  uploadedOn: "January 01 1990",
+  note:"",
+  view:0
+},
+//best of luck nikki episode 1
+{
+  _id: "BEST11H859",
+  episode_id:"S1 - episode 1",
+  categoryName:"Shows",
+  categoryType:"comedy",
+  language:"Hindi",
+  creator: "Disney India",
+  duration:"22min 19sec",
+  year:"2012",
+  UA:'5+',
+  creatorLogo: {
+    altText: "Disney Logo",
+    url: "https://yt3.ggpht.com/ytc/AKedOLTtHaZwu4fs7DOAWEVMqaadIicIhulP2WJ0iX1XkA=s68-c-k-c0x00ffffff-no-rj",
+  },
+  thumbnail: {
+    altText: "best of luck nikki Thumbnail",
+    url: "https://m.media-amazon.com/images/M/MV5BMTE1YzUyODUtNDZkOS00NDkwLWE3NDktY2I1ZjcyNTZhM2ViXkEyXkFqcGdeQXVyODAzNzAwOTU@._V1_.jpg",
+    land:"https://i.ytimg.com/vi/w_RDE7VK_RQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC8dMrmZrP_HY2dl_lNsffv7AdNbw"
+  },
+  title: "Best Of Luck Nikki",
+  description:"Dolly moves her study date with a cute boy (Ritesh) from the library to home because she has to help Avtaar take care of Nikki when Himani goes back to work. Avtaar injures himself falling down the stairs, so Rohan has to take him to the hospital where Himani works, leaving Dolly to watch Nikki.",
+  cast:[],
+  videoYTId:"w_RDE7VK_RQ",
+  rating:"9.1/10",
+  uploadedOn: "January 01 2012",
+  note:"",
+  view:0
+},
+//best of luck nikki episode 2
+{
+  _id: "BEST22H859",
+  episode_id:"S1 - episode 2",
+  categoryName:"Shows",
+  categoryType:"comedy",
+  language:"Hindi",
+  creator: "Disney India",
+  duration:"22min 19sec",
+  year:"2012",
+  UA:'5+',
+  creatorLogo: {
+    altText: "Disney Logo",
+    url: "https://yt3.ggpht.com/ytc/AKedOLTtHaZwu4fs7DOAWEVMqaadIicIhulP2WJ0iX1XkA=s68-c-k-c0x00ffffff-no-rj",
+  },
+  thumbnail: {
+    altText: "best of luck nikki Thumbnail",
+    url: "https://m.media-amazon.com/images/M/MV5BMTE1YzUyODUtNDZkOS00NDkwLWE3NDktY2I1ZjcyNTZhM2ViXkEyXkFqcGdeQXVyODAzNzAwOTU@._V1_.jpg",
+    land:"https://i.ytimg.com/vi/PUhbTqdJ3KA/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAiTJodtUUCF6PbcG9Z22anCSkZZg"
+  },
+  title: "Best Of Luck Nikki",
+  description:"Dolly encourages Himani and Avtaar to go on a “outing” together while the kids take care of the baby.  Rohan takes Nikki to the park, flirts with a cute girl, then accidentally brings the wrong stroller– and baby– home. After a brief search, Dolly, Rohan and Sunny head off to tell Avtaar and Nikki, but find Nikki sitting with the cute girl's family a few tables over at the same restaurant.",
+  cast:[],
+  videoYTId:"PUhbTqdJ3KA",
+  rating:"9.1/10",
+  uploadedOn: "January 01 2012",
+  note:"",
+  view:0
+},
+//best of luck nikki episode 3
+{
+  _id: "BEST33H859",
+  episode_id:"S1 - episode 3",
+  categoryName:"Shows",
+  categoryType:"comedy",
+  language:"Hindi",
+  creator: "Disney India",
+  duration:"22min 19sec",
+  year:"2012",
+  UA:'5+',
+  creatorLogo: {
+    altText: "Disney Logo",
+    url: "https://yt3.ggpht.com/ytc/AKedOLTtHaZwu4fs7DOAWEVMqaadIicIhulP2WJ0iX1XkA=s68-c-k-c0x00ffffff-no-rj",
+  },
+  thumbnail: {
+    altText: "best of luck nikki Thumbnail",
+    url: "https://m.media-amazon.com/images/M/MV5BMTE1YzUyODUtNDZkOS00NDkwLWE3NDktY2I1ZjcyNTZhM2ViXkEyXkFqcGdeQXVyODAzNzAwOTU@._V1_.jpg",
+    land:"https://i.ytimg.com/vi/odmJawZswXI/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDuOMS8_R0N-VQD0HdLC3CJjnEJlw"
+  },
+  title: "Best Of Luck Nikki",
+  description:"Dolly encourages Himani and Avtaar to go on a “outing” together while the kids take care of the baby.  Rohan takes Nikki to the park, flirts with a cute girl, then accidentally brings the wrong stroller– and baby– home. After a brief search, Dolly, Rohan and Sunny head off to tell Avtaar and Nikki, but find Nikki sitting with the cute girl's family a few tables over at the same restaurant.",
+  cast:[],
+  videoYTId:"odmJawZswXI",
+  rating:"9.1/10",
+  uploadedOn: "January 01 2012",
+  note:"",
+  view:0
+},
+//best of luck nikki episode 4
+{
+  _id: "BEST44H859",
+  episode_id:"S1 - episode 4",
+  categoryName:"Shows",
+  categoryType:"comedy",
+  language:"Hindi",
+  creator: "Disney India",
+  duration:"22min 19sec",
+  year:"2012",
+  UA:'5+',
+  creatorLogo: {
+    altText: "Disney Logo",
+    url: "https://yt3.ggpht.com/ytc/AKedOLTtHaZwu4fs7DOAWEVMqaadIicIhulP2WJ0iX1XkA=s68-c-k-c0x00ffffff-no-rj",
+  },
+  thumbnail: {
+    altText: "best of luck nikki Thumbnail",
+    url: "https://m.media-amazon.com/images/M/MV5BMTE1YzUyODUtNDZkOS00NDkwLWE3NDktY2I1ZjcyNTZhM2ViXkEyXkFqcGdeQXVyODAzNzAwOTU@._V1_.jpg",
+    land:"https://i.ytimg.com/vi/UiIKFCtya_s/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAxyDgnfclBc5UujTWM3-iBojDvlA"
+  },
+  title: "Best Of Luck Nikki",
+  description:"Himani reveals that she was the famous school play 'Dinku the Donkey'  which is the same school Dolly goes to and pressures Dolly into trying out. Dolly tries to blow the audition, but gets the role anyway- just in time for the big rivalry game",
+  cast:[],
+  videoYTId:"UiIKFCtya_s",
+  rating:"9.1/10",
+  uploadedOn: "January 01 2012",
+  note:"",
+  view:0
+},
+//best of luck nikki episode 5
+{
+  _id: "BEST55H859",
+  episode_id:"S1 - episode 5",
+  categoryName:"Shows",
+  categoryType:"comedy",
+  language:"Hindi",
+  creator: "Disney India",
+  duration:"22min 19sec",
+  year:"2012",
+  UA:'5+',
+  creatorLogo: {
+    altText: "Disney Logo",
+    url: "https://yt3.ggpht.com/ytc/AKedOLTtHaZwu4fs7DOAWEVMqaadIicIhulP2WJ0iX1XkA=s68-c-k-c0x00ffffff-no-rj",
+  },
+  thumbnail: {
+    altText: "best of luck nikki Thumbnail",
+    url: "https://m.media-amazon.com/images/M/MV5BMTE1YzUyODUtNDZkOS00NDkwLWE3NDktY2I1ZjcyNTZhM2ViXkEyXkFqcGdeQXVyODAzNzAwOTU@._V1_.jpg",
+    land:"https://i.ytimg.com/vi/cc9rDmNsVko/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCQuTEEms1vVW89gIN2zrN1-cv4EQ"
+  },
+  title: "Best Of Luck Nikki",
+  description:"Avtaar cuts a deal with Roli aunty - that she will shut up her yapping dog if he will cut down the tree that blocks her sunlight. Dolly and Rohan stage a sit-in to protest (as the tree holds their childhood tree house ). Avtaar wages war to get them out of the tree house while Himani decides to throw her support in favor of the kids",
+  cast:[],
+  videoYTId:"cc9rDmNsVko",
+  rating:"9.1/10",
+  uploadedOn: "January 01 2012",
+  note:"",
+  view:0
+},
+//best of luck nikki episode 6
+{
+  _id: "BEST66H859",
+  episode_id:"S1 - episode 6",
+  categoryName:"Shows",
+  categoryType:"comedy",
+  language:"Hindi",
+  creator: "Disney India",
+  duration:"22min 19sec",
+  year:"2012",
+  UA:'5+',
+  creatorLogo: {
+    altText: "Disney Logo",
+    url: "https://yt3.ggpht.com/ytc/AKedOLTtHaZwu4fs7DOAWEVMqaadIicIhulP2WJ0iX1XkA=s68-c-k-c0x00ffffff-no-rj",
+  },
+  thumbnail: {
+    altText: "best of luck nikki Thumbnail",
+    url: "https://m.media-amazon.com/images/M/MV5BMTE1YzUyODUtNDZkOS00NDkwLWE3NDktY2I1ZjcyNTZhM2ViXkEyXkFqcGdeQXVyODAzNzAwOTU@._V1_.jpg",
+    land:"https://i.ytimg.com/vi/rBxhubpiq4g/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAAjl8NpeKpa-6FdzC-7nOmPsGVDw"
+  },
+  title: "Best Of Luck Nikki",
+  description:"Dolly is annoyed that her best friend Pam has become “texting buddies” with Himani, so she attempts to bond with Pam’s boring mother.Sunny and Rohan mistakenly believe that Roli aunty has killed her husband, so they go to Roli aunty's house to investigate.",
+  cast:[],
+  videoYTId:"rBxhubpiq4g",
+  rating:"9.1/10",
+  uploadedOn: "January 01 2012",
+  note:"",
+  view:0
+},
+//best of luck nikki episode 7
+{
+  _id: "BEST77H859",
+  episode_id:"S1 - episode 7",
+  categoryName:"Shows",
+  categoryType:"comedy",
+  language:"Hindi",
+  creator: "Disney India",
+  duration:"22min 19sec",
+  year:"2012",
+  UA:'5+',
+  creatorLogo: {
+    altText: "Disney Logo",
+    url: "https://yt3.ggpht.com/ytc/AKedOLTtHaZwu4fs7DOAWEVMqaadIicIhulP2WJ0iX1XkA=s68-c-k-c0x00ffffff-no-rj",
+  },
+  thumbnail: {
+    altText: "best of luck nikki Thumbnail",
+    url: "https://m.media-amazon.com/images/M/MV5BMTE1YzUyODUtNDZkOS00NDkwLWE3NDktY2I1ZjcyNTZhM2ViXkEyXkFqcGdeQXVyODAzNzAwOTU@._V1_.jpg",
+    land:"https://i.ytimg.com/vi/whXcx-_Sp6c/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC3CiPMSviKB8KeseHp1abL92A9BA"
+  },
+  title: "Best Of Luck Nikki",
+  description:"Nikki grabs a pair of baby sunglasses setting off the shoplifting alarm at a drugstore, so the manager (Sandhu) puts Dolly, Sunny, and Nikki in holding until Sunny can devise a plan to bust them out. Neeti, an awkward girl from Dolly's school, works at the store, and aids their escape.",
+  cast:[],
+  videoYTId:"whXcx-_Sp6c",
+  rating:"9.1/10",
+  uploadedOn: "January 01 2012",
+  note:"",
+  view:0
+},
+//boys over flowers episode 1
+{
+  _id: "BOF11H859",
+  episode_id:"episode 1",
+  categoryName:"Shows",
+  categoryType:"Drama",
+  language:"Hindi",
+  creator: "Korean drama",
+  duration:"1hr 4min 19sec",
+  year:"2012",
+  UA:'5+',
+  creatorLogo: {
+    altText: "Korean drama logo",
+    url: "https://yt3.ggpht.com/ytc/AKedOLTgFFnpTV9DpCxQiwfv9iVq2o9xKWFOajXKrOkd=s88-c-k-c0x00ffffff-no-rj",
+  },
+  thumbnail: {
+    altText: "Boys Over Flowers Thumbnail",
+    url: "https://m.media-amazon.com/images/M/MV5BZmNmMTdhNzItNjM4ZC00NjgxLWIwNWMtMzkxZWZkZWVjMzZkXkEyXkFqcGdeQXVyMzE4MDkyNTA@._V1_FMjpg_UX1000_.jpg",
+    land:"https://i.ytimg.com/vi/D143i8X92MA/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLCFeBGWcYAiQSHofvMhZ6EL-JPaGQ"
+  },
+  title: "Boys Over Flowers",
+  description:"Poor girl attends the elite Shin Hwa High and is bullied by the leader of F4 (the four richest boys). He becomes attracted to her; however, she has a crush on his best friend. Whom will she choose?",
+  cast:[],
+  videoYTId:"hi3j3x7UCUk",
+  rating:"9.1/10",
+  uploadedOn: "January 01 2012",
+  note:"",
+  view:0
+},
+//boys over flowers episode 2
+{
+  _id: "BOF22H859",
+  episode_id:"episode 2",
+  categoryName:"Shows",
+  categoryType:"Drama",
+  language:"Hindi",
+  creator: "Korean drama",
+  duration:"1hr 4min 19sec",
+  year:"2012",
+  UA:'5+',
+  creatorLogo: {
+    altText: "Korean drama logo",
+    url: "https://yt3.ggpht.com/ytc/AKedOLTgFFnpTV9DpCxQiwfv9iVq2o9xKWFOajXKrOkd=s88-c-k-c0x00ffffff-no-rj",
+  },
+  thumbnail: {
+    altText: "Boys Over Flowers Thumbnail",
+    url: "https://m.media-amazon.com/images/M/MV5BZmNmMTdhNzItNjM4ZC00NjgxLWIwNWMtMzkxZWZkZWVjMzZkXkEyXkFqcGdeQXVyMzE4MDkyNTA@._V1_FMjpg_UX1000_.jpg",
+    land:"https://i.ytimg.com/vi/DtRDirOc15o/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC3pi0qd_t-nLgk3avi8dDaTNlMhg"
+  },
+  title: "Boys Over Flowers",
+  description:"Not too eager to watch Jan Di dancing with one of his best friends, Jun Pyo exits the ballroom and ends up taking out his frustrations by the poolside.",
+  cast:[],
+  videoYTId:"DtRDirOc15o",
+  rating:"9.1/10",
+  uploadedOn: "January 01 2012",
+  note:"",
+  view:0
+},
+//boys over flowers episode 3
+{
+  _id: "BOF33H859",
+  episode_id:"episode 3",
+  categoryName:"Shows",
+  categoryType:"Drama",
+  language:"Hindi",
+  creator: "Korean drama",
+  duration:"1hr 4min 19sec",
+  year:"2012",
+  UA:'5+',
+  creatorLogo: {
+    altText: "Korean drama logo",
+    url: "https://yt3.ggpht.com/ytc/AKedOLTgFFnpTV9DpCxQiwfv9iVq2o9xKWFOajXKrOkd=s88-c-k-c0x00ffffff-no-rj",
+  },
+  thumbnail: {
+    altText: "Boys Over Flowers Thumbnail",
+    url: "https://m.media-amazon.com/images/M/MV5BZmNmMTdhNzItNjM4ZC00NjgxLWIwNWMtMzkxZWZkZWVjMzZkXkEyXkFqcGdeQXVyMzE4MDkyNTA@._V1_FMjpg_UX1000_.jpg",
+    land:"https://i.ytimg.com/vi/GzQ4IYHpnKc/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBaHi2M_meOubaTkLxZ90o4XizunA"
+  },
+  title: "Boys Over Flowers",
+  description:"Making a sudden decision, Jan-di tells her mother she has to go somewhere and runs off, heading toward Namsan Tower.",
+  cast:[],
+  videoYTId:"GzQ4IYHpnKc",
+  rating:"9.1/10",
+  uploadedOn: "January 01 2012",
+  note:"",
+  view:0
+},
+//boys over flowers episode 4
+{
+  _id: "BOF44H859",
+  episode_id:"episode 4",
+  categoryName:"Shows",
+  categoryType:"Drama",
+  language:"Hindi",
+  creator: "Korean drama",
+  duration:"1hr 4min 19sec",
+  year:"2012",
+  UA:'5+',
+  creatorLogo: {
+    altText: "Korean drama logo",
+    url: "https://yt3.ggpht.com/ytc/AKedOLTgFFnpTV9DpCxQiwfv9iVq2o9xKWFOajXKrOkd=s88-c-k-c0x00ffffff-no-rj",
+  },
+  thumbnail: {
+    altText: "Boys Over Flowers Thumbnail",
+    url: "https://m.media-amazon.com/images/M/MV5BZmNmMTdhNzItNjM4ZC00NjgxLWIwNWMtMzkxZWZkZWVjMzZkXkEyXkFqcGdeQXVyMzE4MDkyNTA@._V1_FMjpg_UX1000_.jpg",
+    land:"https://i.ytimg.com/vi/f7In5uNMWZQ/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAexrWf5b9TSWJHvElrTzOJdYQMkw"
+  },
+  title: "Boys Over Flowers",
+  description:"Jan-di's bike is set on fire while she is assaulted with water balloons and blasted with a fire extinguisher.",
+  cast:[],
+  videoYTId:"f7In5uNMWZQ",
+  rating:"9.1/10",
+  uploadedOn: "January 01 2012",
+  note:"",
+  view:0
+},
+//boys over flowers episode 5
+{
+  _id: "BOF55H859",
+  episode_id:"episode 5",
+  categoryName:"Shows",
+  categoryType:"Drama",
+  language:"Hindi",
+  creator: "Korean drama",
+  duration:"1hr 4min 19sec",
+  year:"2012",
+  UA:'5+',
+  creatorLogo: {
+    altText: "Korean drama logo",
+    url: "https://yt3.ggpht.com/ytc/AKedOLTgFFnpTV9DpCxQiwfv9iVq2o9xKWFOajXKrOkd=s88-c-k-c0x00ffffff-no-rj",
+  },
+  thumbnail: {
+    altText: "Boys Over Flowers Thumbnail",
+    url: "https://m.media-amazon.com/images/M/MV5BZmNmMTdhNzItNjM4ZC00NjgxLWIwNWMtMzkxZWZkZWVjMzZkXkEyXkFqcGdeQXVyMzE4MDkyNTA@._V1_FMjpg_UX1000_.jpg",
+    land:"https://i.ytimg.com/vi/kzUb6TeBHKI/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCGMiZF9uBQ0iE7eVVFJcBTU6Pgkw"
+  },
+  title: "Boys Over Flowers",
+  description:"A questionable psychic foresees that Jan Di will be losing something significant but she pays no heed to it.",
+  cast:[],
+  videoYTId:"kzUb6TeBHKI",
+  rating:"9.1/10",
+  uploadedOn: "January 01 2012",
+  note:"",
+  view:0
+},
+//boys over flowers episode 6
+{
+  _id: "BOF66H859",
+  episode_id:"episode 6",
+  categoryName:"Shows",
+  categoryType:"Drama",
+  language:"Hindi",
+  creator: "Korean drama",
+  duration:"1hr 4min 19sec",
+  year:"2012",
+  UA:'5+',
+  creatorLogo: {
+    altText: "Korean drama logo",
+    url: "https://yt3.ggpht.com/ytc/AKedOLTgFFnpTV9DpCxQiwfv9iVq2o9xKWFOajXKrOkd=s88-c-k-c0x00ffffff-no-rj",
+  },
+  thumbnail: {
+    altText: "Boys Over Flowers Thumbnail",
+    url: "https://m.media-amazon.com/images/M/MV5BZmNmMTdhNzItNjM4ZC00NjgxLWIwNWMtMzkxZWZkZWVjMzZkXkEyXkFqcGdeQXVyMzE4MDkyNTA@._V1_FMjpg_UX1000_.jpg",
+    land:"https://i.ytimg.com/vi/iawUG8IXGgw/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAZthFRTogvGpN0qp2QL0jEF_RUqw"
+  },
+  title: "Boys Over Flowers",
+  description:"Jun-pyo comes up with a plan to get his best friend and Jan-di expelled from Shinhwa High School, and kicked out of F4.",
+  cast:[],
+  videoYTId:"iawUG8IXGgw",
+  rating:"9.1/10",
+  uploadedOn: "January 01 2012",
+  note:"",
+  view:0
+},
+//boys over flowers episode 7
+{
+  _id: "BOF77H859",
+  episode_id:"episode 7",
+  categoryName:"Shows",
+  categoryType:"Drama",
+  language:"Hindi",
+  creator: "Korean drama",
+  duration:"1hr 4min 19sec",
+  year:"2012",
+  UA:'5+',
+  creatorLogo: {
+    altText: "Korean drama logo",
+    url: "https://yt3.ggpht.com/ytc/AKedOLTgFFnpTV9DpCxQiwfv9iVq2o9xKWFOajXKrOkd=s88-c-k-c0x00ffffff-no-rj",
+  },
+  thumbnail: {
+    altText: "Boys Over Flowers Thumbnail",
+    url: "https://m.media-amazon.com/images/M/MV5BZmNmMTdhNzItNjM4ZC00NjgxLWIwNWMtMzkxZWZkZWVjMzZkXkEyXkFqcGdeQXVyMzE4MDkyNTA@._V1_FMjpg_UX1000_.jpg",
+    land:"https://i.ytimg.com/vi/DKKtqLsXun0/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB6yR52-rPwqQFiFWAuhRii5biGqg"
+  },
+  title: "Boys Over Flowers",
+  description:"Jan-di hears that Jun-pyo was in an accident and immediately rushes to the hospital to check up on him.",
+  cast:[],
+  videoYTId:"DKKtqLsXun0",
+  rating:"9.1/10",
+  uploadedOn: "January 01 2012",
+  note:"",
+  view:0
+},
 
+//Tu Tu Main Main episode 1
+{
+  _id: "TUTU11H859",
+  episode_id:"episode 1",
+  categoryName:"Shows",
+  categoryType:"Drama",
+  language:"Hindi",
+  creator: "ONLY OLD TV BOX",
+  duration:"20min 19sec",
+  year:"2012",
+  UA:'5+',
+  creatorLogo: {
+    altText: "ONLY OLD TV BOX logo",
+    url: "https://yt3.ggpht.com/ytc/AKedOLQVQpdiW3WUoZVNNu8PZFqMeMsl7bIjg1u_MPfK=s88-c-k-c0x00ffffff-no-rj",
+  },
+  thumbnail: {
+    altText: "Tu Tu Main Main Thumbnail",
+    url: "https://m.media-amazon.com/images/M/MV5BZDNiMjA3YjItOTE1ZS00YzM5LThiZTAtZGViNzJjZDRhODA3XkEyXkFqcGdeQXVyNDc0MDgzNTE@._V1_FMjpg_UX1000_.jpg",
+    land:"https://i.ytimg.com/vi/9YdR3_a8PjM/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAhnGlpVpSkI8juUNxApix5ZEttAQ"
+  },
+  title: "Tu Tu Main Main",
+  description:"A hilarious comedy featuring a dominant mother-in-law and her equally boisterous daughter-in-law.",
+  cast:[],
+  videoYTId:"9YdR3_a8PjM",
+  rating:"9.1/10",
+  uploadedOn: "January 01 2012",
+  note:"",
+  view:0
+},
+//Tu Tu Main Main episode 2
+{
+  _id: "TUTU22H859",
+  episode_id:"episode 2",
+  categoryName:"Shows",
+  categoryType:"Drama",
+  language:"Hindi",
+  creator: "ONLY OLD TV BOX",
+  duration:"20 min 19sec",
+  year:"2012",
+  UA:'5+',
+  creatorLogo: {
+    altText: "ONLY OLD TV BOX logo",
+    url: "https://yt3.ggpht.com/ytc/AKedOLQVQpdiW3WUoZVNNu8PZFqMeMsl7bIjg1u_MPfK=s88-c-k-c0x00ffffff-no-rj",
+  },
+  thumbnail: {
+    altText: "Tu Tu Main Main Thumbnail",
+    url: "https://m.media-amazon.com/images/M/MV5BZDNiMjA3YjItOTE1ZS00YzM5LThiZTAtZGViNzJjZDRhODA3XkEyXkFqcGdeQXVyNDc0MDgzNTE@._V1_FMjpg_UX1000_.jpg",
+    land:"https://i.ytimg.com/vi/4FczIdSOrHQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBaBLvXrrmYWDSgXcSy01Rf7E7S9A"
+  },
+  title: "Tu Tu Main Main",
+  description:"A hilarious comedy featuring a dominant mother-in-law and her equally boisterous daughter-in-law.",
+  cast:[],
+  videoYTId:"4FczIdSOrHQ",
+  rating:"9.1/10",
+  uploadedOn: "January 01 2012",
+  note:"",
+  view:0
+},
+//Tu Tu Main Main episode 3
+{
+  _id: "TUTU33H859",
+  episode_id:"episode 3",
+  categoryName:"Shows",
+  categoryType:"Drama",
+  language:"Hindi",
+  creator: "ONLY OLD TV BOX",
+  duration:"20 min 19sec",
+  year:"2012",
+  UA:'5+',
+  creatorLogo: {
+    altText: "ONLY OLD TV BOX logo",
+    url: "https://yt3.ggpht.com/ytc/AKedOLQVQpdiW3WUoZVNNu8PZFqMeMsl7bIjg1u_MPfK=s88-c-k-c0x00ffffff-no-rj",
+  },
+  thumbnail: {
+    altText: "Tu Tu Main Main Thumbnail",
+    url: "https://m.media-amazon.com/images/M/MV5BZDNiMjA3YjItOTE1ZS00YzM5LThiZTAtZGViNzJjZDRhODA3XkEyXkFqcGdeQXVyNDc0MDgzNTE@._V1_FMjpg_UX1000_.jpg",
+    land:"https://i.ytimg.com/vi/SLFX85fx0Fg/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCLLajwlsfDksoan60ut-sjqlnXDw"
+  },
+  title: "Tu Tu Main Main",
+  description:"A hilarious comedy featuring a dominant mother-in-law and her equally boisterous daughter-in-law.",
+  cast:[],
+  videoYTId:"SLFX85fx0Fg",
+  rating:"9.1/10",
+  uploadedOn: "January 01 2012",
+  note:"",
+  view:0
+},
+//Tu Tu Main Main episode 4
+{
+  _id: "TUTU44H859",
+  episode_id:"episode 4",
+  categoryName:"Shows",
+  categoryType:"Drama",
+  language:"Hindi",
+  creator: "ONLY OLD TV BOX",
+  duration:"20min 19sec",
+  year:"2012",
+  UA:'5+',
+  creatorLogo: {
+    altText: "ONLY OLD TV BOX logo",
+    url: "https://yt3.ggpht.com/ytc/AKedOLQVQpdiW3WUoZVNNu8PZFqMeMsl7bIjg1u_MPfK=s88-c-k-c0x00ffffff-no-rj",
+  },
+  thumbnail: {
+    altText: "Tu Tu Main Main Thumbnail",
+    url: "https://m.media-amazon.com/images/M/MV5BZDNiMjA3YjItOTE1ZS00YzM5LThiZTAtZGViNzJjZDRhODA3XkEyXkFqcGdeQXVyNDc0MDgzNTE@._V1_FMjpg_UX1000_.jpg",
+    land:"https://i.ytimg.com/vi/dc08xQs8q-Q/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC94rEYkKZchGiMySZADmYlOAHJ3w"
+  },
+  title: "Tu Tu Main Main",
+  description:"A hilarious comedy featuring a dominant mother-in-law and her equally boisterous daughter-in-law.",
+  cast:[],
+  videoYTId:"dc08xQs8q-Q",
+  rating:"9.1/10",
+  uploadedOn: "January 01 2012",
+  note:"",
+  view:0
+},
+//Tu Tu Main Main episode 5
+{
+  _id: "TUTU55H859",
+  episode_id:"episode 5",
+  categoryName:"Shows",
+  categoryType:"Drama",
+  language:"Hindi",
+  creator: "ONLY OLD TV BOX",
+  duration:"1hr 4min 19sec",
+  year:"2012",
+  UA:'5+',
+  creatorLogo: {
+    altText: "ONLY OLD TV BOX logo",
+    url: "https://yt3.ggpht.com/ytc/AKedOLQVQpdiW3WUoZVNNu8PZFqMeMsl7bIjg1u_MPfK=s88-c-k-c0x00ffffff-no-rj",
+  },
+  thumbnail: {
+    altText: "Tu Tu Main Main Thumbnail",
+    url: "https://m.media-amazon.com/images/M/MV5BZDNiMjA3YjItOTE1ZS00YzM5LThiZTAtZGViNzJjZDRhODA3XkEyXkFqcGdeQXVyNDc0MDgzNTE@._V1_FMjpg_UX1000_.jpg",
+    land:"https://i.ytimg.com/vi/P-3GY9zOkmQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB2ah1ImTO9u5po4kSyue00gpEAjQ"
+  },
+  title: "Tu Tu Main Main",
+  description:"A hilarious comedy featuring a dominant mother-in-law and her equally boisterous daughter-in-law.",
+  cast:[],
+  videoYTId:"P-3GY9zOkmQ",
+  rating:"9.1/10",
+  uploadedOn: "January 01 2012",
+  note:"",
+  view:0
+},
+//Tu Tu Main Main episode 6
+{
+  _id: "TUTU66H859",
+  episode_id:"episode 6",
+  categoryName:"Shows",
+  categoryType:"Drama",
+  language:"Hindi",
+  creator: "ONLY OLD TV BOX",
+  duration:"1hr 4min 19sec",
+  year:"2012",
+  UA:'5+',
+  creatorLogo: {
+    altText: "ONLY OLD TV BOX logo",
+    url: "https://yt3.ggpht.com/ytc/AKedOLQVQpdiW3WUoZVNNu8PZFqMeMsl7bIjg1u_MPfK=s88-c-k-c0x00ffffff-no-rj",
+  },
+  thumbnail: {
+    altText: "Tu Tu Main Main Thumbnail",
+    url: "https://m.media-amazon.com/images/M/MV5BZDNiMjA3YjItOTE1ZS00YzM5LThiZTAtZGViNzJjZDRhODA3XkEyXkFqcGdeQXVyNDc0MDgzNTE@._V1_FMjpg_UX1000_.jpg",
+    land:"https://i.ytimg.com/vi/f96DCgCRXJQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBZQenO7eZpVeCPzKf6BhlaKStR8Q"
+  },
+  title: "Tu Tu Main Main",
+  description:"A hilarious comedy featuring a dominant mother-in-law and her equally boisterous daughter-in-law.",
+  cast:[],
+  videoYTId:"f96DCgCRXJQ",
+  rating:"9.1/10",
+  uploadedOn: "January 01 2012",
+  note:"",
+  view:0
+},
+//Tu Tu Main Main episode 7
+{
+  _id: "TUTU77H859",
+  episode_id:"episode 7",
+  categoryName:"Shows",
+  categoryType:"Drama",
+  language:"Hindi",
+  creator: "ONLY OLD TV BOX",
+  duration:"1hr 4min 19sec",
+  year:"2012",
+  UA:'5+',
+  creatorLogo: {
+    altText: "ONLY OLD TV BOX logo",
+    url: "https://yt3.ggpht.com/ytc/AKedOLQVQpdiW3WUoZVNNu8PZFqMeMsl7bIjg1u_MPfK=s88-c-k-c0x00ffffff-no-rj",
+  },
+  thumbnail: {
+    altText: "Tu Tu Main Main Thumbnail",
+    url: "https://m.media-amazon.com/images/M/MV5BZDNiMjA3YjItOTE1ZS00YzM5LThiZTAtZGViNzJjZDRhODA3XkEyXkFqcGdeQXVyNDc0MDgzNTE@._V1_FMjpg_UX1000_.jpg",
+    land:"https://i.ytimg.com/vi/fkBsjqWoHg0/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBsK-rpZJDKdqyeQqCgY4o_DWjhbA"
+  },
+  title: "Tu Tu Main Main",
+  description:"A hilarious comedy featuring a dominant mother-in-law and her equally boisterous daughter-in-law.",
+  cast:[],
+  videoYTId:"fkBsjqWoHg0",
+  rating:"9.1/10",
+  uploadedOn: "January 01 2012",
+  note:"",
+  view:0
+},
+//Shaktimaan
+{
+  _id: "Shakti123411",
+  episode_id:"episode 1",
+  categoryName:"Shows",
+  categoryType:"Super hero",
+  language:"Hindi",
+  creator: "Ultra Bollywood",
+  duration:"43 min",
+  year:"2000",
+  UA:'5+',
+  creatorLogo: {
+    altText: "Ultra Bollywood logo",
+    url: "https://yt3.ggpht.com/ytc/AKedOLSuq5Ow1BSKYDsINF7V16dNt3jQD5VBy_DKfPNN=s68-c-k-c0x00ffffff-no-rj",
+  },
+  thumbnail: {
+    altText: "Shaktimaan Thumbnail",
+    url: "https://m.media-amazon.com/images/M/MV5BYzQyYmE2NDItZTBlZS00MmEyLWI4MjctMWM1NWVkY2MxNzg3XkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_FMjpg_UX1000_.jpg",
+    land:"https://i.ytimg.com/vi/OgrZ2ofIcT8/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDEGJfIzj9HUGamSuLIEBDnUwQ6Fg"
+  },
+  title: "Shaktiman",
+  description:"Shaktimaan is the Indian Super Hero who has been an icon for kids in India. Shaktimaan in his heroic avatar will be a powerhouse dedicated towards fighting against evil plans and saving the human kind. Shaktimaan is one among us, a young man with a good heart, standing tall as a savior of humanity, reminding us of who we are while unearthing and uprooting all evil, with a single purpose of saving this world, saving his world.",
+  cast:[],
+  videoYTId:"uOleNIC8Spg",
+  rating:"9.1/10",
+  uploadedOn: "January 01 2000",
+  note:"",
+  view:0
+},
+{
+  _id: "Shakti123422",
+  episode_id:"episode 2",
+  categoryName:"Shows",
+  categoryType:"Super hero",
+  language:"Hindi",
+  creator: "Ultra Bollywood",
+  duration:"43 min",
+  year:"2000",
+  UA:'5+',
+  creatorLogo: {
+    altText: "Ultra Bollywood logo",
+    url: "https://yt3.ggpht.com/ytc/AKedOLSuq5Ow1BSKYDsINF7V16dNt3jQD5VBy_DKfPNN=s68-c-k-c0x00ffffff-no-rj",
+  },
+  thumbnail: {
+    altText: "Shaktimaan Thumbnail",
+    url: "https://m.media-amazon.com/images/M/MV5BYzQyYmE2NDItZTBlZS00MmEyLWI4MjctMWM1NWVkY2MxNzg3XkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_FMjpg_UX1000_.jpg",
+    land:"https://i.ytimg.com/vi/TtkfCEUFkzY/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCQZrhZ48XR5Qfoc2xZOkEY-y8xPg"
+  },
+  title: "Shaktiman",
+  description:"Shaktimaan is the Indian Super Hero who has been an icon for kids in India. Shaktimaan in his heroic avatar will be a powerhouse dedicated towards fighting against evil plans and saving the human kind. Shaktimaan is one among us, a young man with a good heart, standing tall as a savior of humanity, reminding us of who we are while unearthing and uprooting all evil, with a single purpose of saving this world, saving his world.",
+  cast:[],
+  videoYTId:"TjXcAWSa7vQ",
+  rating:"9.1/10",
+  uploadedOn: "January 01 2000",
+  note:"",
+  view:0
+},
+{
+  _id: "Shakti123433",
+  episode_id:"episode 3",
+  categoryName:"Shows",
+  categoryType:"Super hero",
+  language:"Hindi",
+  creator: "Ultra Bollywood",
+  duration:"43 min",
+  year:"2000",
+  UA:'5+',
+  creatorLogo: {
+    altText: "Ultra Bollywood logo",
+    url: "https://yt3.ggpht.com/ytc/AKedOLSuq5Ow1BSKYDsINF7V16dNt3jQD5VBy_DKfPNN=s68-c-k-c0x00ffffff-no-rj",
+  },
+  thumbnail: {
+    altText: "Shaktimaan Thumbnail",
+    url: "https://m.media-amazon.com/images/M/MV5BYzQyYmE2NDItZTBlZS00MmEyLWI4MjctMWM1NWVkY2MxNzg3XkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_FMjpg_UX1000_.jpg",
+    land:"https://i.ytimg.com/vi/iwgZMdH_LdY/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCEFMzS9vQF3ctIuynrgkRFBx50qQ"
+  },
+  title: "Shaktiman",
+  description:"Shaktimaan is the Indian Super Hero who has been an icon for kids in India. Shaktimaan in his heroic avatar will be a powerhouse dedicated towards fighting against evil plans and saving the human kind. Shaktimaan is one among us, a young man with a good heart, standing tall as a savior of humanity, reminding us of who we are while unearthing and uprooting all evil, with a single purpose of saving this world, saving his world.",
+  cast:[],
+  videoYTId:"DQuDVLm5QXc",
+  rating:"9.1/10",
+  uploadedOn: "January 01 2000",
+  note:"",
+  view:0
+},
+{
+  _id: "Shakti123444",
+  episode_id:"episode 4",
+  categoryName:"Shows",
+  categoryType:"Super hero",
+  language:"Hindi",
+  creator: "Ultra Bollywood",
+  duration:"43 min",
+  year:"2000",
+  UA:'5+',
+  creatorLogo: {
+    altText: "Ultra Bollywood logo",
+    url: "https://yt3.ggpht.com/ytc/AKedOLSuq5Ow1BSKYDsINF7V16dNt3jQD5VBy_DKfPNN=s68-c-k-c0x00ffffff-no-rj",
+  },
+  thumbnail: {
+    altText: "Shaktimaan Thumbnail",
+    url: "https://m.media-amazon.com/images/M/MV5BYzQyYmE2NDItZTBlZS00MmEyLWI4MjctMWM1NWVkY2MxNzg3XkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_FMjpg_UX1000_.jpg",
+    land:"https://i.ytimg.com/vi/wAyq10R4UBc/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCZuRR4R_n2jwyen4Q0IXnVKsWfng"
+  },
+  title: "Shaktiman",
+  description:"Shaktimaan is the Indian Super Hero who has been an icon for kids in India. Shaktimaan in his heroic avatar will be a powerhouse dedicated towards fighting against evil plans and saving the human kind. Shaktimaan is one among us, a young man with a good heart, standing tall as a savior of humanity, reminding us of who we are while unearthing and uprooting all evil, with a single purpose of saving this world, saving his world.",
+  cast:[],
+  videoYTId:"ilF-4DbczNk",
+  rating:"9.1/10",
+  uploadedOn: "January 01 2000",
+  note:"",
+  view:0
+},
+{
+  _id: "Shakti123555",
+  episode_id:"episode 5",
+  categoryName:"Shows",
+  categoryType:"Super hero",
+  language:"Hindi",
+  creator: "Ultra Bollywood",
+  duration:"43 min",
+  year:"2000",
+  UA:'5+',
+  creatorLogo: {
+    altText: "Ultra Bollywood logo",
+    url: "https://yt3.ggpht.com/ytc/AKedOLSuq5Ow1BSKYDsINF7V16dNt3jQD5VBy_DKfPNN=s68-c-k-c0x00ffffff-no-rj",
+  },
+  thumbnail: {
+    altText: "Shaktimaan Thumbnail",
+    url: "https://m.media-amazon.com/images/M/MV5BYzQyYmE2NDItZTBlZS00MmEyLWI4MjctMWM1NWVkY2MxNzg3XkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_FMjpg_UX1000_.jpg",
+    land:"https://i.ytimg.com/vi/G4Cfv4mLshE/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDQ-6kP5KAwMJOkbQ2OiCMqsh9YYg"
+  },
+  title: "Shaktiman",
+  description:"Shaktimaan is the Indian Super Hero who has been an icon for kids in India. Shaktimaan in his heroic avatar will be a powerhouse dedicated towards fighting against evil plans and saving the human kind. Shaktimaan is one among us, a young man with a good heart, standing tall as a savior of humanity, reminding us of who we are while unearthing and uprooting all evil, with a single purpose of saving this world, saving his world.",
+  cast:[],
+  videoYTId:"G4Cfv4mLshE",
+  rating:"9.1/10",
+  uploadedOn: "January 01 2000",
+  note:"",
+  view:0
+},
+{
+  _id: "Shakti12666",
+  episode_id:"episode 6",
+  categoryName:"Shows",
+  categoryType:"Super hero",
+  language:"Hindi",
+  creator: "Ultra Bollywood",
+  duration:"43 min",
+  year:"2000",
+  UA:'5+',
+  creatorLogo: {
+    altText: "Ultra Bollywood logo",
+    url: "https://yt3.ggpht.com/ytc/AKedOLSuq5Ow1BSKYDsINF7V16dNt3jQD5VBy_DKfPNN=s68-c-k-c0x00ffffff-no-rj",
+  },
+  thumbnail: {
+    altText: "Shaktimaan Thumbnail",
+    url: "https://m.media-amazon.com/images/M/MV5BYzQyYmE2NDItZTBlZS00MmEyLWI4MjctMWM1NWVkY2MxNzg3XkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_FMjpg_UX1000_.jpg",
+    land:"https://i.ytimg.com/vi/m1pnM3jHO9k/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDA0laHROFgUDFTA59ql8-oS-3rvA"
+  },
+  title: "Shaktiman",
+  description:"Shaktimaan is the Indian Super Hero who has been an icon for kids in India. Shaktimaan in his heroic avatar will be a powerhouse dedicated towards fighting against evil plans and saving the human kind. Shaktimaan is one among us, a young man with a good heart, standing tall as a savior of humanity, reminding us of who we are while unearthing and uprooting all evil, with a single purpose of saving this world, saving his world.",
+  cast:[],
+  videoYTId:"9Lza8ZTTICw",
+  rating:"9.1/10",
+  uploadedOn: "January 01 2000",
+  note:"",
+  view:0
+},
+{
+  _id: "Shakti12777",
+  episode_id:"episode 7",
+  categoryName:"Shows",
+  categoryType:"Super hero",
+  language:"Hindi",
+  creator: "Ultra Bollywood",
+  duration:"43 min",
+  year:"2000",
+  UA:'5+',
+  creatorLogo: {
+    altText: "Ultra Bollywood logo",
+    url: "https://yt3.ggpht.com/ytc/AKedOLSuq5Ow1BSKYDsINF7V16dNt3jQD5VBy_DKfPNN=s68-c-k-c0x00ffffff-no-rj",
+  },
+  thumbnail: {
+    altText: "Shaktimaan Thumbnail",
+    url: "https://m.media-amazon.com/images/M/MV5BYzQyYmE2NDItZTBlZS00MmEyLWI4MjctMWM1NWVkY2MxNzg3XkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_FMjpg_UX1000_.jpg",
+    land:"https://i.ytimg.com/vi/XVomtXhq4R0/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC1MgS9mMhs3m2Pk7a4zn_J2xX4OA"
+  },
+  title: "Shaktiman",
+  description:"Shaktimaan is the Indian Super Hero who has been an icon for kids in India. Shaktimaan in his heroic avatar will be a powerhouse dedicated towards fighting against evil plans and saving the human kind. Shaktimaan is one among us, a young man with a good heart, standing tall as a savior of humanity, reminding us of who we are while unearthing and uprooting all evil, with a single purpose of saving this world, saving his world.",
+  cast:[],
+  videoYTId:"8KFqk0M2yfk",
+  rating:"9.1/10",
+  uploadedOn: "January 01 2000",
+  note:"",
+  view:0
+},
 ];

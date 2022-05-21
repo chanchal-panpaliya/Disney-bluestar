@@ -60,13 +60,14 @@ const VideoCard=({data})=>{
 
 
 const VideoListCard=({data})=>{
-    let {addwatchlist,removedwatchlist,watchlist} = useContext(VideoContext)
+    let {addwatchlist,removedwatchlist,watchlist,viewcount} = useContext(VideoContext)
     let {token} = useAuth()
     const [ispalylistmodal,setpaylist]=useState(false)
     const [ismodal,setmodal]=useState(false)
     
-    let check = watchlist.length>0 && watchlist.find(item=>item._id === data._id)  
-
+    let check = watchlist.length>0 && watchlist.find(item=>item._id === data._id) 
+    let getview = viewcount.length>0 && viewcount.filter((item)=>item._id===data._id) 
+     console.log("card===>",getview)
     return(
         <>
         <div className='card videolist-card' style={{overflow:'unset'}}> 
@@ -75,12 +76,12 @@ const VideoListCard=({data})=>{
                     <label> {data.duration} </label>
                </div>
                <Link to={"/videolist/"+data._id} > 
-                    <img className='videolist-img' src={data.thumbnail.land} /> 
+                    <img className='videolist-img' src={data.thumbnail.land} onClick={()=>{window.scrollTo({ behavior: 'smooth', top: '0px' });}}/> 
                </Link>
                <div className="videolist-content">
                    
                    <img className='videolist-smallimg border-radius-round' src={data.creatorLogo.url} atl={data.creatorLogo.altText}/>
-                   <div className="video-card-title"> {data.title} </div>
+                   <div className="video-card-title"> {data.title} | {getview.length>0?`${getview[0].view} views`:null}  </div>
  
                    <div className="video-card-bottom video-more">
                         <button className="fa-solid fa-ellipsis-vertical videolist-button-more"> </button>
@@ -112,7 +113,7 @@ const VideoListCard=({data})=>{
 const Vertical_Slider_Card=({data})=>{
     return(
         <div className='videolist-card'> 
-               <Link to={"/videolist/"+data._id} > 
+               <Link to={"/videolist/"+data._id} onClick={()=>{window.scrollTo({ behavior: 'smooth', top: '0px' });}}> 
                     <img className='videolist-img' src={data.thumbnail.land} /> 
                </Link>
                <div className="videolist-content">
@@ -155,14 +156,14 @@ const EpisodeVideoListCard=({data})=>{
                                         }
                             </div>  
                     </div>
-               <Link to={"/videolist/"+data._id}> 
+               <Link to={"/videolist/"+data._id} onClick={()=>{window.scrollTo({ behavior: 'smooth', top: '0px' });}}> 
                     <img className='videolist-img' src={data.thumbnail.land}/> 
                </Link>
                <div className="videolist-content">
                    <img className='videolist-smallimg border-radius-round' src={data.creatorLogo.url} atl={data.creatorLogo.altText}/>
                    <div className="video-card-title"> 
                         <label className='--background'> {data.title} </label>
-                        <label className='--background'> ({data.episode_id}) </label> 
+                        <label className='--background'>  {data.episode_id!=="" && `(${data.episode_id})` }</label> 
                    </div>
                </div> 
         </div>

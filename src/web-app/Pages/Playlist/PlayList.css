@@ -191,7 +191,7 @@
 }
 
 .palylist-active{
-    background: var(--BRAND_BLUE);
+    background:#84848b5e;
 }
 
 @media (max-width: 800px) {

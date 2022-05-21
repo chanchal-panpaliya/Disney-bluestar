@@ -35,7 +35,7 @@
   }
 
   .page-container-userprofile{
-    height: 100vh;
+    /* height: 100vh; */
     padding: 0;
 }
 
@@ -45,7 +45,6 @@
     flex-direction: column;
     width: auto;
     height: -webkit-fill-available;
-    padding: 0;
 }
 
 .like-page-header-userprofile{
@@ -75,6 +74,7 @@
     justify-content: center;
     align-items: center;
     background: transparent;
+    padding: 5rem;
 }
 
 .like-page-card-grid-userprofile{
@@ -93,7 +93,7 @@
     .page-data-display-userprofile{
         flex-direction: column;
         width: -webkit-fill-available;
-        height: 100vh;
+        /* height: 100vh; */
     }
 
     .like-page-round-circle-userprofile{

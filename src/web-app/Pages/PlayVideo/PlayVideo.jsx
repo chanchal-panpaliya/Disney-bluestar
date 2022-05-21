@@ -163,21 +163,30 @@ const PlayVideo =()=>{
                                     }
                             </div>
                             </div>
+
+                            {
+                                data.categoryName === "Shows" ? 
+                                <div className='slider-container --background'>
+                                <h4 className='slider-label --background'> All Episodes </h4> 
+                                </div>
+                                : null
+                            }
+                            
                             {
                               data.categoryName === "Shows" ? 
-                                 <div className='slider-container'>
-                                    <h4 className='slider-label'> episodes </h4>
-                                    <div className='horizontal-slider'> 
+                                    <div className='horizontal-slider --background'> 
                                         <SliderCard type="show" cardlist={alldata.length>0 ? alldata.filter((item)=>item.title === data.title) : []}/>  
-                                    </div>
-                                 </div>
-                                 
+                                    </div>                                 
                                 : null
                             }
                            
 
                         </div>
 
+                        <div className='slider-container --background'>
+                                <h4 className='slider-label --background'> More Like This </h4> 
+                        </div>
+                        
                         {
                            data.categoryName === "Shows" ? 
                            <div className='horizontal-slider'> 

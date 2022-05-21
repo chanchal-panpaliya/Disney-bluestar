@@ -60,26 +60,6 @@ const render_categoryType=(data)=>{
  </div>)
 }
 
-
-// const render_categoryType=(data)=>{
-//    return (
-//     <div className="main-slider-container">
-//     <button style={{display:'none'}} className="slider-icon left" onClick={handlescrollcardLeft}> <i class="fa-solid fa-arrow-left"></i> </button>
-//     <div className="slider --background" style={{scrollLeft:scrollcard,background:"none"}} ref={containerRef}>
-//     <button className={filter.categoryType==="All"?"badge-onselect":"badge-not"}  onClick={()=>{filter_dispatch({type:"CATEGORY_TYPE",payload:"All"})}}> All </button>
-//        {
-//          checklist.length>0 && checklist.map((item,index)=>{
-//           return <>
-//           <button className={filter.categoryType===item?"badge-onselect":"badge-not"}  key={index} onClick={()=>{filter_dispatch({type:"CATEGORY_TYPE",payload:item})}}> {item} </button>
-//           </>
-//        })
-//         }
-//     </div>
-//     <button  style={{display:'none'}} className="slider-icon right" onClick={handlescrollcardRight}> <i class="fa-solid fa-arrow-right"></i> </button>
-// </div>
-//    )
-//   }
-
   return(
       <div className='filter-conatiner --background'>
            {render_categoryType(data)}

@@ -167,6 +167,10 @@ const SinglePage =()=>{
                            
                         </div>
                          
+                        <div className='slider-container --background'>
+                                <h4 className='slider-label --background'> More Like This </h4> 
+                        </div>
+
                         {
                            data.categoryName === "Shows" ? 
                            <div className='horizontal-slider'> 
