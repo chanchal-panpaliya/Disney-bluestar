@@ -7,8 +7,10 @@ import Header from 'web-app/Component/Header/Header';
 import Footer from 'web-app/Component/Footer/Footer';
 import liked_img from '../../img/images/temp/history.png';
 import VideoContext from 'web-app/Context/video/VideoContext';
+import { useNavigate } from 'react-router-dom';
 
 const History=()=>{
+  let navigator = useNavigate();
   let {remove_history,removed_all_historys} = useContext(VideoContext);
   let {token} = useAuth()
   const[data,setdata]=useState([])
