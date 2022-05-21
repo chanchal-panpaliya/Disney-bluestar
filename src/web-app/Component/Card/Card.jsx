@@ -64,10 +64,8 @@ const VideoListCard=({data})=>{
     let {token} = useAuth()
     const [ispalylistmodal,setpaylist]=useState(false)
     const [ismodal,setmodal]=useState(false)
-    
     let check = watchlist.length>0 && watchlist.find(item=>item._id === data._id) 
     let getview = viewcount.length>0 && viewcount.filter((item)=>item._id===data._id) 
-     console.log("card===>",getview)
     return(
         <>
         <div className='card videolist-card' style={{overflow:'unset'}}> 
