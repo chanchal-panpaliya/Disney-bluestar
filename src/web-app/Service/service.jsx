@@ -437,7 +437,6 @@ export function addNewVideoHandler( token, uploadvideo ,Add_Uploaded_Video) {
             headers: { authorization: token },
         }
     ).then((res)=>{
-        console.log(res)
         Add_Uploaded_Video(res.data.uploadedvideo)
     });       
 }
