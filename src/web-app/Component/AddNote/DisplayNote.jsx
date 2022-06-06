@@ -2,19 +2,24 @@ import './AddNote.css';
 import { getNotesService } from 'web-app/Service/service';
 import {useState,useEffect} from "react";
 import { NoteCard } from '../Card/NoteCard';
-import { useAuth } from 'web-app/Context/login/AuthContext';
 import {Auth_Modal,AddNote_Modal} from '../../Component/Modal/Modal';
+//redux
+import { useDispatch, useSelector } from "react-redux";
+import { getNoteData } from '../../Redux/Reducer/noteSlice';
+
+
 const DisplayNote =({id,closeNote,sidemenu})=>{
-    let {token,user} = useAuth()
     const [noteList,SetnoteList] = useState([]);
     const [isaddnote,setnote]=useState(false)
     const [ismodal,setmodal]=useState(false)
+    //redux
+    const { notelist } = useSelector((store) => store.note);
+    const { token , user } = useSelector((store) => store.authentication);
+    const dispatch = useDispatch();
 
     useEffect(()=>{
         let time2 = setTimeout(()=>{
-            getNotesService(token,id).then((res)=>{
-                SetnoteList(res.data.notes)
-            })
+            dispatch(getNoteData([token,id]))
         },0)
         return ()=>clearTimeout(time2)
     },[noteList,SetnoteList])    
@@ -38,7 +43,7 @@ return(
                     </div> 
                     <div className='padding-1rem flex-col row-gap-2rem'>
                                {
-                                    noteList.length>0 && noteList.map((item,index)=>{
+                                    notelist.length>0 && notelist.map((item,index)=>{
                                         return  <NoteCard data={item} key={index}/>
                                     })
                                 }

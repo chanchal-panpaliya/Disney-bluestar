@@ -3,8 +3,7 @@ import '../Home/Home.css';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState ,useContext} from 'react';
 //service
-import { fetch_single_video,fetchAllVideoData ,handler_addWatchLater ,handler_removeWatchLater 
-         ,addVideoToLikedVideos,removeFromlikedVideos,handler_addVideoHistory} from '../../Service/service';
+import { fetch_single_video,fetchAllVideoData} from '../../Service/service';
 //component
 import Header from '../../Component/Header/Header';
 import Footer from '../../Component/Footer/Footer';
@@ -12,16 +11,31 @@ import SliderCard from '../../Component/SliderCard/SliderCard';
 import { Playlist_Modal ,Auth_Modal,AddNote_Modal,ShareModal} from '../../Component/Modal/Modal';
 //
 import VideoContext from 'web-app/Context/video/VideoContext';
-import { useAuth } from 'web-app/Context/login/AuthContext';
 //
 import DisplayNote from 'web-app/Component/AddNote/DisplayNote';
+//redux
+import { addLikedData ,removeLikedData } from '../../Redux/Reducer/likeSlice';
+import { addWatchlistData , removeWatchlistData } from '../../Redux/Reducer/watchSlice';
+
+import { useDispatch, useSelector } from "react-redux";
+
 const PlayVideo =()=>{ 
-    let {addwatchlist,removedwatchlist,watchlist,add_liked,removed_liked,liked,viewcount,uploadedvideo} = useContext(VideoContext)
-    let {token} = useAuth()
+    let { viewcount,toastdispatch} = useContext(VideoContext)
+    //viewcount
+    //let {token} = useAuth()
     const [ispalylistmodal,setpaylist]=useState(false)
     const [ismodal,setmodal]=useState(false)
     const [isaddnote,setnote]=useState(false)
     const [openNoteSidebar,SetopenNoteSidebar] = useState(false)
+
+    //redux
+    const { likedlist } = useSelector((store) => store.likes);
+    const { watchlist } = useSelector((store) => store.watch);
+    const { uploadlist } = useSelector((store) => store.upload);
+    const { token , user } = useSelector((store) => store.authentication);
+
+
+    const dispatch = useDispatch();
 
     const {id} = useParams();
     const [data,setdata]=useState();
@@ -30,10 +44,9 @@ const PlayVideo =()=>{
     const [showdata,setshowdata]=useState([]);
 
 
-    
     useEffect(()=>{
         fetchAllVideoData().then(function(result){
-            let newdata =  uploadedvideo.length>0 ? [...result,...uploadedvideo]  : result 
+            let newdata =  uploadlist.length>0 ? [...result,...uploadlist]  : result 
             setalldata(newdata)
              let filterdata =  newdata.filter(item=> item.categoryName === "Shows")
              if(filterdata.length>0){
@@ -55,7 +68,7 @@ const PlayVideo =()=>{
     useEffect(()=>{
             let time2 = setTimeout(()=>{
                 fetch_single_video(id).then((res)=>{
-                    let check = uploadedvideo.length>0 ? uploadedvideo.find((item)=>item._id===id) : false;
+                    let check = uploadlist.length>0 ? uploadlist.find((item)=>item._id===id) : false;
                     if(check){ 
                         setdata(check)
                     }else{
@@ -97,13 +110,17 @@ const PlayVideo =()=>{
                                        
                                         {renderView(data._id)}
                                        {
-                                            token ? liked.length>0 && liked.find(item=>item._id === data._id)?
+                                            token ? likedlist.length>0 && likedlist.find(item=>item._id === data._id)?
                                             <span className='flex-col row-gap-0.5rem --background'>
-                                                <i style={{color:'green'}} className="fa-solid fa-thumbs-up --background" onClick={()=>removeFromlikedVideos(token, removed_liked, data._id)}></i>
+                                                <i style={{color:'green'}} className="fa-solid fa-thumbs-up --background" 
+                                                onClick={()=>dispatch(removeLikedData([data._id,toastdispatch]))}
+                                                ></i>
                                                 <label className='--background --background'> like </label>
                                             </span> :
                                             <span className='flex-col row-gap-0.5rem --background'>
-                                                <i className="fa-solid fa-thumbs-down --background"  onClick={()=>addVideoToLikedVideos(token, add_liked, data)}></i>
+                                                <i className="fa-solid fa-thumbs-down --background" 
+                                                onClick={()=>dispatch(addLikedData([data,toastdispatch]))} 
+                                                ></i>
                                                 <label className='--background'>unlike</label>
                                             </span> :
                                             <span className='flex-col row-gap-0.5rem --background'>
@@ -115,11 +132,15 @@ const PlayVideo =()=>{
                                         {
                                             token ? watchlist.length>0 && watchlist.find(item=>item._id === data._id)?
                                             <span className='flex-col row-gap-0.5rem --background'>
-                                                <i style={{color:'green'}} className="fa-solid fa-circle-check --background" onClick={()=>handler_removeWatchLater(token, removedwatchlist, data._id)}></i>
+                                                <i style={{color:'green'}} className="fa-solid fa-circle-check --background" 
+                                                onClick={()=>dispatch(removeWatchlistData([data._id,toastdispatch]))}
+                                                ></i>
                                                 <label className='--background --background'> watchlist </label>
                                             </span> :
                                             <span className='flex-col row-gap-0.5rem --background'>
-                                                <i className="fa-solid fa-plus --background" onClick={()=>handler_addWatchLater(token, addwatchlist, data)}></i>
+                                                <i className="fa-solid fa-plus --background" 
+                                                onClick={()=>dispatch(addWatchlistData([data,toastdispatch]))}
+                                                ></i>
                                                 <label className='--background'>watchlist</label>
                                             </span> :
                                             <span className='flex-col row-gap-0.5rem --background'>

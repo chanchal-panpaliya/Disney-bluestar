@@ -1,9 +1,6 @@
 import './Uploadvideo.css';
-import { useEffect ,useState ,useContext} from 'react';
+import {useState ,useContext} from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from 'web-app/Context/login/AuthContext';
-import { fetchAllWatchlaterData } from 'web-app/Service/service';
-import Loader from 'web-app/Component/Loader/Loader';
 import { VideoListCard } from 'web-app/Component/Card/Card';
 import Footer from 'web-app/Component/Footer/Footer';
 import Header from 'web-app/Component/Header/Header';
@@ -11,13 +8,16 @@ import {UploadvideoModal} from '../../Component/Modal/Modal';
 import VideoContext from 'web-app/Context/video/VideoContext';
 //img
 import uploadicon from '../../img/images/temp/uploadicon.png'
+//
+import { useDispatch, useSelector } from "react-redux";
 
 const Uploadvideo =()=>{
-    let {uploadedvideo} = useContext(VideoContext)
-    let navigator = useNavigate()
-    let {token} = useAuth()
     const[data,setdata]=useState([])
     const [isuploadmodal,setuploadmodal] = useState(false)
+    // redux
+    const dispatch = useDispatch();
+    const { uploadlist } = useSelector((store) => store.upload);
+    const { token , user } = useSelector((store) => store.authentication);
 
     return(
       <div>
@@ -30,9 +30,9 @@ const Uploadvideo =()=>{
                  </header>
                  <section className='like-page-body-uploadvideo'>
                  {
-                    uploadedvideo.length>0? 
+                    uploadlist.length>0? 
                     <div className='like-page-card-grid-uploadvideo'> 
-                          {uploadedvideo.map((item,index)=>{
+                          {uploadlist.map((item,index)=>{
                               return <VideoListCard data={item} />
                           }) }
                     </div>

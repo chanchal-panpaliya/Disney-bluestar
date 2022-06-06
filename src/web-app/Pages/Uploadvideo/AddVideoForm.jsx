@@ -1,91 +1,90 @@
 import { useContext,useState } from "react"
-import { addNewVideoHandler } from "web-app/Service/service"
 import VideoContext from "web-app/Context/video/VideoContext"
-import { useAuth } from "web-app/Context/login/AuthContext"
 import "./Uploadvideo.css";
+//redux
+import { useDispatch, useSelector } from "react-redux";
+import { uploadVideoData } from '../../Redux/Reducer/uploadSlice';
+import blue_logo from '../../img/blue.png';
 
+const testCredentials = {
+    episode_id:"",
+    categoryName:"Movies",
+    categoryType:"Comedy",
+    language:"Hindi",
+    duration:"2h 14m",
+    year:"2006",
+    UA:'13+',
+    thumbnail_url: "https://m.media-amazon.com/images/M/MV5BMDE1ODQ1OWEtZGY1ZS00Njk3LTlmNGEtMWY1MmI3Y2JmOGU4XkEyXkFqcGdeQXVyNjQ2MjQ5NzM@._V1_FMjpg_UX1000_.jpg",
+    thumbnail_land:"https://i.ytimg.com/vi/7dcWmEoq7tU/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCsDME7DoITfOXgrX7cwcdpkLTg4g",
+    title: "Apna Sapna Money Money",
+    description:"Satyabol, a devout Hindu, is against his daughter Shivani's relationship with Arjun, a Christian. Resultantly, Arjun asks his conniving cousin, Kishan, to help him unite with his lover.",
+    rating:"6.1/10",
+    videoYTId: "7dcWmEoq7tU",
+  };
 
-    
+const formInitialState={
+    episode_id:"",
+    categoryName:"",
+    categoryType:"",
+    language:"",
+    duration:"",
+    year:"",
+    UA:'',
+    thumbnail_url: "",
+    thumbnail_land:"",
+    title: "",
+    description:"",
+    rating:"",
+    videoYTId: "",
+}
 
 const AddVideoForm = ({modalClose}) =>{
-    let {token,user} = useAuth()
-    let {Add_Uploaded_Video} = useContext(VideoContext)
-    const [episode,setepisode]=useState("")
-    const [categoryName,setcategoryName]=useState("")
-    const [categoryType,setcategoryType]=useState("")
-    const [language,setlanguage]=useState("")
-    const [duration,setduration]=useState("")
-    const [year,setyear]=useState("")
-    const [UA,setUA]=useState("")
-    const [img_vertical,set_img_vertical]=useState("")
-    const [img_Horizontal,set_img_Horizontal]=useState("")
-    const [title,settitle]=useState("")
-    const [description,setdescription]=useState("")
-    const [rating,setrating]=useState("")
-    const [videolink,setvideolink]=useState("")
-    const [testdata,setestdata]=useState(false)
+    let {toastdispatch} = useContext(VideoContext)
 
-    const initialdata={
-        episode_id:"",
-        categoryName:"Movies",
-        categoryType:"Comedy",
-        language:"Hindi",
-        duration:"2h 14m",
-        year:"2006",
-        UA:'13+',
-        creator: "Ultra Movie Parlour",
-        creatorLogo: {
-        altText: "Ultra Movie Parlour Logo",
-        url: "https://yt3.ggpht.com/ytc/AKedOLTMb29B2py-0b3-4qWuHBdVrI7oEkzgCOzI8rXa=s68-c-k-c0x00ffffff-no-rj",
-        },
-        thumbnail: {
-        altText: "apna sapna money money Thumbnail",
-        url: "https://m.media-amazon.com/images/M/MV5BMDE1ODQ1OWEtZGY1ZS00Njk3LTlmNGEtMWY1MmI3Y2JmOGU4XkEyXkFqcGdeQXVyNjQ2MjQ5NzM@._V1_FMjpg_UX1000_.jpg",
-        land:"https://i.ytimg.com/vi/7dcWmEoq7tU/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCsDME7DoITfOXgrX7cwcdpkLTg4g"
-        },
-        title: "Apna Sapna Money Money",
-        description:"Satyabol, a devout Hindu, is against his daughter Shivani's relationship with Arjun, a Christian. Resultantly, Arjun asks his conniving cousin, Kishan, to help him unite with his lover.",
-        cast:[],
-        rating:"6.1/10",
-        videoYTId: "7dcWmEoq7tU",
-        uploadedOn: "March 08 2006",
-        note:"",
-        view:1
-    }
+    const [formData, setFormData] = useState(formInitialState);
+    const { episode_id,categoryName,categoryType,language,duration,year,UA,thumbnail_url,thumbnail_land,title,description,rating,videoYTId} = formData;
+
+    const handleInput = (e) =>
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [e.target.name]: e.target.value,
+    }));
+    //
+    const { token , user } = useSelector((store) => store.authentication);
+    const dispatch = useDispatch();
 
       const datauploadhandle = () =>{
-
+  
         let uploadvideo={
-            episode_id: testdata?initialdata.episode_id:episode,
-            categoryName: testdata?initialdata.categoryName:categoryName,
-            categoryType: testdata?initialdata.categoryType:categoryType,
-            language:testdata?initialdata.language:language,
-            duration:testdata?initialdata.duration:duration,
-            year:testdata?initialdata.year:year,
-            UA:testdata?initialdata.UA : UA,
+            episode_id: episode_id,
+            categoryName: categoryName,
+            categoryType: categoryType,
+            language:language,
+            duration:duration,
+            year:year,
+            UA:UA,
             creator: `${user.firstName || user.firstname}  ${user.lastName || user.lastname}`, 
             creatorLogo: {
               altText: "user Logo",
-              url: "https://yt3.ggpht.com/cpajxwo_F6AznpciPGhZs7TLBJiwRM02BR67VkI_p0I99vR2VvQ2S6ZRm6zLoBf0y9voDqU92bs=s88-c-k-c0x00ffffff-no-rj",
+              url: blue_logo,
             },
             thumbnail: {
               altText: "Thumbnail",
-              url: testdata?initialdata.thumbnail.url:img_vertical,
-              land: testdata?initialdata.thumbnail.land : img_Horizontal
+              url: thumbnail_url,
+              land: thumbnail_land 
             },
-            title: testdata?initialdata.title:title,
-            description:testdata?initialdata.description:description,
+            title: title,
+            description: description,
             cast:[],
-            rating:testdata?initialdata.rating:rating,
-            videoYTId:testdata?initialdata.videoYTId :videolink,
+            rating:rating,
+            videoYTId: videoYTId,
             uploadedOn: new Date(),
             note:"",
-            view:1
+            view: 1
           } 
-          
-          addNewVideoHandler(token,uploadvideo,Add_Uploaded_Video)
-          modalClose()
-       
+
+        dispatch(uploadVideoData([token,uploadvideo,toastdispatch]))
+        modalClose()
       }
 
     return(
@@ -93,7 +92,7 @@ const AddVideoForm = ({modalClose}) =>{
              <h3 className="typography-padding-top-right-bottom-left"> Upload Video </h3>
             <div className="uploadvideo-container">
                 <div>
-                   <button className="header-button-login" onClick={()=>setestdata(!testdata)}> test data </button>
+                   <button className="header-button-login" onClick={() => setFormData(testCredentials)}>  test data </button>
                 </div>
             
                 <div className="table --background"> 
@@ -102,7 +101,7 @@ const AddVideoForm = ({modalClose}) =>{
                                             CategoryName :
                                         </div>
                                         <div className="column-table" style={{border:"none"}}>
-                                            <select className='filter-select' value={testdata?initialdata.categoryName:categoryName} onChange={(e)=>setcategoryName(e.target.value)}>
+                                            <select className='filter-select' name="categoryName" value={categoryName} onChange={handleInput} >
                                                 <option value="Movies"> Movies </option>
                                                 <option value="Shows"> Shows </option>
                                                 <option value="Songs"> Songs </option>
@@ -121,7 +120,7 @@ const AddVideoForm = ({modalClose}) =>{
                                             </div>    
                                         </div>
                                         <div className="column-table" style={{border:"none"}}>
-                                            <input type="text" name="episodenumber" placeholder="enter episode number" value={testdata?initialdata.episode_id:episode} onChange={(e)=>setepisode(e.target.value)}/>
+                                            <input type="text" name="episode_id" placeholder="enter episode number" value={episode_id} onChange={handleInput}/>
                                         </div>
                                     </div> 
                                    :
@@ -136,7 +135,7 @@ const AddVideoForm = ({modalClose}) =>{
                                             </div> 
                                         </div>
                                         <div className="column-table" style={{border:"none"}}>
-                                        <input type="text" name="categoryType" placeholder="enter categoryType" value={testdata?initialdata.categoryType:categoryType} onChange={(e)=>setcategoryType(e.target.value)}/>
+                                        <input type="text" name="categoryType" placeholder="enter categoryType" value={categoryType} onChange={handleInput}/>
                                         </div>
                                 </div>
                                 <div className="row-table"> 
@@ -147,7 +146,7 @@ const AddVideoForm = ({modalClose}) =>{
                                             </div>
                                         </div>
                                         <div className="column-table" style={{border:"none"}}>
-                                            <input type="text" name="language" placeholder="enter language" value={testdata?initialdata.language:language} onChange={(e)=>setlanguage(e.target.value)}/>
+                                            <input type="text" name="language" placeholder="enter language" value={language} onChange={handleInput}/>
                                         </div>
                                 </div>
                                 <div className="row-table"> 
@@ -158,7 +157,7 @@ const AddVideoForm = ({modalClose}) =>{
                                             </div>
                                         </div>
                                         <div className="column-table" style={{border:"none"}}>
-                                            <input type="text" name="duration" placeholder="enter duration" value={testdata?initialdata.duration:duration} onChange={(e)=>setduration(e.target.value)}/>
+                                            <input type="text" name="duration" placeholder="enter duration" value={duration} onChange={handleInput}/>
                                         </div>
                                 </div>
                                 <div className="row-table"> 
@@ -169,7 +168,7 @@ const AddVideoForm = ({modalClose}) =>{
                                             </div>
                                         </div>
                                         <div className="column-table" style={{border:"none"}}>
-                                            <input type="text" name="year" placeholder="enter year" value={testdata?initialdata.year:year} onChange={(e)=>setyear(e.target.value)}/>
+                                            <input type="text" name="year" placeholder="enter year" value={year} onChange={handleInput}/>
                                         </div>
                                 </div>
                                 <div className="row-table"> 
@@ -180,7 +179,7 @@ const AddVideoForm = ({modalClose}) =>{
                                             </div>
                                         </div>
                                         <div className="column-table" style={{border:"none"}}>
-                                            <input type="text" name="UA" placeholder="UA" value={testdata?initialdata.UA : UA} onChange={(e)=>setUA(e.target.value)}/>
+                                            <input type="text" name="UA" placeholder="UA" value={UA} onChange={handleInput}/>
                                         </div>
                                 </div>
                                 <div className="row-table"> 
@@ -191,7 +190,7 @@ const AddVideoForm = ({modalClose}) =>{
                                             </div>
                                         </div>
                                         <div className="column-table" style={{border:"none"}}>
-                                            <input type="text" name="img_vertical" placeholder="peast imdb vertical images link" value={testdata?initialdata.thumbnail.url:img_vertical} onChange={(e)=>set_img_vertical(e.target.value)}/>
+                                            <input type="text" name="thumbnail_url" placeholder="peast imdb vertical images link" value={thumbnail_url} onChange={handleInput}/>
                                         </div>
                                 </div>
                                 <div className="row-table"> 
@@ -202,7 +201,7 @@ const AddVideoForm = ({modalClose}) =>{
                                             </div>
                                         </div>
                                         <div className="column-table" style={{border:"none"}}>
-                                        <img style={{width:'100px'}} src={testdata?initialdata.thumbnail.url:img_vertical} className="video-card-image"/>
+                                        <img style={{width:'100px'}} src={thumbnail_url} className="video-card-image"/>
                                         </div>
                                 </div>
                                 <div className="row-table"> 
@@ -214,7 +213,7 @@ const AddVideoForm = ({modalClose}) =>{
                                             </div>
                                         </div>
                                         <div className="column-table" style={{border:"none"}}>
-                                            <input type="text" name="img_Horizontal" placeholder="peast imdb full screen images link" value={testdata?initialdata.thumbnail.land : img_Horizontal} onChange={(e)=>set_img_Horizontal(e.target.value)}/>
+                                            <input type="text" name="thumbnail_land" placeholder="peast imdb full screen images link" value={thumbnail_land} onChange={handleInput}/>
                                         </div>
                                 </div>
                                 <div className="row-table"> 
@@ -225,7 +224,7 @@ const AddVideoForm = ({modalClose}) =>{
                                             </div>
                                         </div>
                                         <div className="column-table" style={{border:"none"}}>
-                                            <img style={{width:'100px'}} src={testdata?initialdata.thumbnail.land : img_Horizontal} className="video-card-image"/>
+                                            <img style={{width:'100px'}} src={thumbnail_land} className="video-card-image"/>
                                         </div>
                                 </div>
                                 <div className="row-table"> 
@@ -236,7 +235,7 @@ const AddVideoForm = ({modalClose}) =>{
                                             </div>
                                         </div>
                                         <div className="column-table" style={{border:"none"}}>
-                                            <input type="text" name="title" value={testdata?initialdata.title:title} onChange={(e)=>settitle(e.target.value)}/>
+                                            <input type="text" name="title" value={title}  onChange={handleInput}/>
                                         </div>
                                 </div>
                                 <div className="row-table"> 
@@ -244,7 +243,7 @@ const AddVideoForm = ({modalClose}) =>{
                                             Description :
                                         </div>
                                         <div className="column-table" style={{border:"none"}}>
-                                            <input type="text" name="description" value={testdata?initialdata.description:description} onChange={(e)=>setdescription(e.target.value)} />
+                                            <input type="text" name="description" value={description} onChange={handleInput} />
                                         </div>
                                 </div>
                                 <div className="row-table"> 
@@ -255,7 +254,7 @@ const AddVideoForm = ({modalClose}) =>{
                                             </div>
                                         </div>
                                         <div className="column-table" style={{border:"none"}}>
-                                            <input type="text" name="rating" placeholder="6/10" value={testdata?initialdata.rating:rating} onChange={(e)=>setrating(e.target.value)}/>
+                                            <input type="text" name="rating" placeholder="6/10" value={rating} onChange={handleInput}/>
                                         </div>
                                 </div>
                                 <div className="row-table"> 
@@ -266,7 +265,7 @@ const AddVideoForm = ({modalClose}) =>{
                                             </div>
                                         </div>
                                         <div className="column-table" style={{border:"none"}}>
-                                            <input type="text" name="videolink" placeholder="eg. REqFOV2A7sI" value={testdata?initialdata.videoYTId :videolink} onChange={(e)=>setvideolink(e.target.value)}/>
+                                            <input type="text" name="videoYTId" placeholder="eg. REqFOV2A7sI" value={videoYTId} onChange={handleInput}/>
                                         </div>
                                 </div>
                                 <div className="row-table"> 
@@ -277,7 +276,7 @@ const AddVideoForm = ({modalClose}) =>{
                                                 <iframe
                                                 width="100px" 
                                                 height="50px"
-                                                src={`https://www.youtube.com/embed/${testdata?initialdata.videoYTId :videolink}`} 
+                                                src={`https://www.youtube.com/embed/${videoYTId}`} 
                                                 title="YouTube video player" frameBorder="0" 
                                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen>
                                                 </iframe>  
@@ -286,7 +285,14 @@ const AddVideoForm = ({modalClose}) =>{
 
                 </div>
                      <div>
-                        <button className="header-button-login" onClick={datauploadhandle}> upload </button>
+
+                       {
+                             categoryName && categoryType && language && duration && year && UA && thumbnail_url && thumbnail_land && title && description && rating && videoYTId && (
+                                 <button className="header-button-login" onClick={datauploadhandle}> upload </button>
+                            )
+                       }
+
+                       
                      </div>                 
             </div>
            

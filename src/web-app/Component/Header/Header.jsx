@@ -13,15 +13,14 @@ import sidemenuItem from '../../Constant/sidemenu';
 import { Auth_Modal } from '../Modal/Modal';
 //context
 import VideoContext from '../../Context/video/VideoContext';
-import {useAuth} from '../../Context/login/AuthContext';
 import logo from '../../img/images/logo.png';
-
+//redux
+import { useDispatch, useSelector } from "react-redux";
+import {logoutUser} from "../../Redux/Reducer/authSlice"
 
 const Header =() =>{
-
     const navigator = useNavigate()
-    let {menuselected,selectedMenu,filter_dispatch} = useContext(VideoContext);
-    let {token,user} = useAuth();
+    let {menuselected,filter_dispatch,toastdispatch} = useContext(VideoContext);
     const [ismodal,setmodal]=useState(false)
     const [sidemenu,setsidemenu]=useState(false)
     //
@@ -29,7 +28,10 @@ const Header =() =>{
     const [alldata,setalldata] = useState([]);
     const [searchResults, setSearchResults] = useState([]);
     const textfocus = useRef();
-
+    //redux
+    const dispatch = useDispatch();
+    const { token , user } = useSelector((store) => store.authentication);
+    
     useEffect(()=>{
         fetchAllVideoData().then(function(result){
             setalldata(result)  
@@ -38,12 +40,13 @@ const Header =() =>{
      },[])
 
      const logout=()=>{
-        if (token!=null) { 
-            localStorage.removeItem('token') 
-            localStorage.removeItem('user') 
-            window.location.reload();
-            navigator("/") 
-        }
+        const data = dispatch(logoutUser({toastdispatch,navigator}))
+        
+         if(data.payload.user==null && data.payload.token==null){
+            toastdispatch({type:'DANGER',payload:"LOGOUT SUCCESSFULL"})
+            navigator("/")   
+         }
+
      }
 
      const handleChange =(e)=>{

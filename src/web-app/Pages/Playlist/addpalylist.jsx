@@ -1,25 +1,28 @@
 import { useState ,useContext,useEffect} from "react";
-
-import { useAuth } from "web-app/Context/login/AuthContext";
 import VideoContext from "web-app/Context/video/VideoContext";
-import {
-    handler_addPlayListName,
-    handler_addVideoPlaylist,
-    handler_removedVideoPlaylist} from '../../Service/service';
 
-import './PlayList.css'    
+import './PlayList.css'   
+//redux
+import { useDispatch, useSelector } from "react-redux";
+import {createplaylist,addVideoToplaylist,deleteVideoplaylist} from '../../Redux/Reducer/playlistSlice';
+
+
 
 const AddPlayList=({videoId,data})=>{
-    let {token} = useAuth();
-    let {addTitlePlaylist,addVideoPlaylist,removeVideoPlaylsit,playlistdata} = useContext(VideoContext);
+    let {toastdispatch} = useContext(VideoContext);
 
     const [gettext,settext]=useState("")
     const [checklist , setChecklist ] = useState([])
 
+    //redux
+    const { playlist } = useSelector((store) => store.playlist);
+    const { token , user } = useSelector((store) => store.authentication);
+    const dispatch = useDispatch();
+
 
     useEffect(()=>{
-              if(playlistdata.length>0){
-                    let array = playlistdata.map((item)=>{
+              if(playlist.length>0){
+                    let array = playlist.map((item)=>{
                         return item.title
                     })
                    
@@ -35,7 +38,7 @@ const AddPlayList=({videoId,data})=>{
                     setChecklist((prev)=>[...prev])
                 }else{
                     setChecklist((prev)=>[...prev,get])
-                    handler_addPlayListName(e,token,addTitlePlaylist,get)
+                    dispatch(createplaylist([e,token,get,toastdispatch]))
                     settext("")
                 }
             }
@@ -44,17 +47,18 @@ const AddPlayList=({videoId,data})=>{
 
     const AddCheckedplaylist=(e,palylist_id)=>{
           if(e.target.checked){
-            handler_addVideoPlaylist(e,palylist_id,data,token,addVideoPlaylist)
+            dispatch(addVideoToplaylist([e,palylist_id,data,token,toastdispatch]))
           }else{
-            handler_removedVideoPlaylist(e,palylist_id,videoId,token,removeVideoPlaylsit)
+            dispatch(deleteVideoplaylist([e,palylist_id,videoId,token,toastdispatch]))
           }
     }
-   
+
+
    return(
        <div className="addplaylist-container"> 
          <div> 
                {
-                   playlistdata.length>0 ?
+                   playlist.length>0 ?
                
                         <div className="table"> 
                                 <div className="row-table"> 
@@ -65,7 +69,7 @@ const AddPlayList=({videoId,data})=>{
                                                To Add Click on checkbox
                                         </div>
                                 </div>
-                     { playlistdata.map((item,index)=>{
+                     { playlist.map((item,index)=>{
                            
                             return(
                                

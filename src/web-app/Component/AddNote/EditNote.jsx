@@ -1,7 +1,5 @@
 import { useState,useContext } from 'react';
 import './AddNote.css';
-import {editNoteService} from 'web-app/Service/service';
-import { useAuth } from 'web-app/Context/login/AuthContext';
 //draf-js
 import { convertToRaw, EditorState ,convertFromHTML ,ContentState} from 'draft-js';
 import draftToHtml from 'draftjs-to-html';
@@ -9,12 +7,17 @@ import htmlToDraft from 'html-to-draftjs';
 import { Editor  } from "react-draft-wysiwyg";
 import "../../../../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import VideoContext from 'web-app/Context/video/VideoContext';
-
+//redux
+import { useDispatch, useSelector } from "react-redux";
+import { editNote } from '../../Redux/Reducer/noteSlice';
 
 const EditNote=({data,modalClose})=>{
     let {toastdispatch} = useContext(VideoContext)
-    let {token} = useAuth()
     const [text,settext] = useState(data.title)
+    //redux
+    const { notelist } = useSelector((store) => store.note);
+    const { token , user } = useSelector((store) => store.authentication);
+    const dispatch = useDispatch();
    
     //draf
     const blocksFromHtml = htmlToDraft(data.text);
@@ -43,7 +46,7 @@ const EditNote=({data,modalClose})=>{
             text:draftToHtml(convertToRaw(editorState.getCurrentContent())),
             videoId:data.videoId,
         }
-        editNoteService(token,note,toastdispatch)
+        dispatch(editNote([token,note,toastdispatch]))
         settext("")
         modalClose()
     }

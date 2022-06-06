@@ -1,25 +1,26 @@
 import { useEffect ,useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import './WatchLater.css';
-import { useAuth } from 'web-app/Context/login/AuthContext';
-import { fetchAllWatchlaterData } from 'web-app/Service/service';
-import Loader from 'web-app/Component/Loader/Loader';
 import { VideoListCard } from 'web-app/Component/Card/Card';
 import Footer from 'web-app/Component/Footer/Footer';
 import Header from 'web-app/Component/Header/Header';
 //img
 import liked_img from '../../img/images/temp/watchlater.png'
+//redux
+import { useDispatch, useSelector } from "react-redux";
+import { getWatchlistData } from '../../Redux/Reducer/watchSlice';
 
 const WatchLater=()=>{
   let navigator = useNavigate()
-  let {token} = useAuth()
   const[data,setdata]=useState([])
+  //redux
+  const { watchlist } = useSelector((store) => store.watch);
+  const { token , user } = useSelector((store) => store.authentication);
+  const dispatch = useDispatch();
 
   useEffect(()=>{
-   let time = setTimeout(()=>{
-        fetchAllWatchlaterData(token).then((res)=>{
-          setdata(res.data.watchlater)
-        })    
+   let time = setTimeout(()=>{   
+        dispatch(getWatchlistData(token)) 
    },0)
      return () => clearTimeout(time)
   },[data])
@@ -34,9 +35,9 @@ const WatchLater=()=>{
                </header>
                <section className='like-page-body-watchlist'>
                {
-                  data.length>0? 
+                  watchlist.length>0? 
                   <div className='like-page-card-grid-watchlist'> 
-                        {data.map((item,index)=>{
+                        {watchlist.map((item,index)=>{
                             return <VideoListCard data={item} />
                         }) }
                   </div>

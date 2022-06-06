@@ -1,8 +1,4 @@
 import { useEffect ,useState} from 'react';
-import { useAuth } from 'web-app/Context/login/AuthContext';
-import { fetchAllLikedData } from 'web-app/Service/service';
-import Loader from 'web-app/Component/Loader/Loader';
-import { VideoListCard } from 'web-app/Component/Card/Card';
 import { useNavigate } from 'react-router-dom';
 import './Liked.css';
 import Footer from 'web-app/Component/Footer/Footer';
@@ -12,15 +8,22 @@ import liked_img from '../../img/images/temp/like.png'
 //
 import {CardHome} from 'web-app/Component/Card/CardHome';
 
+//redux
+import { useDispatch, useSelector } from "react-redux";
+import { getLikedData } from '../../Redux/Reducer/likeSlice';
+
+
 const Liked = () =>{
   let navigator = useNavigate();
-  let {token} = useAuth()
   const[data,setdata]=useState([])
+  //redux
+  const { likedlist } = useSelector((store) => store.likes);
+  const { token , user } = useSelector((store) => store.authentication);
+  const dispatch = useDispatch();
+
   useEffect(()=>{
    let time = setTimeout(()=>{
-        fetchAllLikedData(token).then((res)=>{
-          setdata(res.data.likes)
-        })    
+        dispatch(getLikedData(token))    
    },0)
      return () => clearTimeout(time)
   },[data,setdata])
@@ -35,9 +38,9 @@ const Liked = () =>{
                </header>
                <section className='like-page-body'>
                {
-                  data.length>0? 
+                  likedlist.length>0? 
                   <div className='like-page-card-grid'> 
-                        {data.map((item,index)=>{
+                        {likedlist.map((item,index)=>{
                         return  <CardHome data={item}/>  
                         }) }
                   </div>

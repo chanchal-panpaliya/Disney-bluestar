@@ -4,27 +4,29 @@ import './PlayList.css';
 import Loader from "../../Component/Loader/Loader";
 import { Playlist_Container_Card } from 'web-app/Component/Card/CardPlaylist';
 import { Playlist_Modal } from '../../Component/Modal/Modal';
-//context
 
-import { useAuth } from 'web-app/Context/login/AuthContext';
-import { fetchAllPlaylistData } from 'web-app/Service/service';
 import Footer from 'web-app/Component/Footer/Footer';
 import Header from 'web-app/Component/Header/Header';
 
 //img
 import liked_img from '../../img/images/temp/pngegg.png';
+//redux
+import { useDispatch, useSelector } from "react-redux";
+import {getplaylistData} from '../../Redux/Reducer/playlistSlice';
 
 const Playlist = ({route}) =>{
-    let {token} = useAuth()
     const [loader,setloader]=useState(false)
     const [playlistdata,setplaylistdata]=useState([])
     const [ispalylistmodal,setpaylist]=useState(false)
 
+    //redux
+    const { playlist } = useSelector((store) => store.playlist);
+    const { token , user } = useSelector((store) => store.authentication);
+    const dispatch = useDispatch();
+
     useEffect(()=>{
       let time = setTimeout(()=>{
-        fetchAllPlaylistData(token).then((res)=>{
-          setplaylistdata(res.data.playlists)
-        }) 
+        dispatch(getplaylistData(token))
       },0)
       return ()=>clearTimeout(time)  
 
@@ -41,9 +43,9 @@ const Playlist = ({route}) =>{
                  </header>
                  <section className='like-page-body-palylist'>
                  {
-                   loader? <Loader/> : playlistdata.length>0? 
+                   loader? <Loader/> : playlist.length>0? 
                     <div className='like-page-card-grid-palylist'> 
-                          {playlistdata.map((item,index)=>{
+                          {playlist.map((item,index)=>{
                           return <Playlist_Container_Card data={item} route={route}/>
                           }) }
                     </div>

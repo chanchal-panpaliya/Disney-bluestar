@@ -3,30 +3,32 @@ import Header from 'web-app/Component/Header/Header';
 import Footer from 'web-app/Component/Footer/Footer';
 import profile from '../../img/images/temp/profile.png';
 import { useEffect ,useState ,useContext} from 'react';
-import { useAuth } from 'web-app/Context/login/AuthContext';
 import { Link , useNavigate } from 'react-router-dom';
 import { Auth_Modal } from '../../Component/Modal/Modal';
 import VideoContext from 'web-app/Context/video/VideoContext';
-import { handler_removeallHistory } from 'web-app/Service/service';
+//redux
+import { useDispatch, useSelector } from "react-redux";
+import { DeleteAllHistoryData } from 'web-app/Redux/Reducer/historySlice';
+import {logoutUser} from "../../Redux/Reducer/authSlice"
 
 const UserProfile = () =>{
-    let {removed_all_historys,toastdispatch} = useContext(VideoContext);
-    let {token,user}=useAuth();
+    let {toastdispatch} = useContext(VideoContext);
     let navigator = useNavigate();
     const [ismodal,setmodal]=useState(false)
-
+    // redux
+    const dispatch = useDispatch();
+    const { token , user } = useSelector((store) => store.authentication);
 
   useEffect(()=>{
     window.scrollTo({ behavior: 'smooth', top: '0px' });
   },[])
 
   const logout=()=>{
-    if (token!=null) { 
-        localStorage.removeItem('token') 
-        localStorage.removeItem('user') 
-        window.location.reload();
-        navigator("/") 
-    }
+    const data = dispatch(logoutUser({toastdispatch,navigator}))
+         if(data.payload.user==null && data.payload.token==null){
+            toastdispatch({type:'DANGER',payload:"LOGOUT SUCCESSFULL"})
+            navigator("/")   
+         }
  }
 
   return(
@@ -88,7 +90,9 @@ const UserProfile = () =>{
                     </div>
                     <div className='row-profile'>
                         <div className='column-profile'> clear history </div>
-                        <div className='column-profile'> <button className='button button-login' onClick={()=>handler_removeallHistory(token,removed_all_historys,toastdispatch)}> clear </button> </div>
+                        <div className='column-profile'> <button className='button button-login' 
+                        onClick={()=>dispatch(DeleteAllHistoryData([token,toastdispatch]))}
+                        > clear </button> </div>
                     </div>  
                     <div className='row-profile'>
                         <div className='column-profile'> <b> forgot password </b> </div>

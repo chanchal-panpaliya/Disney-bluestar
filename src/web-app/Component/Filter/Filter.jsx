@@ -1,4 +1,4 @@
-import { useEffect,useState,useContext,useRef} from 'react';
+import { useEffect,useState,useContext} from 'react';
 import './Filter.css';
 import VideoContext from 'web-app/Context/video/VideoContext';
 
@@ -7,18 +7,6 @@ const Filter=({data})=>{
 
   const [checklist , setChecklist ] = useState([])
   const [selectedsort,setselectedsort]=useState("")
-
-  let [scrollcard,setscrollcard]=useState(0);
-  const containerRef = useRef();
-
-  const handlescrollcardLeft =()=>{
-    containerRef.current.scrollLeft -= 500;
-  }
-
-  const handlescrollcardRight =()=>{
-    containerRef.current.scrollLeft += 500;
-}
-
 
 
   useEffect(()=>{  

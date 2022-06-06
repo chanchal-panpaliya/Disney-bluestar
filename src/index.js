@@ -4,18 +4,20 @@ import "./index.css";
 import App from "./App";
 import { makeServer } from "./server";
 import VideoState from './web-app/Context/video/VideoState';
-import {AuthProvider} from "./web-app/Context/login/AuthContext";
+//redux
+import { store } from './web-app/Redux/Store/store'
+import { Provider } from 'react-redux'
 
 // Call make Server
 makeServer();
 
 ReactDOM.render(
   <React.StrictMode>
-    <AuthProvider>
-      <VideoState> 
-        <App />
-      </VideoState>
-    </AuthProvider>
+     <Provider store={store}> 
+        <VideoState> 
+          <App />
+        </VideoState>
+    </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );

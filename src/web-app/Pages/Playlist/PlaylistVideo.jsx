@@ -1,11 +1,8 @@
 import { useContext,useEffect,useState ,} from "react"
 import VideoContext from "web-app/Context/video/VideoContext"
-import { fetchAllPlaylistData,handler_removedVideoPlaylist ,
-  fetch_single_video,fetchAllVideoData ,handler_addWatchLater ,handler_removeWatchLater 
-  ,addVideoToLikedVideos,removeFromlikedVideos,handler_addVideoHistory} from "web-app/Service/service"
-import { useAuth } from 'web-app/Context/login/AuthContext';
+
 import Loader from "../../Component/Loader/Loader";
-import { VideoPlaylistCard } from "web-app/Component/Card/CardPlaylist";
+
 import Tooltip from "../../Component/ToolTip/Tooltip";
 import { Link ,useParams , useNavigate} from "react-router-dom";
 import Footer from "web-app/Component/Footer/Footer";
@@ -13,49 +10,53 @@ import Header from "web-app/Component/Header/Header";
 import {ShareModal} from '../../Component/Modal/Modal';
 //img
 import liked_img from '../../img/images/temp/playvideo5.png';
-import SliderCard_Vertical from "web-app/Component/SliderCard/SliderCard-V";
 
+//redux
+import { useDispatch, useSelector } from "react-redux";
+import { addHistoryData } from 'web-app/Redux/Reducer/historySlice';
+import { addLikedData ,removeLikedData } from '../../Redux/Reducer/likeSlice';
+import { addWatchlistData , removeWatchlistData } from '../../Redux/Reducer/watchSlice';
+import {deleteVideoplaylist} from '../../Redux/Reducer/playlistSlice';
 
 const PlaylistVideo = ({route}) =>{
      const {id} = useParams();
      let navigator = useNavigate();
-    let{PlaylistId,removeVideoPlaylsit,
-      addwatchlist,removedwatchlist,watchlist,add_liked,removed_liked,liked,viewcount,uploadedvideo,CountVideoView,add_history,getContinueWatchItem} = useContext(VideoContext)
-    let {token} = useAuth()
+    let{PlaylistId,viewcount,CountVideoView,getContinueWatchItem,toastdispatch} = useContext(VideoContext)
+
+    // redux
+    const dispatch = useDispatch();
+    const { likedlist } = useSelector((store) => store.likes);
+    const { watchlist } = useSelector((store) => store.watch);
+    const { playlist } = useSelector((store) => store.playlist);
+    const { token , user } = useSelector((store) => store.authentication);
+
     const [loader,setloader]=useState(false)
-    const [data,setdata]=useState([])
-    const [playlistname,setplaylistname]=useState("")
-    const [currentvideo,securrentvideo]=useState("");
+    const [data,setdata]=useState(playlist.length>0?(playlist.filter(item=>item._id === PlaylistId))[0].videos:[])
+    const [playlistname,setplaylistname]=useState(playlist.length>0?(playlist.filter(item=>item._id === PlaylistId))[0].title:"")
+    const [currentvideo,securrentvideo]=useState(playlist.length>0?(playlist.filter(item=>item._id === PlaylistId))[0].videos[0]:"");
     const [isshare,setshare]=useState(false)
-  
- 
+
     useEffect(()=>{
-      let time = setTimeout(()=>{
-          fetchAllPlaylistData(token).then((res)=>{
-            let data = res.data.playlists
-            if(data.length>0){
-            let datafilter = data.filter(item=>item._id === PlaylistId)
-            setplaylistname(datafilter[0].title)
-            setdata(datafilter[0].videos)
+      let time = setTimeout(()=>{          
+            if(playlist.length>0){
+            let datafilter = playlist.filter(item=>item._id === PlaylistId)
             securrentvideo(datafilter[0].videos[0])
             CountVideoView(datafilter[0].videos[0])
             getContinueWatchItem(datafilter[0].videos[0])
-            handler_addVideoHistory(token,datafilter[0].videos[0],add_history) 
+            //redux
+            dispatch(addHistoryData(datafilter[0].videos[0]))
             }
-         })
+         
       },0)
          return ()=> clearTimeout(time)
-      },[])
+      },[securrentvideo])
 
       useEffect(()=>{
-        fetchAllPlaylistData(token).then((res)=>{
-          let data = res.data.playlists
-          if(data.length>0){
-          let datafilter = data.filter(item=>item._id === PlaylistId)
-          setdata(datafilter[0].videos)
+          if(playlist.length>0){
+            let datafilter = playlist.filter(item=>item._id === PlaylistId)
+            setdata(datafilter[0].videos)
           }
-       })  
-      },[data])
+      },[data,setdata])
 
       const renderView=(id)=>{
         let getview = viewcount.length>0 && viewcount.filter((item)=>item._id===id)
@@ -64,7 +65,6 @@ const PlaylistVideo = ({route}) =>{
         )
           
     }
-
 
    return(
     <div>
@@ -81,7 +81,7 @@ const PlaylistVideo = ({route}) =>{
                       <button className="fa fa-arrow-left" onClick={()=>{route(); localStorage.setItem("route","playlists")}}>  </button>
                     </Link>
                   </Tooltip> 
-                {loader? <Loader/> : data.length>0? 
+                {loader? <Loader/> : (playlist.filter(item=>item._id === PlaylistId))[0].videos.length>0? 
                   <div className="playlist-v-container --background ">
                       <div className="playlist-v-main-video --background">
                              <iframe
@@ -95,15 +95,19 @@ const PlaylistVideo = ({route}) =>{
                              </h3>
                              <div className='flex-row --background col-gap-2rem typography-padding-top-right-bottom-left'>
                                        
-                                           {   renderView(currentvideo._id)  }
+                                       {   renderView(currentvideo._id)  }
                                        {
-                                            token ? liked.length>0 && liked.find(item=>item._id === currentvideo._id)?
+                                            token ? likedlist.length>0 && likedlist.find(item=>item._id === currentvideo._id)?
                                             <span className='flex-col row-gap-0.5rem --background'>
-                                                <i style={{color:'green'}} className="fa-solid fa-thumbs-up --background" onClick={()=>removeFromlikedVideos(token, removed_liked, currentvideo._id)}></i>
+                                                <i style={{color:'green'}} className="fa-solid fa-thumbs-up --background" 
+                                                onClick={()=>dispatch(removeLikedData([currentvideo._id,toastdispatch]))}
+                                                ></i>
                                                 <label className='--background --background'> like </label>
                                             </span> :
                                             <span className='flex-col row-gap-0.5rem --background'>
-                                                <i className="fa-solid fa-thumbs-down --background"  onClick={()=>addVideoToLikedVideos(token, add_liked,currentvideo)}></i>
+                                                <i className="fa-solid fa-thumbs-down --background"  
+                                                onClick={()=>dispatch(addLikedData([currentvideo,toastdispatch]))}
+                                                ></i>
                                                 <label className='--background'>unlike</label>
                                             </span> :
                                             <span> not login </span>
@@ -112,11 +116,15 @@ const PlaylistVideo = ({route}) =>{
                                         {
                                             token ? watchlist.length>0 && watchlist.find(item=>item._id === currentvideo._id)?
                                             <span className='flex-col row-gap-0.5rem --background'>
-                                                <i style={{color:'green'}} className="fa-solid fa-circle-check --background" onClick={()=>handler_removeWatchLater(token, removedwatchlist, currentvideo._id)}></i>
+                                                <i style={{color:'green'}} className="fa-solid fa-circle-check --background" 
+                                                onClick={()=>dispatch(removeWatchlistData([currentvideo._id,toastdispatch]))}
+                                                ></i>
                                                 <label className='--background --background'> watchlist </label>
                                             </span> :
                                             <span className='flex-col row-gap-0.5rem --background'>
-                                                <i className="fa-solid fa-plus --background" onClick={()=>handler_addWatchLater(token, addwatchlist,currentvideo)}></i>
+                                                <i className="fa-solid fa-plus --background" 
+                                                onClick={()=>dispatch(addWatchlistData([currentvideo,toastdispatch]))}
+                                                ></i>
                                                 <label className='--background'>watchlist</label>
                                             </span> :
                                               <span> not login </span>
@@ -133,14 +141,14 @@ const PlaylistVideo = ({route}) =>{
                       
                       { 
                               <div className="playlist-v-list --background">
-                                  {data.map((item,index)=>{
+                                  {(playlist.filter(item=>item._id === PlaylistId))[0].videos.map((item,index)=>{
                                   return (
                                     <div key={index} className={item._id === currentvideo._id?"palylist-videos palylist-active":"palylist-videos"} 
                                       onClick={()=>{
                                           securrentvideo(item);
-                                          CountVideoView(item);
+                                          {(playlist.filter(item=>item._id === PlaylistId))[0].videos.length>1&&CountVideoView(item)}
                                           getContinueWatchItem(item);
-                                          handler_addVideoHistory(token,item,add_history) 
+                                          dispatch(addHistoryData(item))
                                       }}>
                                       <img className="palylist-videos-img" src={item.thumbnail.land} alt="temp"/> 
                                       <h3 className="playlist-v-title --background">
@@ -149,7 +157,9 @@ const PlaylistVideo = ({route}) =>{
                                       <div className="video-card-bottom video-more">
                                         <button className="fa-solid fa-ellipsis-vertical videolist-button-more"> </button>
                                             <div className="dropdown-video-more">
-                                                <button className='--background video-label-hover' onClick={(e)=>handler_removedVideoPlaylist(e,id,item._id,token,removeVideoPlaylsit)}> Remove from playlist </button>
+                                                <button className='--background video-label-hover' 
+                                                onClick={(e)=> dispatch(deleteVideoplaylist([e,id,item._id,token,toastdispatch]))}
+                                                > Remove from playlist </button>
                                             </div>  
                                     </div>
                                     </div>

@@ -1,16 +1,18 @@
 import './Auth.css';
 import '../../Component/Modal/Modal.css';
-import { useState ,useEffect ,useContext} from 'react';
+import { useState ,useContext} from 'react';
 import {useNavigate} from 'react-router-dom';
-import { handleRegistration } from '../../Service/service';
 import VideoContext from 'web-app/Context/video/VideoContext';
+//redux
+import {signupUser} from '../../Redux/Reducer/authSlice';
+import { useDispatch, useSelector } from "react-redux";
 
 const Register = ({routeLogin,modalClose}) =>{
     let{toastdispatch}= useContext(VideoContext)
 
     const navigator = useNavigate();
     const [firstname,setName] = useState("");
-    const [emailId, setEmailId] = useState("");
+    const [email, setemail] = useState("");
     const [password, setPassword] = useState("");
     const [retypedPassword, setRetypedPassword] = useState("");
     const [error, setError] = useState("");
@@ -18,11 +20,13 @@ const Register = ({routeLogin,modalClose}) =>{
     const [termsAndConditions,settermsAndConditions]=useState(false);
     const [hideshowpassword,sethideshowpassword]=useState(false);
     const [hideshow_rety_Pass,Sethideshow_rety_Pass]=useState(false);
+    //redux 
+    const dispatch = useDispatch();
 
 
     const validateemail=(e)=>{
         const emailRegex = /\S+@\S+\.\S+/;
-        setEmailId(e.target.value)
+        setemail(e.target.value)
         if (!emailRegex.test(e.target.value.toLowerCase())) {
             setError("Enter a valid email address");
         } else {
@@ -34,7 +38,7 @@ const Register = ({routeLogin,modalClose}) =>{
     return(
     <div className='flex-col'>
         <h4 className='text-trasn-cap'> Registration </h4>
-          <form onSubmit={(e)=>handleRegistration(e,emailId,password,firstname,lastname,termsAndConditions,navigator,modalClose,setError,toastdispatch)}> 
+          <form onSubmit={(e)=>dispatch(signupUser({e,email,password,firstname,lastname,termsAndConditions,navigator,modalClose,setError,toastdispatch}))}> 
             <div className="flex-row  col-gap-2rem textField-container --background">  
                 <input type="text" name="firstName" value={firstname} placeholder="John" className="text-input" onChange={(e)=>{setName(e.target.value)}} required/>
                 <label className="text-placeholder --background"> Enter First Name </label>                                                
@@ -46,7 +50,7 @@ const Register = ({routeLogin,modalClose}) =>{
             </div>    
             
             <div className="flex-row  col-gap-2rem textField-container --background">  
-                <input type="email" name="email" value={emailId} placeholder="johndoe@gmail.com" autocomplete="off" className="text-input" onChange={(e)=>validateemail(e)} required/>
+                <input type="email" name="email" value={email} placeholder="johndoe@gmail.com" autocomplete="off" className="text-input" onChange={(e)=>validateemail(e)} required/>
                 <label className="text-placeholder --background"> Email Id </label>                                                
             </div>
 
@@ -72,7 +76,7 @@ const Register = ({routeLogin,modalClose}) =>{
                 {error}
 
 
-                {firstname && lastname && emailId && password && retypedPassword && password===retypedPassword && !error && termsAndConditions && (
+                {firstname && lastname && email && password && retypedPassword && password===retypedPassword && !error && termsAndConditions && (
                         <button className={'button button-login --background'} type="submit"> sign up  </button>
                 )}
                 

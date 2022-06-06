@@ -2,10 +2,10 @@ import './Auth.css';
 import '../../Component/Modal/Modal.css';
 import { useState,useEffect ,useContext} from 'react';
 import {useNavigate} from 'react-router-dom';
-import { handleLogin } from '../../Service/service';
-import { useAuth } from '../../Context/login/AuthContext';
 import VideoContext from 'web-app/Context/video/VideoContext';
-
+//redux
+import {loginUser} from '../../Redux/Reducer/authSlice';
+import { useDispatch, useSelector } from "react-redux";
 
 const testCredentials = {
     email: "adarshbalika@gmail.com",
@@ -26,8 +26,8 @@ const Login = ({routeRegister,routeForgotPassword,modalClose}) =>{
     const [hideshowpassword,sethideshowpassword]=useState(false);
     const navigator = useNavigate();
     const [error, setError] = useState("");
-    let {setToken,setUser} = useAuth();
-
+    //redux 
+    const dispatch = useDispatch();
 
     const handleInput = (e) =>
     setFormData((prevFormData) => ({
@@ -45,7 +45,7 @@ const Login = ({routeRegister,routeForgotPassword,modalClose}) =>{
     return(
         <div className='flex-col flex-justify-content-center flex-align-item-center'>
             <h4 className='text-trasn-cap'>  Login </h4>
-            <form onSubmit={(e)=>handleLogin(e,email,password,navigator,modalClose,setError,setToken,setUser,toastdispatch)}>
+            <form onSubmit={(e)=>dispatch(loginUser({e,email,password,navigator,modalClose,setError,toastdispatch}))}>
                     <div className="flex-row  col-gap-2rem textField-container --background">  
                         <input type="email" name="email" value={email} placeholder="johndoe@gmail.com" autocomplete="off" className="text-input" 
                         onChange={handleInput} required/>

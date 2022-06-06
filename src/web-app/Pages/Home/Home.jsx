@@ -13,17 +13,20 @@ import sliderdata from '../../Component/Slider/dataSlider';
 import loder_img from '../../img/images/temp/css-swing-masking-loader.gif';
 //
 import VideoContext from "web-app/Context/video/VideoContext";
+//redux
+import { useSelector } from "react-redux";
 
 
 const Home = ()=>{
-  let{Continuewatchlist,uploadedvideo} = useContext(VideoContext)
+  let{Continuewatchlist} = useContext(VideoContext)
   const [data,setdata]=useState([]);
   const [loader,setloader]=useState(false)
   const [movie,setmovie]=useState([]);
   const [show,setshow]=useState([]);
   const [loading, setLoading] = useState(true);
   const [Allshowdata,setAllshowdata]=useState([]);
-
+  //redux
+  const { uploadlist } = useSelector((store) => store.upload);
 
   useEffect(() => {
     const loadData = async () => {
@@ -38,25 +41,25 @@ const Home = ()=>{
     window.scrollTo({ behavior: 'smooth', top: '0px' });
     setloader(true)
    fetchAllVideoData().then(function(result){
-    let newdata =  uploadedvideo.length>0 ? [...result,...uploadedvideo]  : result 
+    let newdata =  uploadlist.length>0 ? [...result,...uploadlist]  : result 
       setdata(newdata)   
       setloader(false)    
    });
 
    fetch_movie_Data().then(function(result){
-    let newdata =  uploadedvideo.length>0 ? [...result,...uploadedvideo]  : result
+    let newdata =  uploadlist.length>0 ? [...result,...uploadlist]  : result
     let filterdata =  newdata.filter(item=> item.categoryName === "Movies")
      setmovie(filterdata)
    });
 
    fetch_Show_Data().then(res=>{
-    let newdata =  uploadedvideo.length>0 ? [...res,...uploadedvideo]  : res
+    let newdata =  uploadlist.length>0 ? [...res,...uploadlist]  : res
     let filterdata =  newdata.filter(item=> item.categoryName === "Shows")
     setshow(filterdata)
    })
 
    fetchAllVideoData().then(function(result){
-    let newdata =  uploadedvideo.length>0 ? [...result,...uploadedvideo]  : result 
+    let newdata =  uploadlist.length>0 ? [...result,...uploadlist]  : result 
      let filterdata =  newdata.filter(item=> item.categoryName === "Shows")
      if(filterdata.length>0){
         let obj={}

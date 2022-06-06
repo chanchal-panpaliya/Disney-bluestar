@@ -2,16 +2,18 @@ import './index.css';
 import { useEffect, useState ,useContext} from 'react';
 import { Link } from 'react-router-dom';
 import VideoContext from 'web-app/Context/video/VideoContext';
-import { useAuth } from 'web-app/Context/login/AuthContext';
-import {addVideoToLikedVideos,removeFromlikedVideos} from 'web-app/Service/service';
 import { Auth_Modal } from '../Modal/Modal';
-
+//redux
+import { addLikedData ,removeLikedData } from '../../Redux/Reducer/likeSlice';
+import { useDispatch, useSelector } from "react-redux";
 
 const CardHome=({data})=>{
-    let {add_liked,removed_liked,liked} = useContext(VideoContext)
-    let {token} = useAuth()
+    let {toastdispatch} = useContext(VideoContext)
     const [ismodal,setmodal]=useState(false)
-
+    //redux
+    const { likedlist } = useSelector((store) => store.likes);
+    const { token , user } = useSelector((store) => store.authentication);
+    const dispatch = useDispatch();
     return(
         <>
          <div className="card">
@@ -20,12 +22,16 @@ const CardHome=({data})=>{
         </Link>
         <div className="card-body">
             {
-                token ? liked.length>0 && liked.find(item=>item._id === data._id)?
+                token ? likedlist.length>0 && likedlist.find(item=>item._id === data._id)?
                 <span className='flex-col row-gap-0.5rem --background watchlist-btn'>
-                    <i style={{color:'green'}} className="fa-solid fa-thumbs-up --background" onClick={()=>removeFromlikedVideos(token, removed_liked, data._id)}></i>
+                    <i style={{color:'green'}} className="fa-solid fa-thumbs-up --background" 
+                    onClick={()=>dispatch(removeLikedData([data._id,toastdispatch]))}
+                    ></i>
                 </span> :
                 <span className='flex-col row-gap-0.5rem --background watchlist-btn'>
-                    <i className="fa-solid fa-thumbs-down --background"  onClick={()=>addVideoToLikedVideos(token, add_liked, data)}></i>
+                    <i className="fa-solid fa-thumbs-down --background"  
+                    onClick={()=>dispatch(addLikedData([data,toastdispatch]))}
+                    ></i>
                 </span> :
                 <span className='flex-col row-gap-0.5rem --background watchlist-btn'>
                     <i className="fa-solid fa-thumbs-up --background" onClick={()=>{setmodal(!ismodal)}}></i>

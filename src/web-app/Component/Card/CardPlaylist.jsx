@@ -9,14 +9,18 @@ import './Card.css';
 import { handler_deletePlaylist , handler_removedVideoPlaylist } from 'web-app/Service/service';
 //context
 import VideoContext from 'web-app/Context/video/VideoContext';
-import { useAuth } from 'web-app/Context/login/AuthContext';
+
+//redux
+import { useDispatch, useSelector } from "react-redux";
+import {deleteplaylist,deleteVideoplaylist} from '../../Redux/Reducer/playlistSlice';
 
 
 const Playlist_Container_Card=({data,route})=>{
-    let {singlePlaylist,deleteplaylist,toastdispatch} = useContext(VideoContext)
-    let {token} = useAuth()
+    let {singlePlaylist,toastdispatch} = useContext(VideoContext)
     let length = data.videos.length
-
+    // redux
+    const dispatch = useDispatch();
+    const { token , user } = useSelector((store) => store.authentication);
     return(
          <div className='card'> 
                <div className='playlist-name curser-pointer-noeffect'>
@@ -38,7 +42,9 @@ const Playlist_Container_Card=({data,route})=>{
                <div className="video-card-bottom video-more palylist-icon-delete">
                         <button className="fa-solid fa-ellipsis-vertical videolist-button-more"> <i className="fa-solid fa-trash-can --color-primary"></i> </button>
                             <div className="dropdown-video-more">
-                                <button className='--background video-label-hover' onClick={(e)=>handler_deletePlaylist(e,data._id,token,deleteplaylist)} > Delete </button>
+                                <button className='--background video-label-hover' 
+                                onClick={(e)=>{dispatch(deleteplaylist([e,data._id,token,toastdispatch]))}}
+                                > Delete </button>
                             </div>  
                 </div>
         </div>   
@@ -46,8 +52,9 @@ const Playlist_Container_Card=({data,route})=>{
 }
 
 const VideoPlaylistCard=({data})=>{
-    let {removeVideoPlaylsit,singlePlaylistId} = useContext(VideoContext)
-    let {token} = useAuth()
+    let {singlePlaylistId,toastdispatch} = useContext(VideoContext)
+    const dispatch = useDispatch();
+    const { token , user } = useSelector((store) => store.authentication);
     return(
         <div className='videolist-card'> 
              <Link to={"/videolist/"+data._id} onClick={()=>{window.scrollTo({ behavior: 'smooth', top: '0px' });}}> 
@@ -59,7 +66,11 @@ const VideoPlaylistCard=({data})=>{
                    <div className="video-card-bottom video-more">
                         <button className="fa-solid fa-ellipsis-vertical videolist-button-more"> </button>
                             <div className="dropdown-video-more">
-                                <button className='--background video-label-hover' onClick={(e)=>handler_removedVideoPlaylist(e,singlePlaylistId,data._id,token,removeVideoPlaylsit)}> Remove from playlist </button>
+                                <button className='--background video-label-hover' 
+                                onClick={(e)=>dispatch(deleteVideoplaylist([e,singlePlaylistId,data._id,token,toastdispatch]))}
+                                
+                                deleteVideoplaylist
+                                > Remove from playlist </button>
                             </div>  
                     </div>
                </div> 

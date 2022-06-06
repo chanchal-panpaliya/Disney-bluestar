@@ -1,20 +1,22 @@
 //react
 import { useContext ,useState ,useEffect} from 'react';
-import { Link } from 'react-router-dom';
 //css
 import './Card.css';
 //component
 import { Playlist_Modal ,Auth_Modal} from '../Modal/Modal';
 import VideoContext from 'web-app/Context/video/VideoContext';
-import { useAuth } from 'web-app/Context/login/AuthContext';
-import { handler_addWatchLater ,handler_removeWatchLater} from 'web-app/Service/service';
-
+//redux
+import { addWatchlistData , removeWatchlistData} from '../../Redux/Reducer/likeSlice';
+import { useDispatch, useSelector } from "react-redux";
 
 const HistoryCard=({data})=>{
-    let {addwatchlist,removedwatchlist,watchlist} = useContext(VideoContext)
-    let {token} = useAuth()
+    let {toastdispatch} = useContext(VideoContext)
     const [ispalylistmodal,setpaylist]=useState(false)
     const [ismodal,setmodal]=useState(false)
+    //redux
+    const { watchlist } = useSelector((store) => store.watch);
+    const { token , user } = useSelector((store) => store.authentication);
+    const dispatch = useDispatch();
     
     let check = watchlist.length>0 && watchlist.find(item=>item._id === data._id)  
 
@@ -32,9 +34,13 @@ const HistoryCard=({data})=>{
                                 {
                                     token?
                                       check?
-                                        <button className='--background video-label-hover' onClick={()=>handler_removeWatchLater(token, removedwatchlist, data._id)}>removed Watch</button>
+                                        <button className='--background video-label-hover' 
+                                        onClick={()=>dispatch(removeWatchlistData([data._id,toastdispatch]))}
+                                        >removed Watch</button>
                                         :
-                                        <button className='--background video-label-hover' onClick={()=>handler_addWatchLater(token, addwatchlist, data)}>add Watch</button>
+                                        <button className='--background video-label-hover' 
+                                        onClick={()=>dispatch(addWatchlistData([data,toastdispatch]))}
+                                        >add Watch</button>
                                        :
                                        <button className='--background video-label-hover' onClick={()=>{setmodal(!ismodal)}}>without login</button>  
                                 }

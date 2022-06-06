@@ -5,7 +5,6 @@ export async function fetchAllVideoData() {
     try {
        let data = [];
        data = await axios.get("/api/videos").then(res=> res.data.videos)
-    
        return data
       }catch (error) {
         console.log(error);
@@ -24,23 +23,20 @@ export async function fetch_single_video(id) {
     }
 }
 
+//redux
 //registration
-export const handleRegistration = async (e,email,password,firstname,lastname,termsAndConditions,navigator,modalClose,setError,toastdispatch) =>{
+export const Registration = async (e,email,password,firstname,lastname,termsAndConditions,navigator,modalClose,setError,toastdispatch) =>{
     e.preventDefault();
     try {
-         await axios.post("/api/auth/signup",{
+         const res = await axios.post("/api/auth/signup",{
             email,password,firstname,lastname,termsAndConditions
          }).then((res) => {
           
             if(res.status === 200 || res.status === 201){
                 toastdispatch({type:'SUCCESS',payload:"Registered and LOGIN SUCCESSFULL"})
-                localStorage.setItem("token", res.data.encodedToken );
-                localStorage.setItem("user", JSON.stringify(res.data.createdUser));
                 setError("Registered successfully")
                 modalClose()
-                window.location.reload()
-                navigator('/')
-                
+                return res
             }
          }).catch((error)=>{
             if(error.response.status === 422){
@@ -52,7 +48,9 @@ export const handleRegistration = async (e,email,password,firstname,lastname,ter
                  return()=>clearTimeout(time)
             }
         });
-               
+        
+        return res
+        
           } catch (error) {
               toastdispatch({type:'DANGER',payload:"Not able to registered !! check"})
               setError("Not able to registered")
@@ -64,97 +62,30 @@ export const handleRegistration = async (e,email,password,firstname,lastname,ter
 }
 
 //login
-export const handleLogin = async (e,email,password,navigator,modalClose,setError,setToken,setUser,toastdispatch) => {
+export const Login = async (e,email,password,navigator,modalClose,setError,toastdispatch) => {
     e.preventDefault();
-    
     try {
-        await axios.post('/api/auth/login',{
+        const res = await axios.post('/api/auth/login',{
             email,password 
         }).then((res)=>{
-               console.log("res",res)
             if(res.status === 200){
                 if(res.data){
-                    
-                    localStorage.setItem("token", res.data.encodedToken );
-                    localStorage.setItem("user", JSON.stringify(res.data.foundUser));
-                    modalClose()
-                    window.location.reload()
-                    navigator('/')
                     toastdispatch({type:'SUCCESS',payload:"LOGIN SUCCESSFULL"})
+                    modalClose()
+                    return res
                 } 
             }else{
                 toastdispatch({type:'DANGER',payload:"login Failed ! please try again"})
                 setError("login Failed ! please try again") 
             }
-
          });
+         return res
       } catch (error) {
           toastdispatch({type:'DANGER',payload:"login Failed ! please try again"})
           setError("login Failed ! please try again")
       }
 };
 
-//add playlist name
-export const handler_addPlayListName = async (e,token,addTitlePlaylist,playlistName) => {
-    e.preventDefault()
-
-            try {
-                const res = await axios.post('/api/user/playlists', {
-                    playlist: { title: playlistName, description: "" }
-                },
-                    {
-                        headers: {
-                            authorization: token,
-                        },
-                    })
-                    addTitlePlaylist(res.data.playlists)
-            
-            } catch (error) {
-                console.log(error)
-            }
-
-}
-
-// add video playlist
-
-export const handler_addVideoPlaylist = async (e,palylist_id,data,token,addVideoPlaylist)=>{
- 
-        try {
-            const res = await axios.post(
-                `/api/user/playlists/${palylist_id}`,
-                {
-                    video: {...data}
-                },
-                {
-                    headers: {
-                        authorization: token,
-                    },
-                }
-            );
-            addVideoPlaylist(res.data.playlist)
-        } catch (error) {
-            console.log(error)
-        }
-
-}
-
-//remove video playlist
-export const handler_removedVideoPlaylist = async(e,palylist_id,videoId,token,removeVideoPlaylsit)=>{
-        console.log(palylist_id,videoId,token)
-        try{
-            const res=await axios.delete(`/api/user/playlists/${palylist_id}/${videoId}`,
-            {
-                headers: {
-                    authorization: token,
-                },
-            })
-            removeVideoPlaylsit(res.data.playlist)
-    
-        }catch(error){
-            console.log(error)
-        }
-
-}
 
 //get palylist data
 export const fetchAllPlaylistData = async(token)=>{
@@ -173,127 +104,205 @@ export const fetchAllPlaylistData = async(token)=>{
     }
 }
 
-//delete playlist
-export const handler_deletePlaylist=async (e,playlistId,token,deleteplaylist)=>{
+//add playlist name
+export const addPlayListName = async (e,token,playlistName,toastdispatch) => {
     e.preventDefault()
+            try {
+                const res = await axios.post('/api/user/playlists', {
+                    playlist: { title: playlistName, description: "" }
+                },
+                {
+                        headers: {
+                            authorization: token,
+                        },
+                }).then((res)=>{
+                    toastdispatch({type:'SUCCESS',payload:"Playlist Created"})
+                    return res.data.playlists
+                })
+                return res
+            } catch (error) {
+                console.log(error)
+            }
 
+}
+
+
+// add video playlist
+export const addVideoPlaylist = async (e,palylist_id,data,token,toastdispatch)=>{
+ 
+        try {
+            const res = await axios.post(
+                `/api/user/playlists/${palylist_id}`,
+                {
+                    video: {...data}
+                },
+                {
+                    headers: {
+                        authorization: token,
+                    },
+                }
+            ).then((res)=>{
+                toastdispatch({type:'SUCCESS',payload:"Video Added to palylist"})
+                return res.data.playlist
+            });
+            return res
+        } catch (error) {
+            console.log(error)
+        }
+
+}
+
+//remove video playlist
+export const removedVideoPlaylist = async(e,palylist_id,videoId,token,toastdispatch)=>{       
+        try{
+            const res=await axios.delete(`/api/user/playlists/${palylist_id}/${videoId}`,
+            {
+                headers: {
+                    authorization: token,
+                },
+            }).then((res)=>{
+                toastdispatch({type:'DANGER',payload:"Video removed from Playlist"})
+                return res.data.playlist
+            })
+            return res
+    
+        }catch(error){
+            console.log(error)
+        }
+
+}
+
+
+//delete playlist
+export const deletePlaylist=async (e,playlistId,token,toastdispatch)=>{
+    e.preventDefault()
         try{
             const res=await axios.delete(`/api/user/playlists/${playlistId}`,{
                 headers: {
                     authorization: token,
                 }, 
+            }).then((res)=>{
+                toastdispatch({type:'DANGER',payload:"Playlist Deleted"})
+                return res.data.playlists
             })
-
-            deleteplaylist(res.data.playlists)
-    
+           return res
         }catch(error){
             console.log(error)
         }
 }
 
+
 //add watch later
-export const handler_addWatchLater = async (token, addwatchlist, data) => {
-        try {
-            const res = await axios.post('/api/user/watchlater',
-                { video: data },
-                {
-                    headers: {
-                        authorization: token
-                    }
-                },
-            )
-            addwatchlist(res.data.watchlater)
-
-        } catch (error) {
-            console.log(error)
-        }
-}
-
-//removed watch later
-export const handler_removeWatchLater = async (token, removedwatchlist, id) => {
-        try {
-            const res = await axios.delete(`/api/user/watchlater/${id}`, {
+export const addWatchLater = async (token,data,toastdispatch) => {
+    try {
+        const res = await axios.post('/api/user/watchlater',
+            { video: data },
+            {
                 headers: {
                     authorization: token
                 }
             },
-            )
-            removedwatchlist(res.data.watchlater)
-        } catch (error) {
-            console.log(error)
-        }
+        ).then((res)=>{
+            toastdispatch({type:'SUCCESS',payload:"Video Added to watchlist"})
+            return res.data.watchlater
+        })
+        return res
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+//removed watch later
+export const removeWatchLater = async (token,id,toastdispatch) => {
+    try {
+        const res = await axios.delete(`/api/user/watchlater/${id}`, {
+            headers: {
+                authorization: token
+            }
+        },
+        ).then((res)=>{
+            toastdispatch({type:'DANGER',payload:"Video Removed from watchlist"})
+            return res.data.watchlater
+        })
+        return res
+    } catch (error) {
+        console.log(error)
+    }
 }
 
 //all watch later
 export const fetchAllWatchlaterData = async(token)=>{
-    try{
-        let data =[]
-        data = await axios.get(`/api/user/watchlater`,
-        {
-            headers: {
-                authorization: token,
-            },
-        })
-        return data
+try{
+    let data =[]
+    data = await axios.get(`/api/user/watchlater`,
+    {
+        headers: {
+            authorization: token,
+        },
+    })
+    return data
 
-    }catch(error){
-        console.log(error)
-    }
+}catch(error){
+    console.log(error)
+}
 }
 
 //liked
-export const addVideoToLikedVideos = async (token, add_liked,data) => {
-        try {
-            const res = await axios.post('/api/user/likes',
-                { video: data },
-                {
-                    headers: {
-                        authorization: token
-                    }
-                },
-            )
-            add_liked(res.data.likes)
-
-        
-        } catch (error) {
-            console.log(error)
-        }
-   
+export const addVideoToLikedVideos = async (token,data,toastdispatch) => {
+    try {
+        const res = await axios.post('/api/user/likes',
+            { video: data },
+            {
+                headers: {
+                    authorization: token
+                }
+            },
+        ).then((res)=>{
+            toastdispatch({type:'SUCCESS',payload:"Liked"})
+            return res.data.likes
+        })
+        return res
+    } catch (error) {
+        console.log(error)
+    }
 }
 
 //unliked
-export const removeFromlikedVideos=async(token, removed_liked, id)=>{
-    try{
-        const res=await axios.delete(`/api/user/likes/${id}`,{
-            headers:{
-                authorization:token
-            }
-        })
-        removed_liked(res.data.likes)
-    }catch(error){
-        console.log(error)
-    }
+export const removeFromlikedVideos=async(token,id,toastdispatch)=>{
+try{
+    const res=await axios.delete(`/api/user/likes/${id}`,{
+        headers:{
+            authorization:token
+        }
+    }).then((res)=>{
+        toastdispatch({type:'SUCCESS',payload:"DisLiked"})
+        return res.data.likes
+    })
+   return res
+}catch(error){
+    console.log(error)
+}
 }
 
 //all like 
 export const fetchAllLikedData = async(token)=>{
-    try{
-        let data =[]
-        data = await axios.get(`/api/user/likes`,
-        {
-            headers: {
-                authorization: token,
-            },
-        })
-        return data
+try{
+    let data =[]
+    data = await axios.get(`/api/user/likes`,
+    {
+        headers: {
+            authorization: token,
+        },
+    })
+    return data
 
-    }catch(error){
-        console.log(error)
-    }
+}catch(error){
+    console.log(error)
+}
 }
 
-//history data
-export const fetchAllHistoryData = async(token)=>{
+
+export const AllHistoryData = async(token)=>{
     try{
         let data =[]
         data = await axios.get(`/api/user/history`,
@@ -310,9 +319,10 @@ export const fetchAllHistoryData = async(token)=>{
 }
 
 
-export const handler_addVideoHistory = async (token, video, add_history) => {
+export const addVideoHistory = async (token,video) => {
       try {
-        const res = await axios.post(
+        let res =[]
+        res = await axios.post(
           "/api/user/history",
           { video: video },
           {
@@ -320,39 +330,45 @@ export const handler_addVideoHistory = async (token, video, add_history) => {
               authorization: token,
             },
           }
-        );
-        add_history(res.data.history)
+        ).then((res)=>res.data.history);
+        return res
       } catch (error) {
         console.log(error);
       }
   };
   
-  export const handler_removeHistory = async (token, remove_history,Id) => {
+  export const removeHistory = async (token,Id,toastdispatch) => {
     try {
       const res = await axios.delete(`/api/user/history/${Id}`, {
         headers: {
           authorization: token,
         },
-      });
-      remove_history(res.data.history)
+      }).then((res)=>{
+      toastdispatch({type:'DANGER',payload:"Video Removed from historylist"})
+      return res.data.history
+      }
+      );
+    return res
     } catch (error) {
       console.log(error);
     }
   };
   
-  export const handler_removeallHistory = async (token,removed_all_historys) => {
+  export const removeallHistory = async (token,toastdispatch) => {
     try {
       const res = await axios.delete(`/api/user/history/all`, {
         headers: {
           authorization: token,
         },
+      }).then((res)=>{
+        toastdispatch({type:'DANGER',payload:"Historylist Cleared"})
+        return res.data.history
       });
-      removed_all_historys(res.data.history)
+    return res
     } catch (error) {
       console.log(error);
     }
   };
-
 
 //show data
 export async function fetch_Show_Data() {
@@ -378,10 +394,15 @@ export async function fetch_movie_Data() {
 
 
 //note--> add
+export function getNotesService(token, videoId) {
+    const res = axios.get(`/api/user/notes/${videoId}`, {
+          headers: { authorization: token },
+      })
+    return res
+}
 
 export function addNoteService( token, note ,toastdispatch) {
-
-    axios.post(
+   const res = axios.post(
         "/api/user/notes",
         { note },
         {
@@ -389,56 +410,52 @@ export function addNoteService( token, note ,toastdispatch) {
         }
     ).then((res)=>{
         toastdispatch({type:'SUCCESS',payload:"NOTE ADDED"})
+        return res.data.notes
     });
+    return res
 }
 
 // delete
-
 export function deleteNoteService( token, noteId ,toastdispatch) {
-    return axios.delete(`/api/user/notes/${noteId}`, {
+    const res = axios.delete(`/api/user/notes/${noteId}`, {
         headers: { authorization: token },
-    }).then(()=>{
+    }).then((res)=>{
         toastdispatch({type:'DANGER',payload:"NOTE DELETED"})
+        return res.data.notes
     });
+
+    return res
 }
 
 //edit
-
 export function editNoteService( token, note ,toastdispatch) {
-    
-    return axios.post(
+    const res = axios.post(
         `/api/user/notes/${note._id}`,
         { note },
         {
             headers: { authorization: token },
         }
-    ).then(()=>{
+    ).then((res)=>{
         toastdispatch({type:'SUCCESS',payload:"NOTE EDITED"})
-    })
-    ;
+        return res.data.notes
+    });
+
+    return res
 }
 
 //
-export function getNotesService(token, videoId) {
-  return axios.get(`/api/user/notes/${videoId}`, {
-        headers: { authorization: token },
-    })
-}
-
-//
-
-
-
-export function addNewVideoHandler( token, uploadvideo ,Add_Uploaded_Video) {
-    axios.post(
+export function addNewVideoHandler( token,uploadvideo,toastdispatch) {
+    let res = axios.post(
         "/api/user/videos",
         { uploadvideo },
         {
             headers: { authorization: token },
         }
     ).then((res)=>{
-        Add_Uploaded_Video(res.data.uploadedvideo)
-    });       
+        toastdispatch({type:'SUCCESS',payload:"Video Uplaoded"})
+        return res.data.uploadedvideo
+    }); 
+    return res      
 }
 
 

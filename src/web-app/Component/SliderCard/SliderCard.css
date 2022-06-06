@@ -15,7 +15,6 @@
     scrollbar-width: none;
     scroll-behavior: smooth;
     background: rgba(242, 236, 236, 0.097);
-    /* text-align: start; */
 }
 
 .slider-cw{
@@ -26,7 +25,6 @@
     scrollbar-width: none;
     scroll-behavior: smooth;
     background: rgba(242, 236, 236, 0.097);
-    /* text-align: start;    */
     display: flex;
 }
 

@@ -1,24 +1,26 @@
 import { useState,useContext } from 'react';
 import './AddNote.css';
-import {addNoteService} from 'web-app/Service/service';
-import { useAuth } from 'web-app/Context/login/AuthContext';
 //draf-js
 import { convertToRaw,convertFromRaw, EditorState ,ContentState} from 'draft-js';
 import draftToHtml from 'draftjs-to-html';
 import { Editor } from "react-draft-wysiwyg";
 import "../../../../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import VideoContext from 'web-app/Context/video/VideoContext';
-
+//redux
+import { useDispatch, useSelector } from "react-redux";
+import { addNote } from '../../Redux/Reducer/noteSlice';
 
 const AddNote=({vidid,modalClose})=>{
     let {toastdispatch} = useContext(VideoContext)
-    let {token} = useAuth()
     const [text,settext] = useState("")
     const [desc,setdesc] = useState("")
     const [editorState,seteditorState] = useState(EditorState.createEmpty())
     const [rawMessage,setrawMessage]=useState("")
     const[isemty,setempty]=useState(true)
-  
+     //redux
+     const { notelist } = useSelector((store) => store.note);
+     const dispatch = useDispatch();
+     const { token , user } = useSelector((store) => store.authentication);
     const toolbarStyle={
         background:'transparent',
         border:"none"
@@ -53,7 +55,7 @@ const AddNote=({vidid,modalClose})=>{
                 text:editorState,
                 videoId:vidid,
             }
-            addNoteService(token,note,toastdispatch)
+            dispatch(addNote([token,note,toastdispatch]))
             settext("")
             setdesc("")
             modalClose()

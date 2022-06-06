@@ -2,7 +2,7 @@
     height:25rem;
     position: relative;
     overflow: hidden;
-    margin: 1.125rem;
+    margin: 0 1.125rem 1.125rem 1.125rem;
   }
 
   .slide {

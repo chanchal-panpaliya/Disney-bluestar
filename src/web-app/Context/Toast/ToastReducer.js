@@ -1,5 +1,4 @@
 
-
 const ToastReducer=(state,action)=>{
     let toastProperties = null;
     switch(action.type){

@@ -19,19 +19,21 @@ import sliderdata from '../../Component/Slider/dataSlider';
 
 import loder_img from '../../img/images/temp/css-swing-masking-loader.gif';
 import loading_img from '../../img/images/temp/loder.gif';
-import { useAuth } from "web-app/Context/login/AuthContext";
+
 
 import { InfiniteScroll } from "../../Component/InfiniteScroll/useInfiniteScroll";
-
+//redux
+import { useSelector } from "react-redux";
 const VideoList =()=>{
-  let {token} = useAuth()
+
   let {selectedMenu,filter,filter_dispatch,uploadedvideo} = useContext(VideoContext)
   const [data,setdata]=useState([]);
   const [loader,setloader]=useState(false)
   const [loading, setLoading] = useState(true);
   const { limit_data, moredata, setObserverRef } = InfiniteScroll(data);
-
-
+  //redux
+  const { uploadlist } = useSelector((store) => store.upload);
+  const { token , user } = useSelector((store) => store.authentication);
   
   selectedMenu = localStorage.getItem('VIDEO_MENU_SELECTED');
 
@@ -46,7 +48,7 @@ const VideoList =()=>{
   useEffect(()=>{
     setloader(true)
     fetchAllVideoData().then(function(result){  
-      let newdata =  uploadedvideo.length>0 ? [...result,...uploadedvideo]  : result 
+      let newdata =  uploadlist.length>0 ? [...result,...uploadlist]  : result 
       let filterdata =  newdata.filter(item=> item.categoryName === selectedMenu)
       let obj={}
       let newarr=[]

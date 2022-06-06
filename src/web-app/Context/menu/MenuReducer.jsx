@@ -4,7 +4,6 @@ export const MenuReducer = (state,action) =>{
             localStorage.setItem('VIDEO_MENU_SELECTED', action.payload);
             return {...state,selectedMenu : action.payload}
         }
-       
         default :
         return state
      }

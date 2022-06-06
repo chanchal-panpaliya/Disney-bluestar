@@ -1,23 +1,32 @@
 import { Link } from 'react-router-dom'
 import { useContext , useState } from 'react';
 import './Frame.css'
-import {  handler_addWatchLater ,handler_removeWatchLater , handler_addVideoHistory} from 'web-app/Service/service';
+
 import { Playlist_Modal ,Auth_Modal,AddNote_Modal,ShareModal} from '../../Component/Modal/Modal';
-import { useAuth } from 'web-app/Context/login/AuthContext';
 import VideoContext from 'web-app/Context/video/VideoContext';
 import DisplayNote from '../AddNote/DisplayNote';
+
+//redux
+import { addHistoryData } from '../../Redux/Reducer/historySlice';
+import { addWatchlistData , removeWatchlistData} from '../../Redux/Reducer/watchSlice';
+import { useDispatch, useSelector } from "react-redux";
+
+
 const Frame=({data,Noteval,openNote,closeNote})=>{
-    let {token} = useAuth()
-    let {add_history,addwatchlist,removedwatchlist,watchlist,CountVideoView,getContinueWatchItem} = useContext(VideoContext)
+    let {CountVideoView,getContinueWatchItem,toastdispatch} = useContext(VideoContext)
 
     const [ispalylistmodal,setpaylist]=useState(false)
     const [ismodal,setmodal]=useState(false)
     const [isshare,setshare]=useState(false)
     
+    //redux
+    const dispatch = useDispatch();
+    const { watchlist } = useSelector((store) => store.watch);
+    const { token , user } = useSelector((store) => store.authentication);
    
     const handleOpenVideo=()=>{
            if(token){
-                handler_addVideoHistory(token,data,add_history)
+                dispatch(addHistoryData(data))
            }
     }
 
@@ -41,18 +50,25 @@ const Frame=({data,Noteval,openNote,closeNote})=>{
                       <span className='flex-row col-gap-1rem --background'> 
                           <label className='--background'> Watch {data.categoryName} </label>
                           <Link to={`/videolist/${data._id}/watch`} className="fa-solid fa-play" 
-                          onClick={()=>{CountVideoView(data);getContinueWatchItem(data);handleOpenVideo()}}></Link>
+                          onClick={()=>{
+                                        CountVideoView(data);
+                                        getContinueWatchItem(data);
+                                        handleOpenVideo()}}></Link>
                       </span>
                     
                       <div className='flex-row --background col-gap-2rem'>
                             {
                                 token ? watchlist.length>0 && watchlist.find(item=>item._id === data._id)?
                                 <span className='flex-col row-gap-0.5rem --background'>
-                                    <i style={{color:'green'}} className="fa-solid fa-circle-check --background curser-pointer-noeffect" onClick={()=>handler_removeWatchLater(token, removedwatchlist, data._id)}></i>
+                                    <i style={{color:'green'}} className="fa-solid fa-circle-check --background curser-pointer-noeffect" 
+                                    onClick={()=>dispatch(removeWatchlistData([data._id,toastdispatch]))}
+                                    ></i>
                                     <label className='--background --background'> watchlist </label>
                                  </span> :
                                 <span className='flex-col row-gap-0.5rem --background'>
-                                    <i className="fa-solid fa-plus --background curser-pointer-noeffect" onClick={()=>handler_addWatchLater(token, addwatchlist, data)}></i>
+                                    <i className="fa-solid fa-plus --background curser-pointer-noeffect" 
+                                    onClick={()=>dispatch(addWatchlistData([data,toastdispatch]))}
+                                    ></i>
                                     <label className='--background'>watchlist</label>
                                 </span> :
                                  <span className='flex-col row-gap-0.5rem --background'>

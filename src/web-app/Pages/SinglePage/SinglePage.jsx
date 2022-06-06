@@ -4,21 +4,23 @@ import { useParams } from 'react-router-dom';
 import { useEffect, useState ,useContext} from 'react';
 import { Link } from 'react-router-dom';
 //service
-import { fetch_single_video,fetchAllVideoData ,handler_addWatchLater ,handler_removeWatchLater,handler_addVideoHistory,getNotesService} from '../../Service/service';
+import { fetch_single_video,fetchAllVideoData} from '../../Service/service';
 //component
 import Header from '../../Component/Header/Header';
 import Footer from '../../Component/Footer/Footer';
 import SliderCard from '../../Component/SliderCard/SliderCard';
-// import { NoteCard } from 'web-app/Component/Card/NoteCard';
 import { Playlist_Modal ,Auth_Modal,AddNote_Modal,ShareModal} from '../../Component/Modal/Modal';
 //
 import VideoContext from 'web-app/Context/video/VideoContext';
-import { useAuth } from 'web-app/Context/login/AuthContext';
 import Frame from 'web-app/Component/Frame/Frame';
 //
+//redux
+import { useDispatch, useSelector } from "react-redux";
+import { addHistoryData } from 'web-app/Redux/Reducer/historySlice';
+import { addWatchlistData , removeWatchlistData } from '../../Redux/Reducer/watchSlice';
+
 const SinglePage =()=>{ 
-    let {addwatchlist,removedwatchlist,watchlist,add_history,addvideoViewCount,uploadedvideo,CountVideoView,getContinueWatchItem} = useContext(VideoContext)
-    let {token} = useAuth()
+    let {CountVideoView,getContinueWatchItem,toastdispatch} = useContext(VideoContext)
     const [ispalylistmodal,setpaylist]=useState(false)
     const [ismodal,setmodal]=useState(false)
     const [isaddnote,setnote]=useState(false)
@@ -28,13 +30,17 @@ const SinglePage =()=>{
     const [data,setdata]=useState();
     const [alldata,setalldata]=useState([]);
     const [showdata,setshowdata]=useState([]);
-    // const [noteList,SetnoteList] = useState([]);
     const [openNoteSidebar,SetopenNoteSidebar] = useState(false)
+    // redux
+    const dispatch = useDispatch();
+    const { watchlist } = useSelector((store) => store.watch);
+    const { uploadlist } = useSelector((store) => store.upload);
+    const { token , user } = useSelector((store) => store.authentication);
 
     
     useEffect(()=>{
         fetchAllVideoData().then(function(result){
-            let newdata =  uploadedvideo.length>0 ? [...result,...uploadedvideo]  : result 
+            let newdata =  uploadlist.length>0 ? [...result,...uploadlist]  : result 
              setalldata(newdata)
 
              let filterdata =  newdata.filter(item=> item.categoryName === "Shows")
@@ -58,23 +64,21 @@ const SinglePage =()=>{
             let time2 = setTimeout(()=>{
                            
                 fetch_single_video(id).then((res)=>{
-                    let check = uploadedvideo.length>0 ? uploadedvideo.find((item)=>item._id===id) : false;
+                    let check = uploadlist.length>0 ? uploadlist.find((item)=>item._id===id) : false;
                         if(check){ 
                             setdata(check)
                         }else{
                             setdata(res)
                         }
                 })
-                // getNotesService(token,id).then((res)=>{
-                //     SetnoteList(res.data.notes)
-                // })
+
             },0)
             return ()=>clearTimeout(time2)
     },[data,setdata])
     
     const handleOpenVideo=(data)=>{
         if(token){
-             handler_addVideoHistory(token,data,add_history)
+             dispatch(addHistoryData(data))
         }
  }
 
@@ -98,11 +102,15 @@ const SinglePage =()=>{
                                         {
                                             token ? watchlist.length>0 && watchlist.find(item=>item._id === data._id)?
                                             <span className='flex-col row-gap-0.5rem --background'>
-                                                <i style={{color:'green'}} className="fa-solid fa-circle-check --background" onClick={()=>handler_removeWatchLater(token, removedwatchlist, data._id)}></i>
+                                                <i style={{color:'green'}} className="fa-solid fa-circle-check --background" 
+                                                onClick={()=>dispatch(removeWatchlistData([data._id,toastdispatch]))}
+                                                ></i>
                                                 <label className='--background --background'> watchlist </label>
                                             </span> :
                                             <span className='flex-col row-gap-0.5rem --background'>
-                                                <i className="fa-solid fa-plus --background" onClick={()=>handler_addWatchLater(token, addwatchlist, data)}></i>
+                                                <i className="fa-solid fa-plus --background" 
+                                                onClick={()=>dispatch(addWatchlistData([data,toastdispatch]))}
+                                                ></i>
                                                 <label className='--background'>watchlist</label>
                                             </span> :
                                             <span className='flex-col row-gap-0.5rem --background'>

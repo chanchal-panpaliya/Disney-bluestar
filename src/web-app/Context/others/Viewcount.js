@@ -1,16 +1,4 @@
-const Uploadreducer=(state,action)=>{
-    switch(action.type){
-        case "ADD_NEW_VIDEO" :{
-             return {...state,uploadedvideo : action.payload}
-        }
-        
-        default :
-        return state
-     }
- }
-
-
- const ViewCountreducer=(state,action)=>{
+const ViewCountreducer=(state,action)=>{
     switch(action.type){
 
         case "GET_ALL_VIDEO":{
@@ -33,4 +21,4 @@ const Uploadreducer=(state,action)=>{
      }
  }
 
-export  {Uploadreducer,ViewCountreducer}
+export  {ViewCountreducer}

@@ -2,12 +2,9 @@ import { useState,useContext,useEffect } from "react"
 import Login from "./Login";
 import  Register from "./Register";
 import ForgotPassword from "./ForgotPassword";
-import VideoContext from "web-app/Context/video/VideoContext";
-//img
-import loder_img from '../../img/images/temp/css-swing-masking-loader.gif';
+
 
 const Auth =({modalClose,page})=>{
-
     const [route,setroute]=useState(page==="forgotpassword"?"forgopassword":"login")
 
       return(

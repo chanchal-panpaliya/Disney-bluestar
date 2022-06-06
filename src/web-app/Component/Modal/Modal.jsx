@@ -1,13 +1,11 @@
 import "./Modal.css";
-import { useState,useContext } from "react";
 import Auth from "../../Pages/Auth/Auth";
 import AddPlayList from "../../Pages/Playlist/addpalylist";
 import AddNote from "../AddNote/AddNote";
 import EditNote from "../AddNote/EditNote";
 import SharePage from "../SharePage/SharePage";
 import AddVideoForm from "web-app/Pages/Uploadvideo/AddVideoForm";
-import VideoContext from 'web-app/Context/video/VideoContext';
-import { useAuth } from 'web-app/Context/login/AuthContext';
+import { useSelector } from "react-redux";
 //img
 import playlist from '../../img/images/temp/playlist1.png';
 export const Modal =({modalClose})=>{
@@ -41,10 +39,9 @@ export const Auth_Modal =({modalClose,page})=>{
 }
 
 export const Playlist_Modal =({videoid,data,modalClose})=>{
-    let {token} = useAuth()
+    const { token , user } = useSelector((store) => store.authentication);
     if(token)
     return(
-
         <div className='modal'>
         <div className="modal-container">
             <div className='modal-left-side'>
@@ -67,7 +64,7 @@ export const Playlist_Modal =({videoid,data,modalClose})=>{
 }
 
 export const AddNote_Modal =({videoid,data,modalClose})=>{
-    let {token} = useAuth()
+    const { token , user } = useSelector((store) => store.authentication);
     if(token)
     return(
         <div className='modal'>
@@ -88,7 +85,7 @@ export const AddNote_Modal =({videoid,data,modalClose})=>{
 
 //note edit
 export const AddEdit_Modal =({data,modalClose})=>{
-    let {token} = useAuth()
+    const { token , user } = useSelector((store) => store.authentication);
     if(token)
     return(
         <div className='modal'>

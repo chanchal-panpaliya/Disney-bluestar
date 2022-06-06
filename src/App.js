@@ -15,13 +15,17 @@ import PageNotFound from "web-app/Pages/404error/pagenotfound";
 import Uploadvideo from "web-app/Pages/Uploadvideo/Uploadvideo";
 
 //context
-import { useAuth } from './web-app/Context/login/AuthContext';
+//import { useAuth } from './web-app/Context/login/AuthContext';
 import { Toast } from "web-app/Component/Toast/Toast";
 import VideoContext from "web-app/Context/video/VideoContext";
 import { useContext } from "react";
+//redux
+import { useDispatch, useSelector } from "react-redux";
+
 function App() {
-  let {token} = useAuth()
+  //let {token} = useAuth()
   let {toastList} = useContext(VideoContext)
+  const { token , user } = useSelector((store) => store.authentication);
   return (
     <div className="App">
       <Router>

@@ -1,7 +1,7 @@
 import './Auth.css';
 import '../../Component/Modal/Modal.css';
-import { useState ,useEffect } from 'react';
-import {useNavigate} from 'react-router-dom';
+import { useState } from 'react';
+
 
 const ForgotPassword = ({routeLogin,routeRegister}) =>{
     const [emailId, setEmailId] = useState("");

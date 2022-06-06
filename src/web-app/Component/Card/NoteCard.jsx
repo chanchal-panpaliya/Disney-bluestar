@@ -6,15 +6,21 @@ import './Card.css';
 //component
 import {AddEdit_Modal} from '../Modal/Modal';
 import VideoContext from 'web-app/Context/video/VideoContext';
-import { useAuth } from 'web-app/Context/login/AuthContext';
-import {deleteNoteService} from '../../Service/service';
 
+
+//redux
+import { useDispatch, useSelector } from "react-redux";
+import { deleteNote } from '../../Redux/Reducer/noteSlice';
 
 export const NoteCard=({data,key})=>{
      let{toastdispatch} = useContext(VideoContext)
-     let {token} = useAuth()
+    // let {token} = useAuth()
      const [iseditmodal,seteditmodal]=useState(false)
- 
+     // redux
+     const { notelist } = useSelector((store) => store.note);
+     const { token , user } = useSelector((store) => store.authentication);
+     const dispatch = useDispatch();
+
    return(
        <>
         <div className='note-card flex-col row-gap-1rem' key={key}>
@@ -22,7 +28,10 @@ export const NoteCard=({data,key})=>{
            <div className='description' dangerouslySetInnerHTML={{__html:data.text}}></div>
            <div className='flex-row --background card-footer-icon'> 
                 <button className='note-edit-button' onClick={()=>seteditmodal(!iseditmodal)}> edit </button>
-                <button className='note-delete-button' onClick={()=>deleteNoteService( token, data._id ,toastdispatch)}> delete </button>
+                <button className='note-delete-button' 
+                onClick={()=>dispatch(deleteNote([token, data._id ,toastdispatch]))}
+                
+                > delete </button>
            </div>
         </div>
        {

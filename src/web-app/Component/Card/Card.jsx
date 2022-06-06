@@ -6,16 +6,21 @@ import './Card.css';
 //component
 import { Playlist_Modal ,Auth_Modal} from '../Modal/Modal';
 import VideoContext from 'web-app/Context/video/VideoContext';
-import { useAuth } from 'web-app/Context/login/AuthContext';
-import { handler_addWatchLater ,handler_removeWatchLater} from 'web-app/Service/service';
 import Tooltip from '../ToolTip/Tooltip';
+//redux
+import { addWatchlistData , removeWatchlistData} from '../../Redux/Reducer/watchSlice';
+import { useDispatch, useSelector } from "react-redux";
 
 const VideoCard=({data})=>{
-    let {addwatchlist,removedwatchlist,watchlist} = useContext(VideoContext)
-    let {token} = useAuth()
+    let {toastdispatch} = useContext(VideoContext)
+    //let {token} = useAuth()
     const [ispalylistmodal,setpaylist]=useState(false)
     const [ismodal,setmodal]=useState(false)
-    
+    //redux
+    const { watchlist } = useSelector((store) => store.watch);
+    const { token , user } = useSelector((store) => store.authentication);
+    const dispatch = useDispatch();
+ 
     let check = watchlist.length>0 && watchlist.find(item=>item._id === data._id)  
     return(
           <>
@@ -35,14 +40,18 @@ const VideoCard=({data})=>{
                                     token?
                                       check?
                                         <Tooltip content={"remove watchlist"}> 
-                                            <i style={{color:'green'}} className="fa-solid fa-circle-check curser-pointer-noeffect --background"  onClick={()=>handler_removeWatchLater(token, removedwatchlist, data._id)}></i>
+                                            <i style={{color:'green'}} className="fa-solid fa-circle-check curser-pointer-noeffect --background"  
+                                            onClick={()=>dispatch(removeWatchlistData([data._id,toastdispatch]))}
+                                            ></i>
                                         </Tooltip>
                                         :
                                         <Tooltip content={"add watchlist"}> 
-                                            <i className="fa-solid fa-plus  --background curser-pointer-noeffect" onClick={()=>handler_addWatchLater(token, addwatchlist, data)}></i>
+                                            <i className="fa-solid fa-plus  --background curser-pointer-noeffect" 
+                                            onClick={()=>dispatch(addWatchlistData([data,toastdispatch]))}
+                                            ></i>
                                         </Tooltip>
                                        :
-                                       <Tooltip content={"login"}> 
+                                       <Tooltip content={"add watchlist"}> 
                                        <i className="fa-solid fa-plus  --background curser-pointer-noeffect" onClick={()=>{setmodal(!ismodal)}}></i>
                                        </Tooltip>
                                 }
@@ -60,10 +69,14 @@ const VideoCard=({data})=>{
 
 
 const VideoListCard=({data})=>{
-    let {addwatchlist,removedwatchlist,watchlist,viewcount} = useContext(VideoContext)
-    let {token} = useAuth()
+    let {viewcount,toastdispatch} = useContext(VideoContext)
     const [ispalylistmodal,setpaylist]=useState(false)
     const [ismodal,setmodal]=useState(false)
+    //redux
+    const { watchlist } = useSelector((store) => store.watch);
+    const { token , user } = useSelector((store) => store.authentication);
+    const dispatch = useDispatch();
+    //
     let check = watchlist.length>0 && watchlist.find(item=>item._id === data._id) 
     let getview = viewcount.length>0 && viewcount.filter((item)=>item._id===data._id) 
     return(
@@ -88,9 +101,13 @@ const VideoListCard=({data})=>{
                                 {
                                     token?
                                       check?
-                                        <button className='--background video-label-hover' onClick={()=>handler_removeWatchLater(token, removedwatchlist, data._id)}>removed Watch</button>
+                                        <button className='--background video-label-hover' 
+                                        onClick={()=>dispatch(removeWatchlistData([data._id,toastdispatch]))}
+                                        >removed Watch</button>
                                         :
-                                        <button className='--background video-label-hover' onClick={()=>handler_addWatchLater(token, addwatchlist, data)}>add Watch</button>
+                                        <button className='--background video-label-hover' 
+                                        onClick={()=>dispatch(addWatchlistData([data,toastdispatch]))}
+                                        >add Watch</button>
                                        :
                                        <button className='--background video-label-hover' onClick={()=>{setmodal(!ismodal)}}>add Watch</button>  
                                 }
@@ -130,10 +147,13 @@ const Vertical_Slider_Card=({data})=>{
 }
 
 const EpisodeVideoListCard=({data})=>{
-    let {addwatchlist,removedwatchlist,watchlist,getEpisodeVideoId} = useContext(VideoContext)
-    let {token} = useAuth()
+    let {toastdispatch} = useContext(VideoContext)
     const [ispalylistmodal,setpaylist]=useState(false)
     const [ismodal,setmodal]=useState(false)
+    //redux
+    const { watchlist } = useSelector((store) => store.watch);
+    const { token , user } = useSelector((store) => store.authentication);
+    const dispatch = useDispatch();
     
     let check = watchlist.length>0 && watchlist.find(item=>item._id === data._id)  
     return(
@@ -146,9 +166,13 @@ const EpisodeVideoListCard=({data})=>{
                                         {
                                             token?
                                             check?
-                                                <button className='--background video-label-hover' onClick={()=>handler_removeWatchLater(token, removedwatchlist, data._id)}> Remove from Watchlist </button>
+                                                <button className='--background video-label-hover' 
+                                                onClick={()=>dispatch(removeWatchlistData([data._id,toastdispatch]))}
+                                                > Remove from Watchlist </button>
                                                 :
-                                                <button className='--background video-label-hover' onClick={()=>handler_addWatchLater(token, addwatchlist, data)}> Add to Watchlist </button>
+                                                <button className='--background video-label-hover' 
+                                                onClick={()=>dispatch(addWatchlistData([data,toastdispatch]))}
+                                                > Add to Watchlist </button>
                                             :
                                             <button className='--background video-label-hover' onClick={()=>{setmodal(!ismodal)}}> Add to Watchlist </button>  
                                         }
