@@ -8,8 +8,8 @@ import {loginUser} from '../../Redux/Reducer/authSlice';
 import { useDispatch, useSelector } from "react-redux";
 
 const testCredentials = {
-    email: "adarshbalika@gmail.com",
-    password: "adarshBalika123",
+    email: "johndoe@gmail.com",
+    password: "johnDoe123",
     rememberMe: true,
   };
 
